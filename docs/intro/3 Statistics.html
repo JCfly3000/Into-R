@@ -366,7 +366,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#categorical-variable" id="toc-categorical-variable" class="nav-link" data-scroll-target="#categorical-variable"><span class="header-section-number">3</span> Categorical variable</a></li>
   <li><a href="#quantitative-variable" id="toc-quantitative-variable" class="nav-link" data-scroll-target="#quantitative-variable"><span class="header-section-number">4</span> Quantitative variable</a></li>
   <li><a href="#variance-vs-standard-deviation" id="toc-variance-vs-standard-deviation" class="nav-link" data-scroll-target="#variance-vs-standard-deviation"><span class="header-section-number">5</span> Variance vs Standard deviation</a></li>
-  <li><a href="#reference" id="toc-reference" class="nav-link" data-scroll-target="#reference"><span class="header-section-number">6</span> Reference</a></li>
+  <li><a href="#statistics-1" id="toc-statistics-1" class="nav-link" data-scroll-target="#statistics-1"><span class="header-section-number">6</span> Statistics</a>
+  <ul class="collapse">
+  <li><a href="#centrality-mean-median-mode" id="toc-centrality-mean-median-mode" class="nav-link" data-scroll-target="#centrality-mean-median-mode"><span class="header-section-number">6.1</span> Centrality: Mean, Median, Mode</a></li>
+  <li><a href="#spread-variance-standard-deviation-and-the-interquartile-range" id="toc-spread-variance-standard-deviation-and-the-interquartile-range" class="nav-link" data-scroll-target="#spread-variance-standard-deviation-and-the-interquartile-range"><span class="header-section-number">6.2</span> Spread: Variance, Standard Deviation, and the Interquartile Range</a></li>
+  <li><a href="#covariance-and-correlation" id="toc-covariance-and-correlation" class="nav-link" data-scroll-target="#covariance-and-correlation"><span class="header-section-number">6.3</span> Covariance and Correlation</a></li>
+  <li><a href="#correlationpearsons-product-moment-correlation-coefficient" id="toc-correlationpearsons-product-moment-correlation-coefficient" class="nav-link" data-scroll-target="#correlationpearsons-product-moment-correlation-coefficient"><span class="header-section-number">6.4</span> Correlation,Pearson’s product-moment correlation coefficient</a></li>
+  </ul></li>
+  <li><a href="#reference" id="toc-reference" class="nav-link" data-scroll-target="#reference"><span class="header-section-number">7</span> Reference</a></li>
   </ul>
 </nav>
     </div>
@@ -418,8 +425,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1 data-number="5"><span class="header-section-number">5</span> Variance vs Standard deviation</h1>
 <p><img src="images/clipboard-4130404561.png" class="img-fluid"></p>
 </section>
-<section id="reference" class="level1" data-number="6">
-<h1 data-number="6"><span class="header-section-number">6</span> Reference</h1>
+<section id="statistics-1" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Statistics</h1>
+<section id="centrality-mean-median-mode" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="centrality-mean-median-mode"><span class="header-section-number">6.1</span> Centrality: Mean, Median, Mode</h2>
+</section>
+<section id="spread-variance-standard-deviation-and-the-interquartile-range" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="spread-variance-standard-deviation-and-the-interquartile-range"><span class="header-section-number">6.2</span> Spread: Variance, Standard Deviation, and the Interquartile Range</h2>
+</section>
+<section id="covariance-and-correlation" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="covariance-and-correlation"><span class="header-section-number">6.3</span> Covariance and Correlation</h2>
+<p>When analyzing data, it’s often useful to be able to investigate the rela- tionship between two numeric variables to assess trends. For example, you might expect height and weight observations to have a noticeable positive relationship—taller people tend to weigh more. Conversely, you might imag- ine that handspan and length of hair would have less of an association. One of the simplest and most common ways such associations are quantified and compared is through the idea of correlation, for which you need the covariance. The covariance expresses how much two numeric variables “change together” and the nature of that relationship,</p>
+<p><img src="images/clipboard-4055345945.png" class="img-fluid"></p>
+</section>
+<section id="correlationpearsons-product-moment-correlation-coefficient" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="correlationpearsons-product-moment-correlation-coefficient"><span class="header-section-number">6.4</span> Correlation,Pearson’s product-moment correlation coefficient</h2>
+<p>Pearson’s sample correlation coef- ficient ρxy is computed by dividing the sample covariance by the product of the standard deviation of each data set</p>
+<p><img src="images/clipboard-1822919442.png" class="img-fluid"></p>
+<p>Some Correlation Example:</p>
+<p><img src="images/clipboard-775702636.png" class="img-fluid"></p>
+</section>
+</section>
+<section id="reference" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Reference</h1>
 <p>https://www.youtube.com/watch?v=MXaJ7sa7q-8</p>
 <div class="cell">
 <details open="" class="code-fold">
@@ -430,7 +458,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <details><summary>sessionInfo()</summary>
 <pre class="details" data-summary="sessionInfo()"><code>R version 4.4.1 (2024-06-14)
 Platform: aarch64-apple-darwin20
-Running under: macOS 15.1
+Running under: macOS 15.3.1
 
 Matrix products: default
 BLAS:   /Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/lib/libRblas.0.dylib 
@@ -447,9 +475,9 @@ attached base packages:
 
 loaded via a namespace (and not attached):
  [1] htmlwidgets_1.6.4 compiler_4.4.1    fastmap_1.2.0     cli_3.6.4        
- [5] tools_4.4.1       htmltools_0.5.8.1 rstudioapi_0.17.1 yaml_2.3.10      
- [9] rmarkdown_2.28    knitr_1.48        jsonlite_1.8.9    xfun_0.48        
-[13] digest_0.6.37     rlang_1.1.5       evaluate_1.0.1   </code></pre>
+ [5] tools_4.4.1       htmltools_0.5.8.1 yaml_2.3.10       rmarkdown_2.29   
+ [9] knitr_1.49        jsonlite_1.9.1    xfun_0.51         digest_0.6.37    
+[13] rlang_1.1.5       evaluate_1.0.3   </code></pre>
 </details>
 </div>
 </div>
@@ -966,13 +994,41 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/clipboard-4130404561.png)</span></span>
 <span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a><span class="fu"># Reference</span></span>
-<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>https://www.youtube.com/watch?v=MXaJ7sa7q-8</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a><span class="fu"># Statistics</span></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, attr.output='.details summary="sessionInfo()"'}</span></span>
-<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span>
-<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a><span class="fu">## Centrality: Mean, Median, Mode</span></span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a><span class="fu">## Spread: Variance, Standard Deviation, and the Interquartile Range</span></span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a><span class="fu">## Covariance and Correlation</span></span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>When analyzing data, it’s often useful to be able to investigate the rela- tionship between two numeric variables to assess trends. For example, you might expect height and weight observations to have a noticeable positive relationship—taller people tend to weigh more. Conversely, you might imag- ine that handspan and length of hair would have less of an association. One of the simplest and most common ways such associations are quantified and compared is through the idea of correlation, for which you need the covariance. The covariance expresses how much two numeric variables “change together” and the nature of that relationship,</span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/clipboard-4055345945.png)</span></span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a><span class="fu">## Correlation,Pearson’s product-moment correlation coefficient</span></span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a>Pearson’s sample correlation coef- ficient ρxy is computed by dividing the sample covariance by the product of the standard deviation of each data set</span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/clipboard-1822919442.png)</span></span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>Some Correlation Example:</span>
+<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/clipboard-775702636.png)</span></span>
+<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a><span class="fu"># Reference</span></span>
+<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a>https://www.youtube.com/watch?v=MXaJ7sa7q-8</span>
+<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, attr.output='.details summary="sessionInfo()"'}</span></span>
+<span id="cb3-72"><a href="#cb3-72" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span>
+<span id="cb3-73"><a href="#cb3-73" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
