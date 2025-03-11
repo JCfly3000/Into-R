@@ -22,7 +22,7 @@
     "href": "intro/1 basic R.html#get-all-file-name-under-current-directory",
     "title": "Basic R",
     "section": "2.2 get all file name under current directory",
-    "text": "2.2 get all file name under current directory\n\n\nCode\nlist.files()\n\n\n [1] \"1 basic R_files\"               \"1 basic R.qmd\"                \n [3] \"1 basic R.rmarkdown\"           \"1-basic-R.rmarkdown\"          \n [5] \"2 probability.qmd\"             \"3 Statistics.qmd\"             \n [7] \"5 R boook.qmd\"                 \"6 data analytic in R book.qmd\"\n [9] \"7 error handling.qmd\"          \"7 error handling.quarto_ipynb\"\n[11] \"hotels.csv\"                    \"images\"                       \n[13] \"renv\"",
+    "text": "2.2 get all file name under current directory\n\n\nCode\nlist.files()\n\n\n [1] \"1 basic R.qmd\"                 \"1 basic R.rmarkdown\"          \n [3] \"1-basic-R.rmarkdown\"           \"2 probability.qmd\"            \n [5] \"3 Statistics.qmd\"              \"5 R boook.qmd\"                \n [7] \"6 data analytic in R book.qmd\" \"7 error handling.qmd\"         \n [9] \"hotels.csv\"                    \"images\"                       \n[11] \"renv\"",
     "crumbs": [
       "Intro",
       "Basic R"
