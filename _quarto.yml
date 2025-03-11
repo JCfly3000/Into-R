@@ -9,6 +9,7 @@ language:
 format:
   html:
     theme: cosmo
+    fontsize: 100%
     css: styles.css
     toc: true
     grid:

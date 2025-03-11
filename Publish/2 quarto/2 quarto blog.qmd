@@ -127,39 +127,6 @@ title-block-banner: true
 
 ```
 
-# add comment
-
-## using giscus comment tool
-
-https://giscus.app/
-
-### step 1 install giscus on github
-
-https://github.com/apps/giscus
-
-### step 2 enable GitHub Discussions for your repository
-
-![](images/clipboard-2990658216.png)
-
-### step 3 add script to blog post
-
-'''
-<script src="https://giscus.app/client.js"
-        data-repo="[ENTER REPO HERE]"
-        data-repo-id="[ENTER REPO ID HERE]"
-        data-category="[ENTER CATEGORY NAME HERE]"
-        data-category-id="[ENTER CATEGORY ID HERE]"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="bottom"
-        data-theme="preferred_color_scheme"
-        data-lang="en"
-        crossorigin="anonymous"
-        async>
-</script>
-'''
 
 ## draft post,not include in the main page
 

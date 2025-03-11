@@ -458,7 +458,7 @@
     "href": "Publish/2 quarto/2 quarto blog.html",
     "title": "quarto blog",
     "section": "",
-    "text": "Code\n---\ntitle: \"title\"\n\nauthor: \"name\"\ndate: \"2024-05-03\"\ncategories: [R,quarto]\nexecute:\n  warning: false\n  error: false\n  eval: false\n\nformat:\n  html:\n    toc: true\n    toc-location: left\n    code-fold: show\n    code-tools: true\n    number-sections: true\n    code-block-bg: true\n    code-block-border-left: \"#31BAE9\"\n    \n---\n\n\n\n\n\n\n\nCode\n---\ndraft: true  \n  \n---\n\n\n\n\n\n\n\nCode\nproject:\n  type: website\n\nwebsite:\n  title: \"tidystep\"\n  site-url: https://tidystep.netlify.app/\n  description: \"A blog for data stuff\"\n  favicon: \"profile3.png\"\n  google-analytics: \"G-2EQK8RFKFX\"\n  navbar:\n    right:\n      - about.qmd\n      - icon: github\n        href: https://github.com/TonyFly3000\n      - icon: twitter\n        href: https://twitter.com/TonyJCD\n      - icon: rss\n        href: index.xml\n\n  page-footer:\n    right: \"This blog is built with ❤️ and [Quarto](https://quarto.org/).\"\n\nformat:\n  html:\n    theme: \n      light: flatly\n      dark: darkly\n    css: styles.css\n    grid:\n      body-width: 1100px\n      margin-width: 300px\n      gutter-width: 1.5rem\n\neditor: visual\nexecute:\n  freeze: true\n\n\n\n\n\n\n\nCode\n---\ntitle: \"微步数据\"\nlisting:\n  page-size: 8\n  contents: posts\n  sort: \"date desc\"\n  type: default\n  categories: true\n  sort-ui: true\n  filter-ui: false\n  fields: [image, date, title, author,categories]\n  feed: true\npage-layout: full\ntitle-block-banner: true\n---",
+    "text": "Code\n---\ntitle: \"title\"\n\nauthor: \"name\"\ndate: \"2024-05-03\"\ncategories: [R,quarto]\nexecute:\n  warning: false\n  error: false\n  eval: false\n\nformat:\n  html:\n    toc: true\n    toc-location: left\n    code-fold: show\n    code-tools: true\n    number-sections: true\n    code-block-bg: true\n    code-block-border-left: \"#31BAE9\"\n    \n---\n\n\n\n\n\n\n\nCode\n---\ndraft: true  \n  \n---\n\n\n\n\n\n\n\nCode\nproject:\n  type: website\n\nwebsite:\n  title: \"tidystep\"\n  site-url: https://tidystep.netlify.app/\n  description: \"A blog for data stuff\"\n  favicon: \"profile3.png\"\n  google-analytics: \"G-2EQK8RFKFX\"\n  navbar:\n    right:\n      - about.qmd\n      - icon: github\n        href: https://github.com/TonyFly3000\n      - icon: twitter\n        href: https://twitter.com/TonyJCD\n      - icon: rss\n        href: index.xml\n\n  page-footer:\n    right: \"This blog is built with ❤️ and [Quarto](https://quarto.org/).\"\n\nformat:\n  html:\n    theme: \n      light: flatly\n      dark: darkly\n    css: styles.css\n    grid:\n      body-width: 1100px\n      margin-width: 300px\n      gutter-width: 1.5rem\n\neditor: visual\nexecute:\n  freeze: true\n\n\n\n\n\n\n\nCode\n---\ntitle: \"微步数据\"\nlisting:\n  page-size: 8\n  contents: posts\n  sort: \"date desc\"\n  type: default\n  categories: true\n  sort-ui: true\n  filter-ui: false\n  fields: [image, date, title, author,categories]\n  feed: true\npage-layout: full\ntitle-block-banner: true\n---\n\n\n\n\n\n\n\nCode\ndraft:true",
     "crumbs": [
       "Publish",
       "2 quarto",
@@ -517,8 +517,8 @@
     "objectID": "Publish/2 quarto/2 quarto blog.html#draft-postnot-include-in-the-main-page",
     "href": "Publish/2 quarto/2 quarto blog.html#draft-postnot-include-in-the-main-page",
     "title": "quarto blog",
-    "section": "2.2 draft post,not include in the main page",
-    "text": "2.2 draft post,not include in the main page\n\n\nCode\ndraft:true",
+    "section": "",
+    "text": "Code\ndraft:true",
     "crumbs": [
       "Publish",
       "2 quarto",
@@ -2550,7 +2550,7 @@
     "href": "Publish/2 quarto/1 quarto tips.html#render-a-folder-or-file",
     "title": "quarto introduction",
     "section": "render a folder or file",
-    "text": "render a folder or file\n\n\n\nCode\n\nTerminal\n\nquarto render introduction.qmd\nquarto render subdir/\n\n\n\nsource:https://quarto.org/docs/projects/code-execution.html",
+    "text": "render a folder or file\n\n\n\nCode\n\nTerminal\n\nquarto render introduction.qmd\nquarto render subdir/",
     "crumbs": [
       "Publish",
       "2 quarto",
@@ -2798,6 +2798,66 @@
     "crumbs": [
       "Intro",
       "Statistics"
+    ]
+  },
+  {
+    "objectID": "Publish/2 quarto/1 quarto tips.html#freeze",
+    "href": "Publish/2 quarto/1 quarto tips.html#freeze",
+    "title": "quarto introduction",
+    "section": "Freeze",
+    "text": "Freeze\nYou can use the freeze option to denote that computational documents should never be re-rendered during a global project render, or alternatively only be re-rendered when their source file changes:\nin _quarto.yml(for all page) or header(only for this page)\n\n\n\nCode\n\n_quarto.yml\n\nexecute:\n  freeze: true  # never re-render during project render\n\n\n\n\n\n\nCode\n\n_quarto.yml\n\nexecute:\n  freeze: auto  # re-render only when source changes",
+    "crumbs": [
+      "Publish",
+      "2 quarto",
+      "quarto introduction"
+    ]
+  },
+  {
+    "objectID": "Publish/2 quarto/1 quarto tips.html#cache",
+    "href": "Publish/2 quarto/1 quarto tips.html#cache",
+    "title": "quarto introduction",
+    "section": "Cache",
+    "text": "Cache\nYou can use the cache option to cache the results of computations (using the knitr cache for R documents, and Jupyter Cache for Jupyter documents):\n\n\n\nCode\n\n_quarto.yml\n\nexecute:\n  cache: true\n\n\n\nNote that cache invalidation is triggered by changes in chunk source code (or other cache attributes you’ve defined). You may however need to manually refresh the cache if you know that some other input (or even time) has changed sufficiently to warrant an update. To do this, render either individual files or an entire project using the –cache-refresh option:\nsource:https://quarto.org/docs/projects/code-execution.html\n\n\n\nCode\n\nTerminal\n\nquarto render mydoc.qmd --cache-refresh # single doc\nquarto render --cache-refresh           # entire project",
+    "crumbs": [
+      "Publish",
+      "2 quarto",
+      "quarto introduction"
+    ]
+  },
+  {
+    "objectID": "Publish/2 quarto/1 quarto tips.html#in-_quarto.ymlfor-all-page-or-headeronly-for-this-page",
+    "href": "Publish/2 quarto/1 quarto tips.html#in-_quarto.ymlfor-all-page-or-headeronly-for-this-page",
+    "title": "quarto introduction",
+    "section": "in _quarto.yml(for all page) or header(only for this page)",
+    "text": "in _quarto.yml(for all page) or header(only for this page)\n\n\n\nCode\n\n_quarto.yml\n\nformat:\n  html:\n    mainfont:Times New Roman\n    font-size: 120%;\n  \n# can find more font:https://developer.mozilla.org/en-US/docs/Web/CSS/font-family\n\n\n\nsource:https://quarto.org/docs/reference/formats/context.html",
+    "crumbs": [
+      "Publish",
+      "2 quarto",
+      "quarto introduction"
+    ]
+  },
+  {
+    "objectID": "Publish/2 quarto/1 quarto tips.html#in-page",
+    "href": "Publish/2 quarto/1 quarto tips.html#in-page",
+    "title": "quarto introduction",
+    "section": "in page",
+    "text": "in page\n\n\nCode\n&lt;p style=\"font-family: times, serif; font-size:500% \"&gt;This is font size 500%&lt;/p&gt;\n\n\n\nThis is font size 500%\n\n\n\nCode\n&lt;p style=\"font-family: times, serif; font-size:50% \"&gt;This is font size 50%&lt;/p&gt;\n\n\n\nThis is font size 50%",
+    "crumbs": [
+      "Publish",
+      "2 quarto",
+      "quarto introduction"
+    ]
+  },
+  {
+    "objectID": "Publish/2 quarto/1 quarto tips.html#using-giscus-comment-tool",
+    "href": "Publish/2 quarto/1 quarto tips.html#using-giscus-comment-tool",
+    "title": "quarto introduction",
+    "section": "using giscus comment tool",
+    "text": "using giscus comment tool\nhttps://giscus.app/\n\nstep 1 install giscus on github\nhttps://github.com/apps/giscus\n\n\nstep 2 enable GitHub Discussions for your repository\n\n\n\nstep 3 add script to blog post\n\n\nCode\n'''\n&lt;script src=\"https://giscus.app/client.js\"\n        data-repo=\"[ENTER REPO HERE]\"\n        data-repo-id=\"[ENTER REPO ID HERE]\"\n        data-category=\"[ENTER CATEGORY NAME HERE]\"\n        data-category-id=\"[ENTER CATEGORY ID HERE]\"\n        data-mapping=\"pathname\"\n        data-strict=\"0\"\n        data-reactions-enabled=\"1\"\n        data-emit-metadata=\"0\"\n        data-input-position=\"bottom\"\n        data-theme=\"preferred_color_scheme\"\n        data-lang=\"en\"\n        crossorigin=\"anonymous\"\n        async&gt;\n&lt;/script&gt;\n'''",
+    "crumbs": [
+      "Publish",
+      "2 quarto",
+      "quarto introduction"
     ]
   }
 ]
