@@ -276,7 +276,7 @@ images2.png
 
 # add a output hide bottom at quarto file
 
-1.  add foldableCodeBlcok.lua into blog root folder
+## step 1.  add foldableCodeBlcok.lua into blog root folder
 
 ```{r filename='foldableCodeBlcok.lua'}
 #| eval: false
@@ -297,11 +297,19 @@ function CodeBlock(elem)
 end
 ```
 
-2.  add following line in `_quarto.yml`
+## step 2.  add following line in `_quarto.yml`
 
-`filters: - fold_results.lua`
+```{r filename='_quarto.yml'}
+#| eval: false
+website:
+  title: "quarto blog"
 
-3.  put following on code chunk:
+filters:
+  - foldableCodeBlcok.lua
+```
+
+
+## step 3.  put following on code chunk:
 
 `{r, attr.output='.details summary="sessionInfo()"'}`
 

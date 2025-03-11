@@ -2931,5 +2931,101 @@
       "4 email",
       "Email"
     ]
+  },
+  {
+    "objectID": "other/2 web scrap/2 web scrap with chromote.html",
+    "href": "other/2 web scrap/2 web scrap with chromote.html",
+    "title": "web scrap with chromote",
+    "section": "",
+    "text": "Code\nlibrary(tidyverse)\nlibrary(chromote)\n\n\n\n\nCode\npackageVersion(\"chromote\")\n\n\n\n1 create view\n\n\nCode\nlibrary(chromote)\n\nb &lt;- ChromoteSession$new()\n\n# In a web browser, open a viewer for the headless browser. Works best with\n# Chromium-based browsers.\nb$view()\n\n\n\n\nCode\nb$Browser$getVersion()\n\n\n\n\n2 go to page\n\n\nCode\nb$Page$navigate(\"https://www.bing.com\")\n\n\n\n\n3 take picture\n\n\nCode\n# Saves to screenshot.png\nb$screenshot()\n\n\n\n\nCode\n# Takes a screenshot of elements picked out by CSS selector\nis_interactive &lt;- interactive() # Display screenshot if interactive\nb$screenshot(\"sidebar.png\", selector = \"h1\" ,show = is_interactive)\n\n\n\n\n4 take picture as pdf\n\n\nCode\nb$screenshot_pdf(filename='page.pdf')\n\n\n\n\n5 Reference:\nhttps://rstudio.github.io/chromote/\n\n\n\n\n\n\n Back to top",
+    "crumbs": [
+      "Other",
+      "2 web scrap",
+      "web scrap with chromote"
+    ]
+  },
+  {
+    "objectID": "other/2 web scrap/1 web scrap with rvest.html",
+    "href": "other/2 web scrap/1 web scrap with rvest.html",
+    "title": "web scrap with rvest",
+    "section": "",
+    "text": "Code\nlibrary(rvest)\nlibrary(tidyverse)",
+    "crumbs": [
+      "Other",
+      "2 web scrap",
+      "web scrap with rvest"
+    ]
+  },
+  {
+    "objectID": "other/2 web scrap/3 web scrap advance.html",
+    "href": "other/2 web scrap/3 web scrap advance.html",
+    "title": "web scrap with advance",
+    "section": "",
+    "text": "Code\nfrom seleniumbase import SB\n\nwith SB(test=True, uc=True) as sb:\n    sb.open(\"https://google.com/ncr\")\n    sb.type('[title=\"Search\"]', \"SeleniumBase GitHub page\\n\")\n    sb.click('[href*=\"github.com/seleniumbase/\"]')\n    sb.save_screenshot_to_logs()  # ./latest_logs/\n    print(sb.get_page_title())\n\n\n\n\nCode\nfrom seleniumbase import SB\n\nwith SB(test=True, uc=True) as sb:\n    sb.open(\"https://www.whiskybase.com/whiskies/\")\n    #sb.type('[title=\"Search\"]', \"SeleniumBase GitHub page\\n\")\n    #sb.click('[href*=\"github.com/seleniumbase/\"]')\n    sb.save_screenshot_to_logs()  # ./latest_logs/\n    print(sb.get_page_title())\n\n\n\n\nCode\nfrom seleniumbase import Driver\nclass Scraper(BaseCase):\ndef test_bypass_bot_protection(self):\ndriver = Driver(uc=True)\ndriver.open(\"https://www.whiskybase.com/whiskies/whisky/268484/2009-ud\")\ndriver.uc_gui_click_captcha()\npage_html = driver.get_page_source()\nprint(page_html)\ndriver.quit()\n\n\n\n\nCode\nfrom bs4 import BeautifulSoup\nsoup = BeautifulSoup(page_html, 'html.parser')\nprint(soup.prettify())\n\n\n\n\nCode\nprint(soup.get_text())\n\n\n\n\nCode\nsoup.select(\".votes-rating-current\").text\n\n\nh1\n\n1 Reference:\nhttps://github.com/seleniumbase/SeleniumBase\nhttps://medium.com/@datajournal/web-scraping-with-seleniumbase-e3ead6aebe7f\nhttps://github.com/ultrafunkamsterdam/undetected-chromedriver\n\n\n\n\n\n\n Back to top",
+    "crumbs": [
+      "Other",
+      "2 web scrap",
+      "web scrap with advance"
+    ]
+  },
+  {
+    "objectID": "Publish/2 quarto/1 quarto tips.html#step-1.-add-foldablecodeblcok.lua-into-blog-root-folder",
+    "href": "Publish/2 quarto/1 quarto tips.html#step-1.-add-foldablecodeblcok.lua-into-blog-root-folder",
+    "title": "quarto introduction",
+    "section": "step 1. add foldableCodeBlcok.lua into blog root folder",
+    "text": "step 1. add foldableCodeBlcok.lua into blog root folder\n\n\n\nCode\n\nfoldableCodeBlcok.lua\n\nfunction CodeBlock(elem)\n  if elem.classes and elem.classes:find(\"details\") then\n    local summary = \"Code\"\n    if elem.attributes.summary then\n      summary = elem.attributes.summary\n    end\n    return{\n      pandoc.RawBlock(\n        \"html\", \"&lt;details&gt;&lt;summary&gt;\" .. summary .. \"&lt;/summary&gt;\"\n      ),\n      elem,\n      pandoc.RawBlock(\"html\", \"&lt;/details&gt;\")\n    }\n  end\nend",
+    "crumbs": [
+      "Publish",
+      "2 quarto",
+      "quarto introduction"
+    ]
+  },
+  {
+    "objectID": "Publish/2 quarto/1 quarto tips.html#step-2.-add-following-line-in-_quarto.yml",
+    "href": "Publish/2 quarto/1 quarto tips.html#step-2.-add-following-line-in-_quarto.yml",
+    "title": "quarto introduction",
+    "section": "step 2. add following line in _quarto.yml",
+    "text": "step 2. add following line in _quarto.yml\n\n\n\nCode\n\n_quarto.yml\n\nwebsite:\n  title: \"quarto blog\"\n\nfilters:\n  - foldableCodeBlcok.lua",
+    "crumbs": [
+      "Publish",
+      "2 quarto",
+      "quarto introduction"
+    ]
+  },
+  {
+    "objectID": "Publish/2 quarto/1 quarto tips.html#step-3.-put-following-on-code-chunk",
+    "href": "Publish/2 quarto/1 quarto tips.html#step-3.-put-following-on-code-chunk",
+    "title": "quarto introduction",
+    "section": "step 3. put following on code chunk:",
+    "text": "step 3. put following on code chunk:\n{r, attr.output='.details summary=\"sessionInfo()\"'}\n\n\nCode\nsessionInfo()\n\n\nsessionInfo()\nR version 4.4.1 (2024-06-14)\nPlatform: aarch64-apple-darwin20\nRunning under: macOS 15.3.1\n\nMatrix products: default\nBLAS:   /Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/lib/libRblas.0.dylib \nLAPACK: /Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.0\n\nlocale:\n[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8\n\ntime zone: Asia/Shanghai\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nother attached packages:\n[1] quarto_1.4.4\n\nloaded via a namespace (and not attached):\n [1] digest_0.6.37     later_1.4.1       fastmap_1.2.0     xfun_0.51        \n [5] knitr_1.49        htmltools_0.5.8.1 rmarkdown_2.29    ps_1.9.0         \n [9] cli_3.6.4         processx_3.8.6    compiler_4.4.1    rstudioapi_0.17.1\n[13] tools_4.4.1       evaluate_1.0.3    Rcpp_1.0.14       yaml_2.3.10      \n[17] rlang_1.1.5       jsonlite_1.9.1    htmlwidgets_1.6.4",
+    "crumbs": [
+      "Publish",
+      "2 quarto",
+      "quarto introduction"
+    ]
+  },
+  {
+    "objectID": "other/2 web scrap/1 web scrap with rvest.html#get-3rd-table",
+    "href": "other/2 web scrap/1 web scrap with rvest.html#get-3rd-table",
+    "title": "web scrap with rvest",
+    "section": "5.1 get 3rd table",
+    "text": "5.1 get 3rd table\nfind table xpath\n\n\nCode\ntable=page %&gt;%html_element(xpath = '//*[@id=\"mw-content-text\"]/div[1]/table[3]') |&gt; html_table()\ntable |&gt; head()",
+    "crumbs": [
+      "Other",
+      "2 web scrap",
+      "web scrap with rvest"
+    ]
+  },
+  {
+    "objectID": "other/2 web scrap/1 web scrap with rvest.html#get-4th-table",
+    "href": "other/2 web scrap/1 web scrap with rvest.html#get-4th-table",
+    "title": "web scrap with rvest",
+    "section": "5.2 get 4th table",
+    "text": "5.2 get 4th table\nfind table xpath\n\n\nCode\ntable=page %&gt;%html_element(xpath = '//*[@id=\"mw-content-text\"]/div[1]/table[4]') |&gt; html_table()\ntable |&gt; head()\n\n\n\n\nCode\nsessionInfo()",
+    "crumbs": [
+      "Other",
+      "2 web scrap",
+      "web scrap with rvest"
+    ]
   }
 ]

@@ -643,11 +643,14 @@ time_used=end_time-start_time
 time_used
 ```
 
-
 # stop when code run too long
 
-stop the count down at 2 sec
+stop the count down at 1.5 sec
+
 ```{r}
+#|  warning: true
+#|  error: true
+
 library(R.utils)
 foo <- function() {
   print("Tic")
@@ -658,10 +661,9 @@ foo <- function() {
   print("Tac")
 }
 
-res <- withTimeout({
+withTimeout({
   foo()
-}, timeout = 2, onTimeout = "warning")
-res
+}, timeout = 1.5, onTimeout = "warning")
 ```
 
 
