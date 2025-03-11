@@ -515,7 +515,7 @@ open -n /Applications/RStudio.app
 ```
 
 
-# Versio control
+# version control
 
 The renv package helps you create reproducible environments for your R projects
 
@@ -525,6 +525,7 @@ The renv package helps you create reproducible environments for your R projects
 ## inital renv and create renv.lock with current loaded pacakge
 
 ```{r}
+#| eval: false
 renv::init()
 ```
 
@@ -559,6 +560,7 @@ installed_pacakge |> filter(Package %in% (.packages()))|> gt() |> opt_interactiv
 ## install new package with renv::install
 
 ```{r}
+#| eval: false
 renv::install('lubridate')
 ```
 

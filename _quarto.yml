@@ -23,7 +23,7 @@ website:
   reader-mode: true
 
 
-  title: "Into R"
+  title: "R Handbook"
   favicon: "Rlogo.png"
   twitter-card: true
   navbar:
