@@ -2859,5 +2859,77 @@
       "2 quarto",
       "quarto introduction"
     ]
+  },
+  {
+    "objectID": "Publish/5 git/git.html",
+    "href": "Publish/5 git/git.html",
+    "title": "Git",
+    "section": "",
+    "text": "create or open R project(xxxxx.Rproj) in Rstudio\nenable github connection: \n\n\ncommit change and push to github\n\n\n\nReference:\nhttps://www.youtube.com/watch?v=PihKq1GPlcc\n\n\n\n\n\n\n Back to top",
+    "crumbs": [
+      "Publish",
+      "5 git",
+      "Git"
+    ]
+  },
+  {
+    "objectID": "Publish/4 email/email.html",
+    "href": "Publish/4 email/email.html",
+    "title": "Email",
+    "section": "",
+    "text": "Code\nlibrary(blastula)\nlibrary(keyring)\n\n\n\n\n\n\n\n\nCode\ncreate_smtp_creds_key(\n  id = \"gmail001_creds\",\n  provider = \"gmail\",\n  user = \"verykoala@gmail.com\",\n  overwrite = TRUE\n  )\n\n\n\n\n\n\n\nCode\n# create_smtp_creds_key(\n#   id = \"outlook001_creds\",\n#   provider = \"outlook\",\n#   user = \"jcpartner@outlook.com\",\n#   overwrite = TRUE\n#   )\n\ncreate_smtp_creds_file(file = \"ggnot_throwaway_creds\",\n                       user = \"jcpartner@outlook.com\",\n                       provider = \"outlook\")\n\n\n\n\nCode\n#delete_credential_key(\"gmail001_creds\")\n\n\n\n\nCode\nview_credential_keys()\n\n\n\n\n\n\n\n\nCode\nlibrary(blastula)\nmsg=compose_email(\n  body = md(\n  \"Hi there 👋,\n  \n  This is an email to let you now thatrunning job **finished**.\n\n  Best,&lt;br&gt;\n  Tony\"\n  )\n)\n\nmsg\n\n\n\n\n\n\n\n\n\nCode\nmsg %&gt;% \n  smtp_send(\n    from = 'verykoala@gmail.com',\n    to = \"jcflyingco@outlook.com\",\n    subject = \"Testing the email function\",\n    credentials = creds_key(id = \"gmail001_creds\")\n  )\n\n\n\n\n\n\n\nCode\nlibrary(Microsoft365R)\noutl &lt;- get_personal_outlook()\n\n\n\n\nCode\n# list the most recent emails in your Inbox\n#outl$list_emails()\n\n\n\n\nCode\nem &lt;- outl$create_email(msg, subject=\"Hello\", to=\"jcflyingco@outlook.com\")\n\n\n\n\nCode\nem$send()\n\n\n\n\n\n\n\n\nCode\nemail_obj=render_email('.quarto_email.Rmd')\n\n\n\n\nCode\nemail_obj\n\n\n\n\n\n\nCode\nemail_obj%&gt;% \n  smtp_send(\n    from = 'verykoala@gmail.com',\n    to = \"jcflyingco@outlook.com\",\n    subject = \"Testing the email function\",\n    credentials = creds_key(id = \"gmail001_creds\")\n  )\n\n\n\n\n\n\n\nCode\nem &lt;- outl$create_email(email_obj, subject=\"Hello\", to=\"jcflyingco@outlook.com\")\nem$send()",
+    "crumbs": [
+      "Publish",
+      "4 email",
+      "Email"
+    ]
+  },
+  {
+    "objectID": "Publish/4 email/email.html#create-smtp-credentials",
+    "href": "Publish/4 email/email.html#create-smtp-credentials",
+    "title": "Email",
+    "section": "",
+    "text": "Code\ncreate_smtp_creds_key(\n  id = \"gmail001_creds\",\n  provider = \"gmail\",\n  user = \"verykoala@gmail.com\",\n  overwrite = TRUE\n  )\n\n\n\n\n\n\n\nCode\n# create_smtp_creds_key(\n#   id = \"outlook001_creds\",\n#   provider = \"outlook\",\n#   user = \"jcpartner@outlook.com\",\n#   overwrite = TRUE\n#   )\n\ncreate_smtp_creds_file(file = \"ggnot_throwaway_creds\",\n                       user = \"jcpartner@outlook.com\",\n                       provider = \"outlook\")\n\n\n\n\nCode\n#delete_credential_key(\"gmail001_creds\")\n\n\n\n\nCode\nview_credential_keys()",
+    "crumbs": [
+      "Publish",
+      "4 email",
+      "Email"
+    ]
+  },
+  {
+    "objectID": "Publish/4 email/email.html#email-content",
+    "href": "Publish/4 email/email.html#email-content",
+    "title": "Email",
+    "section": "",
+    "text": "Code\nlibrary(blastula)\nmsg=compose_email(\n  body = md(\n  \"Hi there 👋,\n  \n  This is an email to let you now thatrunning job **finished**.\n\n  Best,&lt;br&gt;\n  Tony\"\n  )\n)\n\nmsg",
+    "crumbs": [
+      "Publish",
+      "4 email",
+      "Email"
+    ]
+  },
+  {
+    "objectID": "Publish/4 email/email.html#send-email",
+    "href": "Publish/4 email/email.html#send-email",
+    "title": "Email",
+    "section": "",
+    "text": "Code\nmsg %&gt;% \n  smtp_send(\n    from = 'verykoala@gmail.com',\n    to = \"jcflyingco@outlook.com\",\n    subject = \"Testing the email function\",\n    credentials = creds_key(id = \"gmail001_creds\")\n  )\n\n\n\n\n\n\n\nCode\nlibrary(Microsoft365R)\noutl &lt;- get_personal_outlook()\n\n\n\n\nCode\n# list the most recent emails in your Inbox\n#outl$list_emails()\n\n\n\n\nCode\nem &lt;- outl$create_email(msg, subject=\"Hello\", to=\"jcflyingco@outlook.com\")\n\n\n\n\nCode\nem$send()",
+    "crumbs": [
+      "Publish",
+      "4 email",
+      "Email"
+    ]
+  },
+  {
+    "objectID": "Publish/4 email/email.html#send-email-with-quarto-content",
+    "href": "Publish/4 email/email.html#send-email-with-quarto-content",
+    "title": "Email",
+    "section": "",
+    "text": "Code\nemail_obj=render_email('.quarto_email.Rmd')\n\n\n\n\nCode\nemail_obj\n\n\n\n\n\n\nCode\nemail_obj%&gt;% \n  smtp_send(\n    from = 'verykoala@gmail.com',\n    to = \"jcflyingco@outlook.com\",\n    subject = \"Testing the email function\",\n    credentials = creds_key(id = \"gmail001_creds\")\n  )\n\n\n\n\n\n\n\nCode\nem &lt;- outl$create_email(email_obj, subject=\"Hello\", to=\"jcflyingco@outlook.com\")\nem$send()",
+    "crumbs": [
+      "Publish",
+      "4 email",
+      "Email"
+    ]
   }
 ]

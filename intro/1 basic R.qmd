@@ -626,6 +626,62 @@ renv::deactivate()
 renv::activate()
 ```
 
+# reccord code run time
+
+```{r}
+start_time=Sys.time()
+
+for (kk in 1:5) {
+    print(kk)
+    Sys.sleep(1)
+  }
+
+end_time=Sys.time()
+time_used=end_time-start_time
+time_used
+```
+
+
+# stop when code run too long
+
+stop the count down at 2 sec
+```{r}
+library(R.utils)
+foo <- function() {
+  print("Tic")
+  for (kk in 1:100) {
+    print(kk)
+    Sys.sleep(0.1)
+  }
+  print("Tac")
+}
+
+res <- withTimeout({
+  foo()
+}, timeout = 2, onTimeout = "warning")
+res
+```
+
+
+# check website connection
+
+when connect_result= 2 it means connection is ok
+
+```{r}
+url='www.bing.com'
+connect_result=system(paste0('ping -c 1 ',url))
+connect_result
+```
+
+when connect_result= 68 it means connection is fail
+
+```{r}
+url='www.bingxxxxx.com'
+connect_result=system(paste0('ping -c 1 ',url))
+connect_result
+```
+
+
 
 
 
