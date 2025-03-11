@@ -21,8 +21,6 @@ format:
 website:
   back-to-top-navigation: true
   reader-mode: true
-
-
   title: "R Handbook"
   favicon: "Rlogo.png"
   twitter-card: true

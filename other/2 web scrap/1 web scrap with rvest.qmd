@@ -6,7 +6,6 @@ author: "Tony Duan"
 execute:
   warning: false
   error: false
-  eval: false
 format:
   html:
     toc: true
@@ -105,14 +104,14 @@ web <- read_html_live(url)
 
 
 ```{r}
+#| eval: false
 web$view()
 ```
 
 ```{r}
-web %>% html_elements(".widget-article-content") |> html_text(trim = TRUE)
+intro_text=web %>% html_elements(".widget-article-content") |> html_text(trim = TRUE) 
+intro_text
 ```
-
-
 
 
 
