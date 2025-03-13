@@ -39,7 +39,7 @@ install.packages("quarto")
 
 ## in Terminal
 
-```{bach filename="Terminal"}
+```{bash filename="Terminal"}
 #| eval: false
 quarto check
 ```
@@ -75,12 +75,68 @@ import sys
 print(sys.version)
 ```
 
-## Bath
+## Bash
 
 
 ```{{bash}}
 echo "foo" 
 ```
+
+
+# calling variable between R and Python
+
+There are R variable: r_var  and Python version:python_var
+
+```{{r}}
+r_var=111
+```
+
+```{r}
+#| echo: false
+r_var=111
+```
+
+
+```{{python}}
+python_var=222
+```
+
+
+```{python}
+#| echo: false
+python_var=222
+```
+
+::: panel-tabset
+
+## calling python variable in R
+```{{python}}
+r.r_var
+```
+
+```{python}
+#| echo: false
+r.r_var
+```
+
+
+## calling R variable in Python
+```{{r}}
+library(reticulate)
+py$python_var
+```
+
+```{r}
+#| echo: false
+library(reticulate)
+py$python_var
+```
+
+
+
+
+::: 
+
 
 
 # quarto code chunk option
@@ -170,19 +226,18 @@ superscript^2^
 
 `highlight`
 
-# link
+## link
 
-```{r}
-#| eval: false
+````
 [link](www.rstudio.com)
-```
+````
+
 
 [link](www.rstudio.com)
 
-# tab
+## tab
 
-```{r}
-#| eval: false
+````
 ::: {.panel-tabset}
 
 ## Tab 1
@@ -195,19 +250,19 @@ This is tab 1
 This is tab 2
 
 :::
-```
+````
 
 ::: panel-tabset
-## Tab 1
+### Tab 1
 
 This is tab 1
 
-## Tab 2
+### Tab 2
 
 This is tab 2
 :::
 
-# column display
+## column display
 
 ```{r}
 #| eval: false
@@ -346,6 +401,7 @@ quarto render "tidymodel in R"
 # embed audio
 
 ::: panel-tabset
+
 ## in code
 
 ```{r}
@@ -372,6 +428,7 @@ format:
       - aa.mp3
 ---
 ```
+
 :::
 
 
@@ -434,7 +491,7 @@ source:https://quarto.org/docs/output-formats/html-themes.html
 ## render a folder or file
 
 
-```{bach filename="Terminal"}
+```{bash filename="Terminal"}
 #| eval: false
 quarto render introduction.qmd
 quarto render subdir/
@@ -527,6 +584,212 @@ https://github.com/apps/giscus
 ```
 
 
-# Reference:
+#### step 3b or using comment for all page
+
+add into _quarto.yml
+
+```{r filename="_quarto.yml"}
+#| eval: false
+format:
+  html:
+    include-after-body: 
+         - text: <script src="https://giscus.app/client.js" data-repo="[ENTER REPO HERE]" data-repo-id="[ENTER REPO ID HERE]" data-category="[ENTER CATEGORY NAME HERE]" data-category-id="[ENTER CATEGORY ID HERE]" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="preferred_color_scheme" data-lang="en" crossorigin="anonymous" async> </script>
+    
+```
+
+
+
+
+# quarto engine
+
+Quarto is a multi-language, next generation version of R Markdown from RStudio, with many new features and capabilities
+
+
+::: panel-tabset
+
+## using R
+
+by defalut,Quarto uses Knitr to execute R code
+
+```{r}
+#| eval: false
+#| 
+title: "matplotlib demo"
+format:
+  html:
+    code-fold: true
+
+```
+
+
+## using Python
+
+when set jupyter: python3 it will run quarto file with python
+
+### First, install jupyter & rpy2
+
+```{bash}
+#| eval: false
+pip install jupyter
+pip install rpy2
+```
+
+
+### add engine jupyter: python3
+```{r}
+#| eval: false
+---
+title: "ggplot2 demo"
+author: "Norah Jones"
+date: "5/22/2021"
+format: 
+  html:
+    code-fold: true
+jupyter: python3
+---
+```
+
+Note that when rendering an .ipynb Quarto will not execute the cells within the notebook by default (the presumption being that you have already executed them while editing the notebook)
+
+You can also specify this behavior within the notebook’s YAML front matter:
+
+```{r}
+#| eval: false
+---
+title: "My Notebook"
+execute: 
+  enabled: true
+---
+```
+
+### Run R in python code chunk under python environment
+
+
+
+```{python}
+#| eval: false
+%load_ext rpy2.ipython
+```
+
+
+```{python}
+#| eval: false
+%%R
+print(R.version)
+```
+
+:::
+
+# quarto output format
+
+
+::: panel-tabset
+
+## html
+
+```{r}
+#| eval: false
+---
+title: "ggplot2 demo"
+author: "Tony D"
+date: "5/22/2021"
+format: 
+  html
+---
+  
+```
+
+
+
+## pdf
+
+```{r}
+#| eval: false
+---
+title: "ggplot2 demo"
+author: "Tony D"
+date: "5/22/2021"
+format: 
+  pdf
+---
+  
+```
+
+## MS words
+
+```{r}
+#| eval: false
+---
+title: "ggplot2 demo"
+author: "Tony D"
+date: "5/22/2021"
+format: 
+  docx
+---
+  
+```
+
+
+## MS PowerPoint
+
+```{r}
+#| eval: false
+---
+title: "ggplot2 demo"
+author: "Tony D"
+date: "5/22/2021"
+format: 
+  pptx
+---
+  
+```
+
+
+
+## Revealjs
+
+```{r}
+#| eval: false
+---
+title: "ggplot2 demo"
+author: "Tony D"
+date: "5/22/2021"
+format: 
+  revealjs
+---
+  
+```
+
+
+## multi ouput format at once
+
+```{r}
+#| eval: false
+---
+title: "ggplot2 demo"
+author: "Tony D"
+date: "5/22/2021"
+format: 
+  html: default
+  revealjs: default
+---
+  
+```
+
+
+
+
+
+## Others
+
+<iframe width="900" height="600" src="https://quarto.org/docs/output-formats/all-formats.html"></iframe>
+
+
+
+
+:::
+
+
+# Reference
 
 https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf

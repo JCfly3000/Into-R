@@ -2853,7 +2853,7 @@
     "href": "Publish/2 quarto/1 quarto tips.html#using-giscus-comment-tool",
     "title": "quarto introduction",
     "section": "using giscus comment tool",
-    "text": "using giscus comment tool\nhttps://giscus.app/\n\nstep 1 install giscus on github\nhttps://github.com/apps/giscus\n\n\nstep 2 enable GitHub Discussions for your repository\n\n\n\nstep 3 add script to blog post\n\n\nCode\n'''\n&lt;script src=\"https://giscus.app/client.js\"\n        data-repo=\"[ENTER REPO HERE]\"\n        data-repo-id=\"[ENTER REPO ID HERE]\"\n        data-category=\"[ENTER CATEGORY NAME HERE]\"\n        data-category-id=\"[ENTER CATEGORY ID HERE]\"\n        data-mapping=\"pathname\"\n        data-strict=\"0\"\n        data-reactions-enabled=\"1\"\n        data-emit-metadata=\"0\"\n        data-input-position=\"bottom\"\n        data-theme=\"preferred_color_scheme\"\n        data-lang=\"en\"\n        crossorigin=\"anonymous\"\n        async&gt;\n&lt;/script&gt;\n'''",
+    "text": "using giscus comment tool\nhttps://giscus.app/\n\nstep 1 install giscus on github\nhttps://github.com/apps/giscus\n\n\nstep 2 enable GitHub Discussions for your repository\n\n\n\nstep 3 add script to blog post\n\n\nCode\n'''\n&lt;script src=\"https://giscus.app/client.js\"\n        data-repo=\"[ENTER REPO HERE]\"\n        data-repo-id=\"[ENTER REPO ID HERE]\"\n        data-category=\"[ENTER CATEGORY NAME HERE]\"\n        data-category-id=\"[ENTER CATEGORY ID HERE]\"\n        data-mapping=\"pathname\"\n        data-strict=\"0\"\n        data-reactions-enabled=\"1\"\n        data-emit-metadata=\"0\"\n        data-input-position=\"bottom\"\n        data-theme=\"preferred_color_scheme\"\n        data-lang=\"en\"\n        crossorigin=\"anonymous\"\n        async&gt;\n&lt;/script&gt;\n'''\n\n\n\nstep 3b or using comment for all page\nadd into _quarto.yml\n\n\n\nCode\n\n_quarto.yml\n\nformat:\n  html:\n    include-after-body: \n         - text: &lt;script src=\"https://giscus.app/client.js\" data-repo=\"[ENTER REPO HERE]\" data-repo-id=\"[ENTER REPO ID HERE]\" data-category=\"[ENTER CATEGORY NAME HERE]\" data-category-id=\"[ENTER CATEGORY ID HERE]\" data-mapping=\"pathname\" data-strict=\"0\" data-reactions-enabled=\"1\" data-emit-metadata=\"0\" data-input-position=\"bottom\" data-theme=\"preferred_color_scheme\" data-lang=\"en\" crossorigin=\"anonymous\" async&gt; &lt;/script&gt;",
     "crumbs": [
       "Publish",
       "2 quarto",
@@ -3026,6 +3026,330 @@
       "Other",
       "2 web scrap",
       "web scrap with rvest"
+    ]
+  },
+  {
+    "objectID": "Publish/2 quarto/1 quarto tips.html#using-r",
+    "href": "Publish/2 quarto/1 quarto tips.html#using-r",
+    "title": "quarto introduction",
+    "section": "using R",
+    "text": "using R\nby defalut,Quarto uses Knitr to execute R code\n\n\nCode\ntitle: \"matplotlib demo\"\nformat:\n  html:\n    code-fold: true",
+    "crumbs": [
+      "Publish",
+      "2 quarto",
+      "quarto introduction"
+    ]
+  },
+  {
+    "objectID": "Publish/2 quarto/1 quarto tips.html#using-python",
+    "href": "Publish/2 quarto/1 quarto tips.html#using-python",
+    "title": "quarto introduction",
+    "section": "using Python",
+    "text": "using Python\nwhen set jupyter: python3 it will run quarto file with python\nFirst, install jupyter ::: {.cell}\n\nCode\npython3 -m pip install jupyter\n\n:::\n\n\nCode\n---\ntitle: \"ggplot2 demo\"\nauthor: \"Norah Jones\"\ndate: \"5/22/2021\"\nformat: \n  html:\n    code-fold: true\njupyter: python3\n---\n\n\nNote that when rendering an .ipynb Quarto will not execute the cells within the notebook by default (the presumption being that you have already executed them while editing the notebook)\nYou can also specify this behavior within the notebook’s YAML front matter:\n\n\nCode\n---\ntitle: \"My Notebook\"\nexecute: \n  enabled: true\n---\n\n\n:::",
+    "crumbs": [
+      "Publish",
+      "2 quarto",
+      "quarto introduction"
+    ]
+  },
+  {
+    "objectID": "Publish/2 quarto/1 quarto intro.html",
+    "href": "Publish/2 quarto/1 quarto intro.html",
+    "title": "quarto introduction",
+    "section": "",
+    "text": "https://quarto.org/docs/get-started/\n\n\n\n\n\nCode\ninstall.packages(\"quarto\")",
+    "crumbs": [
+      "Publish",
+      "2 quarto",
+      "quarto introduction"
+    ]
+  },
+  {
+    "objectID": "Publish/2 quarto/1 quarto intro.html#install-quarto-cli",
+    "href": "Publish/2 quarto/1 quarto intro.html#install-quarto-cli",
+    "title": "quarto introduction",
+    "section": "",
+    "text": "https://quarto.org/docs/get-started/",
+    "crumbs": [
+      "Publish",
+      "2 quarto",
+      "quarto introduction"
+    ]
+  },
+  {
+    "objectID": "Publish/2 quarto/1 quarto intro.html#install-quarto-pacakge",
+    "href": "Publish/2 quarto/1 quarto intro.html#install-quarto-pacakge",
+    "title": "quarto introduction",
+    "section": "",
+    "text": "Code\ninstall.packages(\"quarto\")",
+    "crumbs": [
+      "Publish",
+      "2 quarto",
+      "quarto introduction"
+    ]
+  },
+  {
+    "objectID": "Publish/2 quarto/1 quarto intro.html#in-terminal",
+    "href": "Publish/2 quarto/1 quarto intro.html#in-terminal",
+    "title": "quarto introduction",
+    "section": "in Terminal",
+    "text": "in Terminal\n\n\n\nCode\n\nTerminal\n\nquarto check",
+    "crumbs": [
+      "Publish",
+      "2 quarto",
+      "quarto introduction"
+    ]
+  },
+  {
+    "objectID": "Publish/2 quarto/1 quarto intro.html#in-r",
+    "href": "Publish/2 quarto/1 quarto intro.html#in-r",
+    "title": "quarto introduction",
+    "section": "in R",
+    "text": "in R\n\n\nCode\nlibrary(quarto)\nquarto_version()\n\n\n[1] '99.9.9'\n\n\nquarto location\n\n\nCode\nquarto_path()\n\n\n[1] \"/usr/local/bin/quarto\"",
+    "crumbs": [
+      "Publish",
+      "2 quarto",
+      "quarto introduction"
+    ]
+  },
+  {
+    "objectID": "Publish/2 quarto/1 quarto intro.html#r",
+    "href": "Publish/2 quarto/1 quarto intro.html#r",
+    "title": "quarto introduction",
+    "section": "R",
+    "text": "R\n```{R}\nversion\n```",
+    "crumbs": [
+      "Publish",
+      "2 quarto",
+      "quarto introduction"
+    ]
+  },
+  {
+    "objectID": "Publish/2 quarto/1 quarto intro.html#python",
+    "href": "Publish/2 quarto/1 quarto intro.html#python",
+    "title": "quarto introduction",
+    "section": "Python",
+    "text": "Python\n```{python}\nimport sys\nprint(sys.version)\n```",
+    "crumbs": [
+      "Publish",
+      "2 quarto",
+      "quarto introduction"
+    ]
+  },
+  {
+    "objectID": "Publish/2 quarto/1 quarto intro.html#bath",
+    "href": "Publish/2 quarto/1 quarto intro.html#bath",
+    "title": "quarto introduction",
+    "section": "Bath",
+    "text": "Bath\n```{bash}\necho \"foo\" \n```",
+    "crumbs": [
+      "Publish",
+      "2 quarto",
+      "quarto introduction"
+    ]
+  },
+  {
+    "objectID": "Publish/2 quarto/1 quarto intro.html#in-yaml-header",
+    "href": "Publish/2 quarto/1 quarto intro.html#in-yaml-header",
+    "title": "quarto introduction",
+    "section": "in YAML header",
+    "text": "in YAML header\n---\ntitle: \"My Document\"\nexecute:\n  echo: false\njupyter: python3\n---\n\neval： Evaluate the code chunk (if false, just echos the code into the output).\necho： Include the source code in output.\noutput： Include the results of executing the code in the output (true, false, or asis to indicate that the output is raw markdown and should not have any of Quarto’s standard enclosing markdown).\nwarning： Include warnings in the output.\nerror： Evaluate the code chunk (if false, just echos the code into the output).\ninclude： Catch all for preventing any output (code or results) from being included (e.g. include: false suppresses all output from the code block).",
+    "crumbs": [
+      "Publish",
+      "2 quarto",
+      "quarto introduction"
+    ]
+  },
+  {
+    "objectID": "Publish/2 quarto/1 quarto intro.html#in-code-chunk",
+    "href": "Publish/2 quarto/1 quarto intro.html#in-code-chunk",
+    "title": "quarto introduction",
+    "section": "in code chunk",
+    "text": "in code chunk\n\n\nCode\n #| eval: false",
+    "crumbs": [
+      "Publish",
+      "2 quarto",
+      "quarto introduction"
+    ]
+  },
+  {
+    "objectID": "Publish/2 quarto/1 quarto intro.html#step-1.-add-foldablecodeblcok.lua-into-blog-root-folder",
+    "href": "Publish/2 quarto/1 quarto intro.html#step-1.-add-foldablecodeblcok.lua-into-blog-root-folder",
+    "title": "quarto introduction",
+    "section": "step 1. add foldableCodeBlcok.lua into blog root folder",
+    "text": "step 1. add foldableCodeBlcok.lua into blog root folder\n\n\n\nCode\n\nfoldableCodeBlcok.lua\n\nfunction CodeBlock(elem)\n  if elem.classes and elem.classes:find(\"details\") then\n    local summary = \"Code\"\n    if elem.attributes.summary then\n      summary = elem.attributes.summary\n    end\n    return{\n      pandoc.RawBlock(\n        \"html\", \"&lt;details&gt;&lt;summary&gt;\" .. summary .. \"&lt;/summary&gt;\"\n      ),\n      elem,\n      pandoc.RawBlock(\"html\", \"&lt;/details&gt;\")\n    }\n  end\nend",
+    "crumbs": [
+      "Publish",
+      "2 quarto",
+      "quarto introduction"
+    ]
+  },
+  {
+    "objectID": "Publish/2 quarto/1 quarto intro.html#step-2.-add-following-line-in-_quarto.yml",
+    "href": "Publish/2 quarto/1 quarto intro.html#step-2.-add-following-line-in-_quarto.yml",
+    "title": "quarto introduction",
+    "section": "step 2. add following line in _quarto.yml",
+    "text": "step 2. add following line in _quarto.yml\n\n\n\nCode\n\n_quarto.yml\n\nwebsite:\n  title: \"quarto blog\"\n\nfilters:\n  - foldableCodeBlcok.lua",
+    "crumbs": [
+      "Publish",
+      "2 quarto",
+      "quarto introduction"
+    ]
+  },
+  {
+    "objectID": "Publish/2 quarto/1 quarto intro.html#step-3.-put-following-on-code-chunk",
+    "href": "Publish/2 quarto/1 quarto intro.html#step-3.-put-following-on-code-chunk",
+    "title": "quarto introduction",
+    "section": "step 3. put following on code chunk:",
+    "text": "step 3. put following on code chunk:\n{r, attr.output='.details summary=\"sessionInfo()\"'}\n\n\nCode\nsessionInfo()\n\n\nsessionInfo()\nR version 4.4.1 (2024-06-14)\nPlatform: aarch64-apple-darwin20\nRunning under: macOS 15.3.1\n\nMatrix products: default\nBLAS:   /Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/lib/libRblas.0.dylib \nLAPACK: /Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.0\n\nlocale:\n[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8\n\ntime zone: Asia/Shanghai\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nother attached packages:\n[1] reticulate_1.41.0 quarto_1.4.4     \n\nloaded via a namespace (and not attached):\n [1] digest_0.6.37     later_1.4.1       fastmap_1.2.0     Matrix_1.7-2     \n [5] xfun_0.51         lattice_0.22-6    knitr_1.49        htmltools_0.5.8.1\n [9] png_0.1-8         rmarkdown_2.29    ps_1.9.0          cli_3.6.4        \n[13] processx_3.8.6    grid_4.4.1        compiler_4.4.1    rstudioapi_0.17.1\n[17] tools_4.4.1       evaluate_1.0.3    Rcpp_1.0.14       yaml_2.3.10      \n[21] rlang_1.1.5       jsonlite_1.9.1    htmlwidgets_1.6.4",
+    "crumbs": [
+      "Publish",
+      "2 quarto",
+      "quarto introduction"
+    ]
+  },
+  {
+    "objectID": "Publish/2 quarto/1 quarto intro.html#embed-youtube",
+    "href": "Publish/2 quarto/1 quarto intro.html#embed-youtube",
+    "title": "quarto introduction",
+    "section": "embed youtube",
+    "text": "embed youtube\n\n\nCode\n&lt;iframe width=\"640\" height=\"480\" src=\"https://www.youtube.com/embed/nku5zFMZAdU\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen&gt;\n&lt;/iframe&gt;",
+    "crumbs": [
+      "Publish",
+      "2 quarto",
+      "quarto introduction"
+    ]
+  },
+  {
+    "objectID": "Publish/2 quarto/1 quarto intro.html#embed-local-video",
+    "href": "Publish/2 quarto/1 quarto intro.html#embed-local-video",
+    "title": "quarto introduction",
+    "section": "embed local video",
+    "text": "embed local video\n\n\nCode\n{{&lt; video images/vv.mp4 height=\"600\" &gt;}}",
+    "crumbs": [
+      "Publish",
+      "2 quarto",
+      "quarto introduction"
+    ]
+  },
+  {
+    "objectID": "Publish/2 quarto/1 quarto intro.html#in-_quarto.ymlfor-all-page-or-headeronly-for-this-page",
+    "href": "Publish/2 quarto/1 quarto intro.html#in-_quarto.ymlfor-all-page-or-headeronly-for-this-page",
+    "title": "quarto introduction",
+    "section": "in _quarto.yml(for all page) or header(only for this page)",
+    "text": "in _quarto.yml(for all page) or header(only for this page)\n\n\n\nCode\n\n_quarto.yml\n\nformat:\n  html:\n    mainfont:Times New Roman\n    font-size: 120%;\n  \n# can find more font:https://developer.mozilla.org/en-US/docs/Web/CSS/font-family\n\n\n\nsource:https://quarto.org/docs/reference/formats/context.html",
+    "crumbs": [
+      "Publish",
+      "2 quarto",
+      "quarto introduction"
+    ]
+  },
+  {
+    "objectID": "Publish/2 quarto/1 quarto intro.html#in-page",
+    "href": "Publish/2 quarto/1 quarto intro.html#in-page",
+    "title": "quarto introduction",
+    "section": "in page",
+    "text": "in page\n\n\nCode\n&lt;p style=\"font-family: times, serif; font-size:500% \"&gt;This is font size 500%&lt;/p&gt;\n\n\n\nThis is font size 500%\n\n\n\nCode\n&lt;p style=\"font-family: times, serif; font-size:50% \"&gt;This is font size 50%&lt;/p&gt;\n\n\n\nThis is font size 50%",
+    "crumbs": [
+      "Publish",
+      "2 quarto",
+      "quarto introduction"
+    ]
+  },
+  {
+    "objectID": "Publish/2 quarto/1 quarto intro.html#render-a-folder-or-file",
+    "href": "Publish/2 quarto/1 quarto intro.html#render-a-folder-or-file",
+    "title": "quarto introduction",
+    "section": "render a folder or file",
+    "text": "render a folder or file\n\n\n\nCode\n\nTerminal\n\nquarto render introduction.qmd\nquarto render subdir/",
+    "crumbs": [
+      "Publish",
+      "2 quarto",
+      "quarto introduction"
+    ]
+  },
+  {
+    "objectID": "Publish/2 quarto/1 quarto intro.html#freeze",
+    "href": "Publish/2 quarto/1 quarto intro.html#freeze",
+    "title": "quarto introduction",
+    "section": "Freeze",
+    "text": "Freeze\nYou can use the freeze option to denote that computational documents should never be re-rendered during a global project render, or alternatively only be re-rendered when their source file changes:\nin _quarto.yml(for all page) or header(only for this page)\n\n\n\nCode\n\n_quarto.yml\n\nexecute:\n  freeze: true  # never re-render during project render\n\n\n\n\n\n\nCode\n\n_quarto.yml\n\nexecute:\n  freeze: auto  # re-render only when source changes",
+    "crumbs": [
+      "Publish",
+      "2 quarto",
+      "quarto introduction"
+    ]
+  },
+  {
+    "objectID": "Publish/2 quarto/1 quarto intro.html#cache",
+    "href": "Publish/2 quarto/1 quarto intro.html#cache",
+    "title": "quarto introduction",
+    "section": "Cache",
+    "text": "Cache\nYou can use the cache option to cache the results of computations (using the knitr cache for R documents, and Jupyter Cache for Jupyter documents):\n\n\n\nCode\n\n_quarto.yml\n\nexecute:\n  cache: true\n\n\n\nNote that cache invalidation is triggered by changes in chunk source code (or other cache attributes you’ve defined). You may however need to manually refresh the cache if you know that some other input (or even time) has changed sufficiently to warrant an update. To do this, render either individual files or an entire project using the –cache-refresh option:\nsource:https://quarto.org/docs/projects/code-execution.html\n\n\n\nCode\n\nTerminal\n\nquarto render mydoc.qmd --cache-refresh # single doc\nquarto render --cache-refresh           # entire project",
+    "crumbs": [
+      "Publish",
+      "2 quarto",
+      "quarto introduction"
+    ]
+  },
+  {
+    "objectID": "Publish/2 quarto/1 quarto intro.html#using-giscus-comment-tool",
+    "href": "Publish/2 quarto/1 quarto intro.html#using-giscus-comment-tool",
+    "title": "quarto introduction",
+    "section": "using giscus comment tool",
+    "text": "using giscus comment tool\nhttps://giscus.app/\n\nstep 1 install giscus on github\nhttps://github.com/apps/giscus\n\n\nstep 2 enable GitHub Discussions for your repository\n\n\n\nstep 3 add script to blog post\n\n\nCode\n'''\n&lt;script src=\"https://giscus.app/client.js\"\n        data-repo=\"[ENTER REPO HERE]\"\n        data-repo-id=\"[ENTER REPO ID HERE]\"\n        data-category=\"[ENTER CATEGORY NAME HERE]\"\n        data-category-id=\"[ENTER CATEGORY ID HERE]\"\n        data-mapping=\"pathname\"\n        data-strict=\"0\"\n        data-reactions-enabled=\"1\"\n        data-emit-metadata=\"0\"\n        data-input-position=\"bottom\"\n        data-theme=\"preferred_color_scheme\"\n        data-lang=\"en\"\n        crossorigin=\"anonymous\"\n        async&gt;\n&lt;/script&gt;\n'''\n\n\n\nstep 3b or using comment for all page\nadd into _quarto.yml\n\n\n\nCode\n\n_quarto.yml\n\nformat:\n  html:\n    include-after-body: \n         - text: &lt;script src=\"https://giscus.app/client.js\" data-repo=\"[ENTER REPO HERE]\" data-repo-id=\"[ENTER REPO ID HERE]\" data-category=\"[ENTER CATEGORY NAME HERE]\" data-category-id=\"[ENTER CATEGORY ID HERE]\" data-mapping=\"pathname\" data-strict=\"0\" data-reactions-enabled=\"1\" data-emit-metadata=\"0\" data-input-position=\"bottom\" data-theme=\"preferred_color_scheme\" data-lang=\"en\" crossorigin=\"anonymous\" async&gt; &lt;/script&gt;",
+    "crumbs": [
+      "Publish",
+      "2 quarto",
+      "quarto introduction"
+    ]
+  },
+  {
+    "objectID": "Publish/2 quarto/1 quarto intro.html#bash",
+    "href": "Publish/2 quarto/1 quarto intro.html#bash",
+    "title": "quarto introduction",
+    "section": "Bash",
+    "text": "Bash\n```{bash}\necho \"foo\" \n```",
+    "crumbs": [
+      "Publish",
+      "2 quarto",
+      "quarto introduction"
+    ]
+  },
+  {
+    "objectID": "Publish/2 quarto/1 quarto intro.html#link",
+    "href": "Publish/2 quarto/1 quarto intro.html#link",
+    "title": "quarto introduction",
+    "section": "link",
+    "text": "link\n[link](www.rstudio.com)\nlink",
+    "crumbs": [
+      "Publish",
+      "2 quarto",
+      "quarto introduction"
+    ]
+  },
+  {
+    "objectID": "Publish/2 quarto/1 quarto intro.html#tab",
+    "href": "Publish/2 quarto/1 quarto intro.html#tab",
+    "title": "quarto introduction",
+    "section": "tab",
+    "text": "tab\n::: {.panel-tabset}\n\n## Tab 1\n\nThis is tab 1\n\n\n## Tab 2\n\nThis is tab 2\n\n:::\n\nTab 1Tab 2\n\n\nThis is tab 1\n\n\nThis is tab 2",
+    "crumbs": [
+      "Publish",
+      "2 quarto",
+      "quarto introduction"
+    ]
+  },
+  {
+    "objectID": "Publish/2 quarto/1 quarto intro.html#column-display",
+    "href": "Publish/2 quarto/1 quarto intro.html#column-display",
+    "title": "quarto introduction",
+    "section": "column display",
+    "text": "column display\n\n\nCode\n::: columns\n::: {.column width=\"40%\"}\nthis column with 40% width\n::: \n\n::: {.column width=\"60%\"}\nthis column with 60% width\n::: \n\n::: \n\n\n\n\nthis column with 40% width\n\nthis column with 60% width",
+    "crumbs": [
+      "Publish",
+      "2 quarto",
+      "quarto introduction"
     ]
   }
 ]
