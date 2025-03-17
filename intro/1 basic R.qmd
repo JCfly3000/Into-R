@@ -688,6 +688,59 @@ connect_result
 
 
 
+# Using Python
+
+
+## select python version
+
+check whether python is available
+
+```{r}
+reticulate::py_available()
+```
+
+check python version
+
+```{r}
+reticulate::py_config()
+```
+
+
+
+
+## select python version
+
+Set up Python:Using python 3.11 instead of 3.13. It need to restart first
+
+
+```{r}
+#| eval: false
+Sys.setenv(RETICULATE_PYTHON = "/Library/Frameworks/Python.framework/Versions/3.11/bin/python3.11")
+library(reticulate)
+use_python("/Library/Frameworks/Python.framework/Versions/3.11/bin/python3.11")
+```
+
+
+```{python}
+#| eval: false
+from platform import python_version
+print(python_version())
+```
+
+
+
+
+
+
+## run python in R
+
+```{r}
+#| eval: false
+source_python("flights.py")
+```
+
+
+
 
 ```{r, attr.output='.details summary="sessionInfo()"'}
 sessionInfo()

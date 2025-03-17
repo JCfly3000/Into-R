@@ -1,0 +1,140 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"web scrap with advance\"\n",
+        "author: \"Tony Duan\"\n",
+        "\n",
+        "execute:\n",
+        "  warning: false\n",
+        "  error: false\n",
+        "  eval: false\n",
+        "\n",
+        "format:\n",
+        "  html:\n",
+        "    toc: true\n",
+        "    toc-location: right\n",
+        "    code-fold: show\n",
+        "    code-tools: true\n",
+        "    number-sections: true\n",
+        "    code-block-bg: true\n",
+        "    code-block-border-left: \"#31BAE9\"\n",
+        "---\n"
+      ],
+      "id": "1e5e4839"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "from seleniumbase import SB\n",
+        "\n",
+        "with SB(test=True, uc=True) as sb:\n",
+        "    sb.open(\"https://google.com/ncr\")\n",
+        "    sb.type('[title=\"Search\"]', \"SeleniumBase GitHub page\\n\")\n",
+        "    sb.click('[href*=\"github.com/seleniumbase/\"]')\n",
+        "    sb.save_screenshot_to_logs()  # ./latest_logs/\n",
+        "    print(sb.get_page_title())"
+      ],
+      "id": "4ccdfca3",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "from seleniumbase import SB\n",
+        "\n",
+        "with SB(test=True, uc=True) as sb:\n",
+        "    sb.open(\"https://www.whiskybase.com/whiskies/\")\n",
+        "    #sb.type('[title=\"Search\"]', \"SeleniumBase GitHub page\\n\")\n",
+        "    #sb.click('[href*=\"github.com/seleniumbase/\"]')\n",
+        "    sb.save_screenshot_to_logs()  # ./latest_logs/\n",
+        "    print(sb.get_page_title())"
+      ],
+      "id": "13f94d4b",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "from seleniumbase import Driver\n",
+        "class Scraper(BaseCase):\n",
+        "def test_bypass_bot_protection(self):\n",
+        "driver = Driver(uc=True)\n",
+        "driver.open(\"https://www.whiskybase.com/whiskies/whisky/268484/2009-ud\")\n",
+        "driver.uc_gui_click_captcha()\n",
+        "page_html = driver.get_page_source()\n",
+        "print(page_html)\n",
+        "driver.quit()"
+      ],
+      "id": "bb39d897",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "from bs4 import BeautifulSoup\n",
+        "soup = BeautifulSoup(page_html, 'html.parser')\n",
+        "print(soup.prettify())"
+      ],
+      "id": "db3292a1",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "print(soup.get_text())"
+      ],
+      "id": "9edbca77",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "soup.select(\".votes-rating-current\").text"
+      ],
+      "id": "ef338311",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "h1\n",
+        "\n",
+        "# Reference:\n",
+        "\n",
+        "https://github.com/seleniumbase/SeleniumBase\n",
+        "\n",
+        "https://medium.com/@datajournal/web-scraping-with-seleniumbase-e3ead6aebe7f\n",
+        "\n",
+        "https://github.com/ultrafunkamsterdam/undetected-chromedriver\n"
+      ],
+      "id": "39094431"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "/Library/Frameworks/Python.framework/Versions/3.13/share/jupyter/kernels/python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}

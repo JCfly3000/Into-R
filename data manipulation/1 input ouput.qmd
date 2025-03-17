@@ -107,7 +107,7 @@ data002=(data) %>% as.data.frame()
 glimpse(data002)
 ```
 
-## Getting Data from Images
+## read Data from Images
 
 ```{r}
 library(tesseract)
@@ -144,10 +144,64 @@ glimpse(raw_tibble001)
 ```
 
 
+## read data from RData/Rds
+
+Rda is just a short name for RData.Rds stores a single R object.RData can store multiple R objects in a single file. 
+
+### read one data 
+
+```{r}
+#| eval: false
+my_data <- readRDS("mtcars.rds")
+```
+
+### read multiple data
+
+```{r}
+#| eval: false
+load("my_work_space.RData")
+```
+
+## read doxc
+
+```{r}
+pak::pkg_install('officer')
+library(officer)
+docx=read_docx("data/example03.docx")
+#docx
+```
+
+```{r}
+docx_dim(docx)
+```
+
+```{r}
+docx_summary(docx)
+```
+
+filter table section
+
+```{r}
+table_cells=docx_summary(docx) %>% filter(content_type == "table cell")
+
+table_data <- table_cells %>% filter(!is_header) %>% select(row_id, cell_id, text)
+table_data
+```
+
+transform the table data into a data frame
+
+```{r}
+# The content of the table is in 'long' format, but we can 're-rectangularise'
+table_names <- table_cells[table_cells$is_header, "text"]
+table_content <- table_cells[!table_cells$is_header, "text"]
+row_count <- nrow(table_cells) / nrow(table_cells[table_cells$is_header, ]) - 1
+table_mat <- as.data.frame(matrix(table_content, nrow = row_count))
+names(table_mat) <- table_names
+table_mat
+```
 
 
-
-# Output
+# Output 
 
 
 ## write csv 
@@ -205,5 +259,28 @@ its time!')
 write_delim(text, "text.txt")
 ```
 
+## write to RData/Rds
+
+### write one data
+
+```{r}
+# Save a single object to a file
+saveRDS(mtcars, "mtcars.rds")
+```
+
+### write multiple data
+
+```{r}
+# Save a single object to a file
+save(mtcars,iris, file="mtcars_and_iris.RData")
+```
+
+
+### write all working space data
+
+```{r}
+# Save a single object to a file
+save.image(file = "my_work_space.RData")
+```
 
 
