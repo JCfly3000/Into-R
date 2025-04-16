@@ -391,6 +391,15 @@ quarto render "tidymodel in R"
 
 ```
 
+## embed bilibili
+
+
+<iframe  width="640" height="480"  src="//player.bilibili.com/player.html?isOutside=true&aid=892286280&bvid=BV1pP4y1G7hU&cid=461709819&p=1&autoplay=0&muted=false&danmaku=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"
+sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts"></iframe>
+
+
+
+
 ## embed local video
 
 ```{r}

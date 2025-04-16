@@ -18,8 +18,7 @@ format:
     code-block-border-left: "#31BAE9"
     code-copy: true
 ---
-
-# data
+# US gdp by State
 
 
 ```{r}
@@ -37,71 +36,32 @@ library(maps)
 mapStates = map("state", fill = TRUE, plot = FALSE)
 ```
 
+US location data
 ```{r}
 json_data=read_sf("us-states.json")
 ```
-
 
 ```{r}
 map_df <- as.data.frame(json_data)
 ```
 
 
-
-# map
-
-```{r}
-data001=read_csv('./data/us shooting dagta001.csv')
-```
-
-
-
-```{r}
-data001=sample_n(data001,10) %>% clean_names() %>% mutate(full_adress=paste(address,city_or_county,state))
-```
-
-```{r}
-glimpse(data001)
-```
-
-# search all address to latitude, longitude
-```{r}
-# geocode the addresses
-data002 <- data001 %>%
-  geocode(full_adress, method = 'arcgis', lat = latitude , long = longitude)
-
-glimpse(data002)
-```
-
-```{r}
-data003=data002 %>% filter(is.na(latitude)==FALSE,(is.na(longitude)==FALSE))
-```
-
-# map
-
-```{r}
-m <- leaflet(data=mapStates) %>%
-   # Add default OpenStreetMap map tiles
-  addTiles() %>%  
-  # add markers
-  addMarkers( lng=data003$longitude, lat=data003$latitude, popup=data003$state)%>% 
-  addPolygons(fillColor = topo.colors(10, alpha = NULL), stroke = FALSE)
-
-m  
-```
-
-
-# US gdp by State
-
 ```{r}
 glimpse(mapStates)
 ```
+
+US 2-22 GDP data
 
 ```{r}
 library(openxlsx)
 library(readxl)
 
 per_gdp_usd=read_excel('US state gpd 2022.xlsx') %>% mutate(names=str_replace(names,'\\*','') %>% str_trim() )
+```
+
+
+```{r}
+glimpse(per_gdp_usd)
 ```
 
 
@@ -112,19 +72,31 @@ map_df002 <- merge(map_df, per_gdp_usd, by.x = "name", by.y = "names")
 
 
 ```{r}
+glimpse(map_df002)
+```
+
+
+```{r}
 map_sf002 <- sf::st_as_sf(map_df002, sf_column_name = "geometry")
 ```
 
 ```{r}
 
-pal <- colorNumeric("magma", NULL)
+#pal <- colorNumeric("magma", NULL)
+pal <- colorNumeric(
+  palette = "Blues",
+  domain = map_df002$per_gdp_usd
+  )
 
+binpal <- colorBin("Blues",map_df002$per_gdp_usd, 20, pretty = FALSE)
 
 m <- leaflet(map_sf002) %>%
    # Add default OpenStreetMap map tiles
   addTiles() %>%  
    addPolygons(smoothFactor = 0.3, fillOpacity = 0.5,weight = 1,
-    fillColor = ~ pal(per_2022_usd)
+    #fillColor = ~ pal(per_2022_usd)
+    #color = ~pal(per_2022_usd)
+   color = ~binpal(per_2022_usd)
     ,popup = ~ paste0(
       "地区：", name, "<br/>",
       "<hr/>",

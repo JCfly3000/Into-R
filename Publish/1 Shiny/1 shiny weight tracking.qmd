@@ -21,7 +21,7 @@ format:
 # Shiny app:<https://tduan.shinyapps.io/weightshiny/>
 
 ```{=html}
-<iframe width="900" height="500" src="https://tduan.shinyapps.io/weightshiny/" title="shiny app"></iframe>
+<iframe width="900" height="500" src="https://tonyflying.shinyapps.io/weight_tracking/" title="shiny app"></iframe>
 ```
 
 --------------------------------

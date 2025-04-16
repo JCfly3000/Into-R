@@ -22,7 +22,7 @@
     "href": "intro/1 basic R.html#get-all-file-name-under-current-directory",
     "title": "Basic R",
     "section": "2.2 get all file name under current directory",
-    "text": "2.2 get all file name under current directory\n\n\nCode\nlist.files()\n\n\n [1] \"1 basic R.qmd\"                 \"1 basic R.rmarkdown\"          \n [3] \"1-basic-R.rmarkdown\"           \"2 probability.qmd\"            \n [5] \"3 Statistics.qmd\"              \"5 R boook.qmd\"                \n [7] \"6 data analytic in R book.qmd\" \"7 error handling.qmd\"         \n [9] \"hotels.csv\"                    \"images\"                       \n[11] \"renv\"",
+    "text": "2.2 get all file name under current directory\n\n\nCode\nlist.files()\n\n\n [1] \"1 basic R_files\"               \"1 basic R.qmd\"                \n [3] \"1 basic R.rmarkdown\"           \"1-basic-R.rmarkdown\"          \n [5] \"2 probability.qmd\"             \"3 Statistics.qmd\"             \n [7] \"5 R boook.qmd\"                 \"6 data analytic in R book.qmd\"\n [9] \"7 error handling.qmd\"          \"hotels.csv\"                   \n[11] \"images\"                        \"renv\"",
     "crumbs": [
       "Intro",
       "Basic R"
@@ -120,8 +120,8 @@
     "objectID": "intro/1 basic R.html#error-handling-on-for-loopprint-out-error",
     "href": "intro/1 basic R.html#error-handling-on-for-loopprint-out-error",
     "title": "Basic R",
-    "section": "5.2 Error handling on for Loop:print out error",
-    "text": "5.2 Error handling on for Loop:print out error\n\n\nCode\nstuff &lt;- list(12, 9, 2, \"cat\", 25, 10, \"bird\")\n#stuff\n\n\n\n\nCode\nloop_num=0\n\nfor (i in 1:6) {\n  loop_num=loop_num+1\n  tryCatch (print(1+i),\n           \n           error = function(e){\n           message(paste(\"An error occurred for loop num\", loop_num,\":\\n\"), e)\n             \n         })\n}\n\n\n[1] 2\n[1] 3\n[1] 4\n[1] 5\n[1] 6\n[1] 7",
+    "section": "5.3 Error handling on for Loop:print out error",
+    "text": "5.3 Error handling on for Loop:print out error\n\n\nCode\nstuff &lt;- list(12, 9, 2, \"cat\", 25, 10, \"bird\")\n#stuff\n\n\n\n\nCode\nloop_num=0\n\nfor (i in 1:6) {\n  loop_num=loop_num+1\n  tryCatch (print(1+i),\n           \n           error = function(e){\n           message(paste(\"An error occurred for loop num\", loop_num,\":\\n\"), e)\n             \n         })\n}\n\n\n[1] 2\n[1] 3\n[1] 4\n[1] 5\n[1] 6\n[1] 7",
     "crumbs": [
       "Intro",
       "Basic R"
@@ -131,8 +131,8 @@
     "objectID": "intro/1 basic R.html#while-loop",
     "href": "intro/1 basic R.html#while-loop",
     "title": "Basic R",
-    "section": "5.3 while Loop",
-    "text": "5.3 while Loop\n\n\nCode\ni &lt;- 1\nwhile (i &lt; 6) {\n  print(i)\n  i &lt;- i + 1\n}\n\n\n[1] 1\n[1] 2\n[1] 3\n[1] 4\n[1] 5\n\n\nwith break statement\n\n\nCode\ni &lt;- 1\nwhile (i &lt; 6) {\n  print(i)\n  i &lt;- i + 1\n  if (i == 4) {break}\n}\n\n\n[1] 1\n[1] 2\n[1] 3\n\n\nwith next statement\n\n\nCode\ni =1\n\nwhile (i &lt; 6) {\n  i &lt;- i + 1\n  if (i == 4){next}\n  print(i)\n}\n\n\n[1] 2\n[1] 3\n[1] 5\n[1] 6",
+    "section": "5.4 while Loop",
+    "text": "5.4 while Loop\n\n\nCode\ni &lt;- 1\nwhile (i &lt; 6) {\n  print(i)\n  i &lt;- i + 1\n}\n\n\n[1] 1\n[1] 2\n[1] 3\n[1] 4\n[1] 5\n\n\nwith break statement\n\n\nCode\ni &lt;- 1\nwhile (i &lt; 6) {\n  print(i)\n  i &lt;- i + 1\n  if (i == 4) {break}\n}\n\n\n[1] 1\n[1] 2\n[1] 3\n\n\nwith next statement\n\n\nCode\ni =1\n\nwhile (i &lt; 6) {\n  i &lt;- i + 1\n  if (i == 4){next}\n  print(i)\n}\n\n\n[1] 2\n[1] 3\n[1] 5\n[1] 6",
     "crumbs": [
       "Intro",
       "Basic R"
@@ -142,8 +142,8 @@
     "objectID": "intro/1 basic R.html#error-handling-on-whie-loop-try-when-the-error-gone",
     "href": "intro/1 basic R.html#error-handling-on-whie-loop-try-when-the-error-gone",
     "title": "Basic R",
-    "section": "5.4 Error handling on whie Loop: try when the error gone",
-    "text": "5.4 Error handling on whie Loop: try when the error gone\n\n\nCode\ni=0\na=0\nwhile (i &lt; 4) {\n  a=a+1\n  print(i)\n  tryCatch({\n  asdfgaergae5gh5hae5h\n    i=i+1\n  },error = function(msg){print('eeeeeeee')\n    i=i-1\n    print(paste0(\"new i : \",i))\n   \n    })\n   if(a&gt;10){break}\n  }\n\n\n[1] 0\n[1] \"eeeeeeee\"\n[1] \"new i : -1\"\n[1] 0\n[1] \"eeeeeeee\"\n[1] \"new i : -1\"\n[1] 0\n[1] \"eeeeeeee\"\n[1] \"new i : -1\"\n[1] 0\n[1] \"eeeeeeee\"\n[1] \"new i : -1\"\n[1] 0\n[1] \"eeeeeeee\"\n[1] \"new i : -1\"\n[1] 0\n[1] \"eeeeeeee\"\n[1] \"new i : -1\"\n[1] 0\n[1] \"eeeeeeee\"\n[1] \"new i : -1\"\n[1] 0\n[1] \"eeeeeeee\"\n[1] \"new i : -1\"\n[1] 0\n[1] \"eeeeeeee\"\n[1] \"new i : -1\"\n[1] 0\n[1] \"eeeeeeee\"\n[1] \"new i : -1\"\n[1] 0\n[1] \"eeeeeeee\"\n[1] \"new i : -1\"",
+    "section": "5.5 Error handling on whie Loop: try when the error gone",
+    "text": "5.5 Error handling on whie Loop: try when the error gone\n\n\nCode\ni=0\na=0\nwhile (i &lt; 4) {\n  a=a+1\n  print(i)\n  tryCatch({\n  asdfgaergae5gh5hae5h\n    i=i+1\n  },error = function(msg){print('eeeeeeee')\n    i=i-1\n    print(paste0(\"new i : \",i))\n   \n    })\n   if(a&gt;10){break}\n  }\n\n\n[1] 0\n[1] \"eeeeeeee\"\n[1] \"new i : -1\"\n[1] 0\n[1] \"eeeeeeee\"\n[1] \"new i : -1\"\n[1] 0\n[1] \"eeeeeeee\"\n[1] \"new i : -1\"\n[1] 0\n[1] \"eeeeeeee\"\n[1] \"new i : -1\"\n[1] 0\n[1] \"eeeeeeee\"\n[1] \"new i : -1\"\n[1] 0\n[1] \"eeeeeeee\"\n[1] \"new i : -1\"\n[1] 0\n[1] \"eeeeeeee\"\n[1] \"new i : -1\"\n[1] 0\n[1] \"eeeeeeee\"\n[1] \"new i : -1\"\n[1] 0\n[1] \"eeeeeeee\"\n[1] \"new i : -1\"\n[1] 0\n[1] \"eeeeeeee\"\n[1] \"new i : -1\"\n[1] 0\n[1] \"eeeeeeee\"\n[1] \"new i : -1\"",
     "crumbs": [
       "Intro",
       "Basic R"
@@ -275,7 +275,7 @@
     "href": "intro/1 basic R.html#check-pacakge-dependencies",
     "title": "Basic R",
     "section": "8.4 check pacakge dependencies",
-    "text": "8.4 check pacakge dependencies\n\n\nCode\npak::pkg_deps_tree(\"tibble\")\n\n\ntibble 3.2.1 ✨🔧 ⬇ (688.89 kB)\n├─fansi 1.0.6 ✨🔧 ⬇ (383.06 kB)\n├─lifecycle 1.0.4 ✨ ⬇ (124.78 kB)\n│ ├─cli 3.6.4 ✨🔧 ⬇ (1.45 MB)\n│ ├─glue 1.8.0 ✨🔧 ⬇ (173.70 kB)\n│ └─rlang 1.1.5 ✨🔧 ⬇ (1.90 MB)\n├─magrittr 2.0.3 ✨🔧 ⬇ (233.52 kB)\n├─pillar 1.10.1 ✨ ⬇ (657.46 kB)\n│ ├─cli\n│ ├─glue\n│ ├─lifecycle\n│ ├─rlang\n│ ├─utf8 1.2.4 ✨🔧 ⬇ (206.91 kB)\n│ └─vctrs 0.6.5 ✨🔧 ⬇ (1.89 MB)\n│   ├─cli\n│   ├─glue\n│   ├─lifecycle\n│   └─rlang\n├─pkgconfig 2.0.3 ✨ ⬇ (18.45 kB)\n├─rlang\n└─vctrs\n\nKey:  ✨ new |  ⬇ download | 🔧 compile",
+    "text": "8.4 check pacakge dependencies\n\n\nCode\npak::pkg_deps_tree(\"tibble\")\n\n\ntibble 3.2.1 ✨🔧\n├─fansi 1.0.6 ✨🔧 ⬇ (383.06 kB)\n├─lifecycle 1.0.4 ✨ ⬇ (124.78 kB)\n│ ├─cli 3.6.4 ✨🔧 ⬇ (1.45 MB)\n│ ├─glue 1.8.0 ✨🔧 ⬇ (173.70 kB)\n│ └─rlang 1.1.6 ✨🔧 ⬇ (1.89 MB)\n├─magrittr 2.0.3 ✨🔧 ⬇ (233.52 kB)\n├─pillar 1.10.2 ✨ ⬇ (657.78 kB)\n│ ├─cli\n│ ├─glue\n│ ├─lifecycle\n│ ├─rlang\n│ ├─utf8 1.2.4 ✨🔧 ⬇ (206.91 kB)\n│ └─vctrs 0.6.5 ✨🔧 ⬇ (1.89 MB)\n│   ├─cli\n│   ├─glue\n│   ├─lifecycle\n│   └─rlang\n├─pkgconfig 2.0.3 ✨ ⬇ (18.45 kB)\n├─rlang\n└─vctrs\n\nKey:  ✨ new |  ⬇ download | 🔧 compile",
     "crumbs": [
       "Intro",
       "Basic R"
@@ -458,7 +458,7 @@
     "href": "Publish/2 quarto/2 quarto blog.html",
     "title": "quarto blog",
     "section": "",
-    "text": "Code\n---\ntitle: \"title\"\n\nauthor: \"name\"\ndate: \"2024-05-03\"\ncategories: [R,quarto]\nexecute:\n  warning: false\n  error: false\n  eval: false\n\nformat:\n  html:\n    toc: true\n    toc-location: left\n    code-fold: show\n    code-tools: true\n    number-sections: true\n    code-block-bg: true\n    code-block-border-left: \"#31BAE9\"\n    \n---\n\n\n\n\n\n\n\nCode\n---\ndraft: true  \n  \n---\n\n\n\n\n\n\n\nCode\nproject:\n  type: website\n\nwebsite:\n  title: \"tidystep\"\n  site-url: https://tidystep.netlify.app/\n  description: \"A blog for data stuff\"\n  favicon: \"profile3.png\"\n  google-analytics: \"G-2EQK8RFKFX\"\n  navbar:\n    right:\n      - about.qmd\n      - icon: github\n        href: https://github.com/TonyFly3000\n      - icon: twitter\n        href: https://twitter.com/TonyJCD\n      - icon: rss\n        href: index.xml\n\n  page-footer:\n    right: \"This blog is built with ❤️ and [Quarto](https://quarto.org/).\"\n\nformat:\n  html:\n    theme: \n      light: flatly\n      dark: darkly\n    css: styles.css\n    grid:\n      body-width: 1100px\n      margin-width: 300px\n      gutter-width: 1.5rem\n\neditor: visual\nexecute:\n  freeze: true\n\n\n\n\n\n\n\nCode\n---\ntitle: \"微步数据\"\nlisting:\n  page-size: 8\n  contents: posts\n  sort: \"date desc\"\n  type: default\n  categories: true\n  sort-ui: true\n  filter-ui: false\n  fields: [image, date, title, author,categories]\n  feed: true\npage-layout: full\ntitle-block-banner: true\n---\n\n\n\n\n\n\n\nCode\ndraft:true",
+    "text": "Code\n---\ntitle: \"title\"\n\nauthor: \"name\"\ndate: \"2024-05-03\"\ncategories: [R,quarto]\nexecute:\n  warning: false\n  error: false\n  eval: false\n\nformat:\n  html:\n    toc: true\n    toc-location: left\n    code-fold: show\n    code-tools: true\n    number-sections: true\n    code-block-bg: true\n    code-block-border-left: \"#31BAE9\"\n    \n---\n\n\n\n\n\n\n\nCode\n---\ndraft: true  \n  \n---\n\n\n\n\n\n\n\nCode\nproject:\n  type: website\n\nwebsite:\n  title: \"tidystep\"\n  site-url: https://tidystep.netlify.app/\n  description: \"A blog for data stuff\"\n  favicon: \"profile3.png\"\n  google-analytics: \"G-2EQK8RFKFX\"\n  navbar:\n    right:\n      - about.qmd\n      - icon: github\n        href: https://github.com/TonyFly3000\n      - icon: twitter\n        href: https://twitter.com/TonyJCD\n      - icon: rss\n        href: index.xml\n\n  page-footer:\n    right: \"This blog is built with ❤️ and [Quarto](https://quarto.org/).\"\n\nformat:\n  html:\n    theme: \n      light: flatly\n      dark: darkly\n    css: styles.css\n    grid:\n      body-width: 1100px\n      margin-width: 300px\n      gutter-width: 1.5rem\n\neditor: visual\nexecute:\n  freeze: true\n\n\n\n\n\n\n\nCode\n---\ntitle: \"微步数据\"\nlisting:\n  page-size: 8\n  contents: posts\n  sort: \"date desc\"\n  type: default\n  categories: true\n  sort-ui: true\n  filter-ui: false\n  fields: [image, date, title, author,categories]\n  feed: true\npage-layout: full\ntitle-block-banner: true\n---\n\n\n\n\n\n\n\nCode\ndraft:true\n\n\n\n\n\n\n\n\n\nCode\nremotes::install_github(\"nikitoshina/staticryptR\")\n\n\n\n\n\n\n\nCode\nbrew install node\n\n\n\n\n\n\n\nCode\nnpm install -g staticrypt\n\n\n\n\n\n\n\nCode\n# _quarto.yml\nproject:\n  output-dir: \"./_output\"\n  post-render: encrypt.r\n\n\n\n\n\npassword protect all website\n\n\nCode\n# encrypt.r\nstaticryptR::staticryptr(\n  files = \"_output/\",\n  directory = \".\",\n  password = \"123123\",\n  short = TRUE,\n  recursive = TRUE,\n  template_color_primary = \"#6667AB\",\n  template_color_secondary = \"#f9f9f3\",\n  template_title = \"Your Document Title\",\n  template_instructions = \"Enter the password or contact example@email.com\",\n  template_button = \"Access\"\n)\n\n\npassword protect one posts\n\n\nCode\nstaticryptR::staticryptr(\n  files = c(\"posts/youtube_yt-dlp/\"),\n  directory = c(\"docs/posts/\"),\n  password = \"123123\",\n  short = TRUE,\n  recursive = TRUE,\n  template_color_primary = \"#6667AB\",\n  template_color_secondary = \"#f9f9f3\",\n  template_title = \"Your Document Title\",\n  template_instructions = \"Enter the password or contact TonyJCing@outlook.com\",\n  template_button = \"Access\",\n  print_cmd = TRUE\n)",
     "crumbs": [
       "Publish",
       "2 quarto",
@@ -823,7 +823,7 @@
     "href": "Plot/5 Map/3 leaflet US.html",
     "title": "US map",
     "section": "",
-    "text": "1 data\n\n\nCode\nlibrary(tidyverse)\nlibrary(rvest)\nlibrary(chromote)\nlibrary(janitor)\nlibrary(tidygeocoder)\nlibrary(leaflet)\nlibrary(sf)\n\n\n\n\nCode\nlibrary(maps)\nmapStates = map(\"state\", fill = TRUE, plot = FALSE)\n\n\n\n\nCode\njson_data=read_sf(\"us-states.json\")\n\n\n\n\nCode\nmap_df &lt;- as.data.frame(json_data)\n\n\n\n\n2 map\n\n\nCode\ndata001=read_csv('./data/us shooting dagta001.csv')\n\n\n\n\nCode\ndata001=sample_n(data001,10) %&gt;% clean_names() %&gt;% mutate(full_adress=paste(address,city_or_county,state))\n\n\n\n\nCode\nglimpse(data001)\n\n\nRows: 10\nColumns: 12\n$ incident_id       &lt;dbl&gt; 2781501, 2789603, 2779827, 2788820, 2782337, 2786468…\n$ incident_date     &lt;chr&gt; \"December 18, 2023\", \"December 29, 2023\", \"December …\n$ state             &lt;chr&gt; \"District of Columbia\", \"New York\", \"California\", \"M…\n$ city_or_county    &lt;chr&gt; \"Washington\", \"Syracuse\", \"Los Angeles\", \"Yazoo City…\n$ address           &lt;chr&gt; \"44th St NE and Eads St NE\", \"611 2nd North St\", \"S …\n$ victims_killed    &lt;dbl&gt; 0, 0, 0, 0, 0, 1, 0, 0, 0, 0\n$ victims_injured   &lt;dbl&gt; 1, 1, 1, 1, 0, 0, 0, 1, 1, 1\n$ suspects_killed   &lt;dbl&gt; 0, 0, 0, 0, 1, 0, 0, 0, 0, 0\n$ suspects_injured  &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 1, 0, 0, 0\n$ suspects_arrested &lt;dbl&gt; 0, 1, 0, 1, 0, 1, 1, 0, 0, 0\n$ operations        &lt;chr&gt; \"N/A\", \"N/A\", \"N/A\", \"N/A\", \"N/A\", \"N/A\", \"N/A\", \"N/…\n$ full_adress       &lt;chr&gt; \"44th St NE and Eads St NE Washington District of Co…\n\n\n\n\n3 search all address to latitude, longitude\n\n\nCode\n# geocode the addresses\ndata002 &lt;- data001 %&gt;%\n  geocode(full_adress, method = 'arcgis', lat = latitude , long = longitude)\n\nglimpse(data002)\n\n\nRows: 10\nColumns: 14\n$ incident_id       &lt;dbl&gt; 2781501, 2789603, 2779827, 2788820, 2782337, 2786468…\n$ incident_date     &lt;chr&gt; \"December 18, 2023\", \"December 29, 2023\", \"December …\n$ state             &lt;chr&gt; \"District of Columbia\", \"New York\", \"California\", \"M…\n$ city_or_county    &lt;chr&gt; \"Washington\", \"Syracuse\", \"Los Angeles\", \"Yazoo City…\n$ address           &lt;chr&gt; \"44th St NE and Eads St NE\", \"611 2nd North St\", \"S …\n$ victims_killed    &lt;dbl&gt; 0, 0, 0, 0, 0, 1, 0, 0, 0, 0\n$ victims_injured   &lt;dbl&gt; 1, 1, 1, 1, 0, 0, 0, 1, 1, 1\n$ suspects_killed   &lt;dbl&gt; 0, 0, 0, 0, 1, 0, 0, 0, 0, 0\n$ suspects_injured  &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 1, 0, 0, 0\n$ suspects_arrested &lt;dbl&gt; 0, 1, 0, 1, 0, 1, 1, 0, 0, 0\n$ operations        &lt;chr&gt; \"N/A\", \"N/A\", \"N/A\", \"N/A\", \"N/A\", \"N/A\", \"N/A\", \"N/…\n$ full_adress       &lt;chr&gt; \"44th St NE and Eads St NE Washington District of Co…\n$ latitude          &lt;dbl&gt; 38.89555, 43.07529, 34.01009, 32.86100, 37.26622, 39…\n$ longitude         &lt;dbl&gt; -76.93921, -76.16025, -118.28723, -90.40963, -79.970…\n\n\n\n\nCode\ndata003=data002 %&gt;% filter(is.na(latitude)==FALSE,(is.na(longitude)==FALSE))\n\n\n\n\n4 map\n\n\nCode\nm &lt;- leaflet(data=mapStates) %&gt;%\n   # Add default OpenStreetMap map tiles\n  addTiles() %&gt;%  \n  # add markers\n  addMarkers( lng=data003$longitude, lat=data003$latitude, popup=data003$state)%&gt;% \n  addPolygons(fillColor = topo.colors(10, alpha = NULL), stroke = FALSE)\n\nm  \n\n\n\n\n\n\n\n\n5 US gdp by State\n\n\nCode\nglimpse(mapStates)\n\n\nList of 4\n $ x    : num [1:15599] -87.5 -87.5 -87.5 -87.5 -87.6 ...\n $ y    : num [1:15599] 30.4 30.4 30.4 30.3 30.3 ...\n $ range: num [1:4] -124.7 -67 25.1 49.4\n $ names: chr [1:63] \"alabama\" \"arizona\" \"arkansas\" \"california\" ...\n - attr(*, \"class\")= chr \"map\"\n\n\n\n\nCode\nlibrary(openxlsx)\nlibrary(readxl)\n\nper_gdp_usd=read_excel('US state gpd 2022.xlsx') %&gt;% mutate(names=str_replace(names,'\\\\*','') %&gt;% str_trim() )\n\n\n\n\nCode\nmap_df002 &lt;- merge(map_df, per_gdp_usd, by.x = \"name\", by.y = \"names\")\n\n\n\n\nCode\nmap_sf002 &lt;- sf::st_as_sf(map_df002, sf_column_name = \"geometry\")\n\n\n\n\nCode\npal &lt;- colorNumeric(\"magma\", NULL)\n\n\nm &lt;- leaflet(map_sf002) %&gt;%\n   # Add default OpenStreetMap map tiles\n  addTiles() %&gt;%  \n   addPolygons(smoothFactor = 0.3, fillOpacity = 0.5,weight = 1,\n    fillColor = ~ pal(per_2022_usd)\n    ,popup = ~ paste0(\n      \"地区：\", name, \"&lt;br/&gt;\",\n      \"&lt;hr/&gt;\",\n      \"人均gpd：\", per_2022_usd, \"（千 美元）\", \"&lt;br/&gt;\"\n      \n    )\n     ,label = lapply(paste0(\n      \"地区：\", \"&lt;b&gt;\", map_sf002$name, \"&lt;/b&gt;\", \"&lt;br/&gt;\",\n      \"人均gpd 美元：\", round(map_sf002$per_2022_usd/1000), \"K &lt;br/&gt;\",\n       \"总gpd 美元：\", round(map_sf002$total_2022_usd), \"M &lt;br/&gt;\"\n\n    ), htmltools::HTML)\n    )%&gt;% addLegend(\n    position = \"bottomright\", title = \"人均gpd(美元)\",\n    pal = pal, values = ~per_2022_usd, opacity = 1.0\n    )\n  \n\n\n\nm  \n\n\n\n\n\n\n\n\n6 resouce:\nhttps://www.gunviolencearchive.org/reports/mass-shooting?page=8&year=2023\n\n\n\n\n\n\n Back to top",
+    "text": "1 US gdp by State\n\n\nCode\nlibrary(tidyverse)\nlibrary(rvest)\nlibrary(chromote)\nlibrary(janitor)\nlibrary(tidygeocoder)\nlibrary(leaflet)\nlibrary(sf)\n\n\n\n\nCode\nlibrary(maps)\nmapStates = map(\"state\", fill = TRUE, plot = FALSE)\n\n\nUS location data ::: {.cell}\n\nCode\njson_data=read_sf(\"us-states.json\")\n\n:::\n\n\nCode\nmap_df &lt;- as.data.frame(json_data)\n\n\n\n\nCode\nglimpse(mapStates)\n\n\nList of 4\n $ x    : num [1:15599] -87.5 -87.5 -87.5 -87.5 -87.6 ...\n $ y    : num [1:15599] 30.4 30.4 30.4 30.3 30.3 ...\n $ range: num [1:4] -124.7 -67 25.1 49.4\n $ names: chr [1:63] \"alabama\" \"arizona\" \"arkansas\" \"california\" ...\n - attr(*, \"class\")= chr \"map\"\n\n\nUS 2-22 GDP data\n\n\nCode\nlibrary(openxlsx)\nlibrary(readxl)\n\nper_gdp_usd=read_excel('US state gpd 2022.xlsx') %&gt;% mutate(names=str_replace(names,'\\\\*','') %&gt;% str_trim() )\n\n\n\n\nCode\nglimpse(per_gdp_usd)\n\n\nRows: 51\nColumns: 3\n$ names          &lt;chr&gt; \"California\", \"Texas\", \"New York\", \"Florida\", \"Illinois…\n$ total_2022_usd &lt;dbl&gt; 3641643, 2402137, 2048403, 1439065, 1025667, 911813, 82…\n$ per_2022_usd   &lt;dbl&gt; 92190, 78456, 104344, 62446, 82126, 71160, 69978, 69253…\n\n\n\n\nCode\nmap_df002 &lt;- merge(map_df, per_gdp_usd, by.x = \"name\", by.y = \"names\")\n\n\n\n\nCode\nglimpse(map_df002)\n\n\nRows: 51\nColumns: 6\n$ name           &lt;chr&gt; \"Alabama\", \"Alaska\", \"Arizona\", \"Arkansas\", \"California…\n$ id             &lt;chr&gt; \"01\", \"02\", \"04\", \"05\", \"06\", \"08\", \"09\", \"10\", \"11\", \"…\n$ density        &lt;dbl&gt; 94.650, 1.264, 57.050, 56.430, 241.700, 49.330, 739.100…\n$ geometry       &lt;MULTIPOLYGON [°]&gt; MULTIPOLYGON (((-87.3593 35..., MULTIPOLYG…\n$ total_2022_usd &lt;dbl&gt; 281569, 65699, 475654, 165989, 3641643, 491289, 319345,…\n$ per_2022_usd   &lt;dbl&gt; 54753, 86722, 62365, 54259, 92190, 82954, 88760, 85977,…\n\n\n\n\nCode\nmap_sf002 &lt;- sf::st_as_sf(map_df002, sf_column_name = \"geometry\")\n\n\n\n\nCode\n#pal &lt;- colorNumeric(\"magma\", NULL)\npal &lt;- colorNumeric(\n  palette = \"Blues\",\n  domain = map_df002$per_gdp_usd\n  )\n\nbinpal &lt;- colorBin(\"Blues\",map_df002$per_gdp_usd, 20, pretty = FALSE)\n\nm &lt;- leaflet(map_sf002) %&gt;%\n   # Add default OpenStreetMap map tiles\n  addTiles() %&gt;%  \n   addPolygons(smoothFactor = 0.3, fillOpacity = 0.5,weight = 1,\n    #fillColor = ~ pal(per_2022_usd)\n    #color = ~pal(per_2022_usd)\n   color = ~binpal(per_2022_usd)\n    ,popup = ~ paste0(\n      \"地区：\", name, \"&lt;br/&gt;\",\n      \"&lt;hr/&gt;\",\n      \"人均gpd：\", per_2022_usd, \"（千 美元）\", \"&lt;br/&gt;\"\n      \n    )\n     ,label = lapply(paste0(\n      \"地区：\", \"&lt;b&gt;\", map_sf002$name, \"&lt;/b&gt;\", \"&lt;br/&gt;\",\n      \"人均gpd 美元：\", round(map_sf002$per_2022_usd/1000), \"K &lt;br/&gt;\",\n       \"总gpd 美元：\", round(map_sf002$total_2022_usd), \"M &lt;br/&gt;\"\n\n    ), htmltools::HTML)\n    )%&gt;% addLegend(\n    position = \"bottomright\", title = \"人均gpd(美元)\",\n    pal = pal, values = ~per_2022_usd, opacity = 1.0\n    )\n  \n\n\n\nm  \n\n\n\n\n\n\n\n\n2 resouce:\nhttps://www.gunviolencearchive.org/reports/mass-shooting?page=8&year=2023\n\n\n\n\n\n\n Back to top",
     "crumbs": [
       "Plot",
       "5 Map",
@@ -2585,7 +2585,7 @@
     "href": "intro/1 basic R.html#list-all-packages-on-cran",
     "title": "Basic R",
     "section": "8.7 list all packages on cran",
-    "text": "8.7 list all packages on cran\n\n\nCode\ncran_pacakge_num=available.packages(repos = \"http://cran.us.r-project.org\") |&gt; as.data.frame()\n\n\nAs 2025-03-11 ,there are total library 22161 on cran\n\n\nCode\ncran_pacakge_num|&gt; gt() |&gt; opt_interactive()",
+    "text": "8.7 list all packages on cran\n\n\nCode\ncran_pacakge_num=available.packages(repos = \"http://cran.us.r-project.org\") |&gt; as.data.frame()\n\n\nAs 2025-04-14 ,there are total library 22301 on cran\n\n\nCode\ncran_pacakge_num|&gt; gt() |&gt; opt_interactive()",
     "crumbs": [
       "Intro",
       "Basic R"
@@ -2596,7 +2596,7 @@
     "href": "intro/1 basic R.html#check-local-installed-old-package-compare-with-cran",
     "title": "Basic R",
     "section": "8.8 check local installed old package compare with cran",
-    "text": "8.8 check local installed old package compare with cran\n\n\nCode\nold.packages(repos = \"http://cran.us.r-project.org\")\n\n\n           Package     \nhttr2      \"httr2\"     \nplotly     \"plotly\"    \nquantreg   \"quantreg\"  \nRcppTOML   \"RcppTOML\"  \nreadxl     \"readxl\"    \nreticulate \"reticulate\"\nunits      \"units\"     \n           LibPath                                                               \nhttr2      \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\nplotly     \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\nquantreg   \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\nRcppTOML   \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\nreadxl     \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\nreticulate \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\nunits      \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\n           Installed Built   ReposVer  \nhttr2      \"1.1.0\"   \"4.4.1\" \"1.1.1\"   \nplotly     \"4.10.2\"  \"4.4.1\" \"4.10.4\"  \nquantreg   \"6.00\"    \"4.4.1\" \"6.1\"     \nRcppTOML   \"0.2.2\"   \"4.4.0\" \"0.2.3\"   \nreadxl     \"1.4.4\"   \"4.4.1\" \"1.4.5\"   \nreticulate \"1.41.0\"  \"4.4.1\" \"1.41.0.1\"\nunits      \"0.8-5\"   \"4.4.0\" \"0.8-6\"   \n           Repository                                \nhttr2      \"http://cran.us.r-project.org/src/contrib\"\nplotly     \"http://cran.us.r-project.org/src/contrib\"\nquantreg   \"http://cran.us.r-project.org/src/contrib\"\nRcppTOML   \"http://cran.us.r-project.org/src/contrib\"\nreadxl     \"http://cran.us.r-project.org/src/contrib\"\nreticulate \"http://cran.us.r-project.org/src/contrib\"\nunits      \"http://cran.us.r-project.org/src/contrib\"",
+    "text": "8.8 check local installed old package compare with cran\n\n\nCode\nold.packages(repos = \"http://cran.us.r-project.org\")\n\n\n             Package       \narrow        \"arrow\"       \nAsioHeaders  \"AsioHeaders\" \nbigD         \"bigD\"        \nblastula     \"blastula\"    \nbroom        \"broom\"       \ncards        \"cards\"       \ncluster      \"cluster\"     \ncommonmark   \"commonmark\"  \ndoBy         \"doBy\"        \nduckdb       \"duckdb\"      \nforeign      \"foreign\"     \nfs           \"fs\"          \nfuture       \"future\"      \ngdtools      \"gdtools\"     \ngemini.R     \"gemini.R\"    \ngert         \"gert\"        \nggmap        \"ggmap\"       \nggplot2      \"ggplot2\"     \nhttr2        \"httr2\"       \njpeg         \"jpeg\"        \nknitr        \"knitr\"       \nlater        \"later\"       \nlattice      \"lattice\"     \nlme4         \"lme4\"        \nmagick       \"magick\"      \nmarkdown     \"markdown\"    \nMatrix       \"Matrix\"      \nMatrixModels \"MatrixModels\"\nmgcv         \"mgcv\"        \nnlme         \"nlme\"        \nnloptr       \"nloptr\"      \npak          \"pak\"         \nparallelly   \"parallelly\"  \npillar       \"pillar\"      \npkgbuild     \"pkgbuild\"    \nps           \"ps\"          \nqpdf         \"qpdf\"        \nquantmod     \"quantmod\"    \nquantreg     \"quantreg\"    \nragg         \"ragg\"        \nraster       \"raster\"      \nRcppTOML     \"RcppTOML\"    \nRCurl        \"RCurl\"       \nRdpack       \"Rdpack\"      \nreadxl       \"readxl\"      \nrenv         \"renv\"        \nrlang        \"rlang\"       \nsass         \"sass\"        \nsf           \"sf\"          \nstringi      \"stringi\"     \nsummarytools \"summarytools\"\nsystemfonts  \"systemfonts\" \nterra        \"terra\"       \ntesseract    \"tesseract\"   \ntextutils    \"textutils\"   \ntidygeocoder \"tidygeocoder\"\ntzdb         \"tzdb\"        \nunits        \"units\"       \nV8           \"V8\"          \nwebsocket    \"websocket\"   \nwritexl      \"writexl\"     \nxfun         \"xfun\"        \nzoo          \"zoo\"         \n             LibPath                                                               \narrow        \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\nAsioHeaders  \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\nbigD         \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\nblastula     \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\nbroom        \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\ncards        \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\ncluster      \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\ncommonmark   \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\ndoBy         \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\nduckdb       \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\nforeign      \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\nfs           \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\nfuture       \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\ngdtools      \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\ngemini.R     \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\ngert         \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\nggmap        \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\nggplot2      \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\nhttr2        \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\njpeg         \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\nknitr        \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\nlater        \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\nlattice      \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\nlme4         \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\nmagick       \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\nmarkdown     \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\nMatrix       \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\nMatrixModels \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\nmgcv         \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\nnlme         \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\nnloptr       \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\npak          \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\nparallelly   \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\npillar       \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\npkgbuild     \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\nps           \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\nqpdf         \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\nquantmod     \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\nquantreg     \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\nragg         \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\nraster       \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\nRcppTOML     \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\nRCurl        \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\nRdpack       \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\nreadxl       \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\nrenv         \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\nrlang        \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\nsass         \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\nsf           \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\nstringi      \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\nsummarytools \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\nsystemfonts  \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\nterra        \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\ntesseract    \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\ntextutils    \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\ntidygeocoder \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\ntzdb         \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\nunits        \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\nV8           \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\nwebsocket    \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\nwritexl      \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\nxfun         \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\nzoo          \"/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library\"\n             Installed   Built   ReposVer   \narrow        \"19.0.1\"    \"4.4.1\" \"19.0.1.1\" \nAsioHeaders  \"1.22.1-2\"  \"4.4.1\" \"1.28.2-1\" \nbigD         \"0.3.0\"     \"4.4.1\" \"0.3.1\"    \nblastula     \"0.3.5\"     \"4.4.0\" \"0.3.6\"    \nbroom        \"1.0.7\"     \"4.4.1\" \"1.0.8\"    \ncards        \"0.5.1\"     \"4.4.1\" \"0.6.0\"    \ncluster      \"2.1.8\"     \"4.4.1\" \"2.1.8.1\"  \ncommonmark   \"1.9.2\"     \"4.4.1\" \"1.9.5\"    \ndoBy         \"4.6.25\"    \"4.4.1\" \"4.6.26\"   \nduckdb       \"1.2.0\"     \"4.4.1\" \"1.2.1\"    \nforeign      \"0.8-88\"    \"4.4.1\" \"0.8-90\"   \nfs           \"1.6.5\"     \"4.4.1\" \"1.6.6\"    \nfuture       \"1.34.0\"    \"4.4.0\" \"1.40.0\"   \ngdtools      \"0.4.1\"     \"4.4.1\" \"0.4.2\"    \ngemini.R     \"0.8.0\"     \"4.4.1\" \"0.12.0\"   \ngert         \"2.1.4\"     \"4.4.1\" \"2.1.5\"    \nggmap        \"4.0.0\"     \"4.4.0\" \"4.0.1\"    \nggplot2      \"3.5.1\"     \"4.4.0\" \"3.5.2\"    \nhttr2        \"1.1.1\"     \"4.4.1\" \"1.1.2\"    \njpeg         \"0.1-10\"    \"4.4.0\" \"0.1-11\"   \nknitr        \"1.49\"      \"4.4.1\" \"1.50\"     \nlater        \"1.4.1\"     \"4.4.1\" \"1.4.2\"    \nlattice      \"0.22-6\"    \"4.4.1\" \"0.22-7\"   \nlme4         \"1.1-36\"    \"4.4.1\" \"1.1-37\"   \nmagick       \"2.8.5\"     \"4.4.1\" \"2.8.6\"    \nmarkdown     \"1.13\"      \"4.4.0\" \"2.0\"      \nMatrix       \"1.7-2\"     \"4.4.1\" \"1.7-3\"    \nMatrixModels \"0.5-3\"     \"4.4.0\" \"0.5-4\"    \nmgcv         \"1.9-1\"     \"4.4.1\" \"1.9-3\"    \nnlme         \"3.1-167\"   \"4.4.1\" \"3.1-168\"  \nnloptr       \"2.1.1\"     \"4.4.0\" \"2.2.1\"    \npak          \"0.8.0.1\"   \"4.4.1\" \"0.8.0.2\"  \nparallelly   \"1.42.0\"    \"4.4.1\" \"1.43.0\"   \npillar       \"1.10.1\"    \"4.4.1\" \"1.10.2\"   \npkgbuild     \"1.4.6\"     \"4.4.1\" \"1.4.7\"    \nps           \"1.9.0\"     \"4.4.1\" \"1.9.1\"    \nqpdf         \"1.3.4\"     \"4.4.1\" \"1.3.5\"    \nquantmod     \"0.4.26\"    \"4.4.0\" \"0.4.27\"   \nquantreg     \"6.00\"      \"4.4.1\" \"6.1\"      \nragg         \"1.3.3\"     \"4.4.1\" \"1.4.0\"    \nraster       \"3.6-31\"    \"4.4.1\" \"3.6-32\"   \nRcppTOML     \"0.2.2\"     \"4.4.0\" \"0.2.3\"    \nRCurl        \"1.98-1.16\" \"4.4.0\" \"1.98-1.17\"\nRdpack       \"2.6.2\"     \"4.4.1\" \"2.6.4\"    \nreadxl       \"1.4.4\"     \"4.4.1\" \"1.4.5\"    \nrenv         \"1.1.2\"     \"4.4.1\" \"1.1.4\"    \nrlang        \"1.1.5\"     \"4.4.1\" \"1.1.6\"    \nsass         \"0.4.9\"     \"4.4.0\" \"0.4.10\"   \nsf           \"1.0-19\"    \"4.4.1\" \"1.0-20\"   \nstringi      \"1.8.4\"     \"4.4.0\" \"1.8.7\"    \nsummarytools \"1.1.1\"     \"4.4.1\" \"1.1.3\"    \nsystemfonts  \"1.2.1\"     \"4.4.1\" \"1.2.2\"    \nterra        \"1.8-29\"    \"4.4.1\" \"1.8-42\"   \ntesseract    \"5.2.2\"     \"4.4.1\" \"5.2.3\"    \ntextutils    \"0.4-1\"     \"4.4.0\" \"0.4-2\"    \ntidygeocoder \"1.0.5\"     \"4.4.0\" \"1.0.6\"    \ntzdb         \"0.4.0\"     \"4.4.0\" \"0.5.0\"    \nunits        \"0.8-5\"     \"4.4.0\" \"0.8-7\"    \nV8           \"6.0.1\"     \"4.4.1\" \"6.0.3\"    \nwebsocket    \"1.4.2\"     \"4.4.1\" \"1.4.4\"    \nwritexl      \"1.5.1\"     \"4.4.1\" \"1.5.3\"    \nxfun         \"0.51\"      \"4.4.1\" \"0.52\"     \nzoo          \"1.8-13\"    \"4.4.1\" \"1.8-14\"   \n             Repository                                \narrow        \"http://cran.us.r-project.org/src/contrib\"\nAsioHeaders  \"http://cran.us.r-project.org/src/contrib\"\nbigD         \"http://cran.us.r-project.org/src/contrib\"\nblastula     \"http://cran.us.r-project.org/src/contrib\"\nbroom        \"http://cran.us.r-project.org/src/contrib\"\ncards        \"http://cran.us.r-project.org/src/contrib\"\ncluster      \"http://cran.us.r-project.org/src/contrib\"\ncommonmark   \"http://cran.us.r-project.org/src/contrib\"\ndoBy         \"http://cran.us.r-project.org/src/contrib\"\nduckdb       \"http://cran.us.r-project.org/src/contrib\"\nforeign      \"http://cran.us.r-project.org/src/contrib\"\nfs           \"http://cran.us.r-project.org/src/contrib\"\nfuture       \"http://cran.us.r-project.org/src/contrib\"\ngdtools      \"http://cran.us.r-project.org/src/contrib\"\ngemini.R     \"http://cran.us.r-project.org/src/contrib\"\ngert         \"http://cran.us.r-project.org/src/contrib\"\nggmap        \"http://cran.us.r-project.org/src/contrib\"\nggplot2      \"http://cran.us.r-project.org/src/contrib\"\nhttr2        \"http://cran.us.r-project.org/src/contrib\"\njpeg         \"http://cran.us.r-project.org/src/contrib\"\nknitr        \"http://cran.us.r-project.org/src/contrib\"\nlater        \"http://cran.us.r-project.org/src/contrib\"\nlattice      \"http://cran.us.r-project.org/src/contrib\"\nlme4         \"http://cran.us.r-project.org/src/contrib\"\nmagick       \"http://cran.us.r-project.org/src/contrib\"\nmarkdown     \"http://cran.us.r-project.org/src/contrib\"\nMatrix       \"http://cran.us.r-project.org/src/contrib\"\nMatrixModels \"http://cran.us.r-project.org/src/contrib\"\nmgcv         \"http://cran.us.r-project.org/src/contrib\"\nnlme         \"http://cran.us.r-project.org/src/contrib\"\nnloptr       \"http://cran.us.r-project.org/src/contrib\"\npak          \"http://cran.us.r-project.org/src/contrib\"\nparallelly   \"http://cran.us.r-project.org/src/contrib\"\npillar       \"http://cran.us.r-project.org/src/contrib\"\npkgbuild     \"http://cran.us.r-project.org/src/contrib\"\nps           \"http://cran.us.r-project.org/src/contrib\"\nqpdf         \"http://cran.us.r-project.org/src/contrib\"\nquantmod     \"http://cran.us.r-project.org/src/contrib\"\nquantreg     \"http://cran.us.r-project.org/src/contrib\"\nragg         \"http://cran.us.r-project.org/src/contrib\"\nraster       \"http://cran.us.r-project.org/src/contrib\"\nRcppTOML     \"http://cran.us.r-project.org/src/contrib\"\nRCurl        \"http://cran.us.r-project.org/src/contrib\"\nRdpack       \"http://cran.us.r-project.org/src/contrib\"\nreadxl       \"http://cran.us.r-project.org/src/contrib\"\nrenv         \"http://cran.us.r-project.org/src/contrib\"\nrlang        \"http://cran.us.r-project.org/src/contrib\"\nsass         \"http://cran.us.r-project.org/src/contrib\"\nsf           \"http://cran.us.r-project.org/src/contrib\"\nstringi      \"http://cran.us.r-project.org/src/contrib\"\nsummarytools \"http://cran.us.r-project.org/src/contrib\"\nsystemfonts  \"http://cran.us.r-project.org/src/contrib\"\nterra        \"http://cran.us.r-project.org/src/contrib\"\ntesseract    \"http://cran.us.r-project.org/src/contrib\"\ntextutils    \"http://cran.us.r-project.org/src/contrib\"\ntidygeocoder \"http://cran.us.r-project.org/src/contrib\"\ntzdb         \"http://cran.us.r-project.org/src/contrib\"\nunits        \"http://cran.us.r-project.org/src/contrib\"\nV8           \"http://cran.us.r-project.org/src/contrib\"\nwebsocket    \"http://cran.us.r-project.org/src/contrib\"\nwritexl      \"http://cran.us.r-project.org/src/contrib\"\nxfun         \"http://cran.us.r-project.org/src/contrib\"\nzoo          \"http://cran.us.r-project.org/src/contrib\"",
     "crumbs": [
       "Intro",
       "Basic R"
@@ -3201,7 +3201,7 @@
     "href": "Publish/2 quarto/1 quarto intro.html#step-3.-put-following-on-code-chunk",
     "title": "quarto introduction",
     "section": "step 3. put following on code chunk:",
-    "text": "step 3. put following on code chunk:\n{r, attr.output='.details summary=\"sessionInfo()\"'}\n\n\nCode\nsessionInfo()\n\n\nsessionInfo()\nR version 4.4.1 (2024-06-14)\nPlatform: aarch64-apple-darwin20\nRunning under: macOS 15.3.1\n\nMatrix products: default\nBLAS:   /Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/lib/libRblas.0.dylib \nLAPACK: /Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.0\n\nlocale:\n[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8\n\ntime zone: Asia/Shanghai\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nother attached packages:\n[1] reticulate_1.41.0 quarto_1.4.4     \n\nloaded via a namespace (and not attached):\n [1] digest_0.6.37     later_1.4.1       fastmap_1.2.0     Matrix_1.7-2     \n [5] xfun_0.51         lattice_0.22-6    knitr_1.49        htmltools_0.5.8.1\n [9] png_0.1-8         rmarkdown_2.29    ps_1.9.0          cli_3.6.4        \n[13] processx_3.8.6    grid_4.4.1        compiler_4.4.1    rstudioapi_0.17.1\n[17] tools_4.4.1       evaluate_1.0.3    Rcpp_1.0.14       yaml_2.3.10      \n[21] rlang_1.1.5       jsonlite_1.9.1    htmlwidgets_1.6.4",
+    "text": "step 3. put following on code chunk:\n{r, attr.output='.details summary=\"sessionInfo()\"'}\n\n\nCode\nsessionInfo()\n\n\nsessionInfo()\nR version 4.4.1 (2024-06-14)\nPlatform: aarch64-apple-darwin20\nRunning under: macOS 15.3.2\n\nMatrix products: default\nBLAS:   /Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/lib/libRblas.0.dylib \nLAPACK: /Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.0\n\nlocale:\n[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8\n\ntime zone: Asia/Shanghai\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nother attached packages:\n[1] reticulate_1.41.0 quarto_1.4.4     \n\nloaded via a namespace (and not attached):\n [1] digest_0.6.37       later_1.4.1         fastmap_1.2.0      \n [4] Matrix_1.7-2        xfun_0.51           lattice_0.22-6     \n [7] knitr_1.49          htmltools_0.5.8.1   png_0.1-8          \n[10] rmarkdown_2.29      ps_1.9.0            cli_3.6.4          \n[13] processx_3.8.6.9000 grid_4.4.1          compiler_4.4.1     \n[16] rstudioapi_0.17.1   tools_4.4.1         evaluate_1.0.3     \n[19] Rcpp_1.0.14         yaml_2.3.10         rlang_1.1.5        \n[22] jsonlite_2.0.0      htmlwidgets_1.6.4",
     "crumbs": [
       "Publish",
       "2 quarto",
@@ -3394,6 +3394,364 @@
     "crumbs": [
       "data manipulation",
       "input & ouput in R"
+    ]
+  },
+  {
+    "objectID": "Plot/5 Map/5 world map.html",
+    "href": "Plot/5 Map/5 world map.html",
+    "title": "World map with GPD per capita",
+    "section": "",
+    "text": "1 Download data\n\n\nCode\nlibrary(tidyverse)\nlibrary(rvest)\nlibrary(chromote)\nlibrary(janitor)\nlibrary(tidygeocoder)\nlibrary(leaflet)\nlibrary(sf)\n\n\nworld geojson\n\n\nCode\n# From http://data.okfn.org/data/datasets/geo-boundaries-world-110m\n#countries &lt;- sf::read_sf(\"https://rstudio.github.io/leaflet/json/countries.geojson\")\ncountries &lt;- sf::read_sf(\"https://raw.githubusercontent.com/johan/world.geo.json/refs/heads/master/countries.geo.json\")\n\n\nworld gpd per capita data\n\n\nCode\nworld_gdp_per_capita=read.csv(\"https://gist.githubusercontent.com/vr-23/d6a4a0aadcf3a2640091ca43c25e1955/raw/57b9cb74b24dc87b489c74cc4e11209cd5720642/world-data-2023.csv\")\n\n\n\n\nCode\n# data source: https://data.worldbank.org/\ndownload.file(\"https://api.worldbank.org/v2/en/indicator/NY.GDP.PCAP.CD?downloadformat=csv\",destfile='world_data.zip')\n\n\n\n\nCode\nunzip('world_data.zip')\n\n\n\n\nCode\nworld_gdp_per_capita=read.csv(\"API_NY.GDP.PCAP.CD_DS2_en_csv_v2_76317.csv\",skip = 3) |&gt; clean_names()\n\n\n\n\nCode\ndata001=countries |&gt; left_join(world_gdp_per_capita,by = join_by(id ==country_code))\n\n\n\n\nCode\npal &lt;- colorNumeric(palette = c('red','orange','yellow','pink','blue', 'green'),\n                    domain = data001$x2023\n  )\n\n\n\nm &lt;- leaflet(data001) %&gt;%\n   # Add default OpenStreetMap map tiles\n  addTiles() %&gt;%  \n   addPolygons(smoothFactor = 0.3, fillOpacity = 0.5,weight = 1,\n    fillColor = ~ pal(x2023)\n    ,color = ~pal(x2023)\n   #color = ~binpal(x2023)\n    ,popup = ~ paste0(\n      \"地区：\", name, \"&lt;br/&gt;\",\n      \"&lt;hr/&gt;\",\n      \"人均gpd：\", x2023, \"（美元）\", \"&lt;br/&gt;\"\n      \n    )\n     ,label = lapply(paste0(\n      \"地区：\", \"&lt;b&gt;\", data001$country_name, \"&lt;/b&gt;\", \"&lt;br/&gt;\",\n      \"人均gpd 美元：\", round(data001$x2023), \" USD&lt;br/&gt;\"\n     # , \"总gpd 美元：\", round(data001$total_2022_usd), \"M &lt;br/&gt;\"\n\n    ), htmltools::HTML)\n    )%&gt;% addLegend(\n    position = \"bottomright\", title = \"人均gpd(美元)\",\n    pal = pal, values = ~x2023, opacity = 1.0\n    )\n\n\n\n\nCode\nm  |&gt;  setView(lng = -10, lat = 45, zoom = 2)\n\n\n\n\n\n\n\n\n2 resouce:\n\n\n\n\n\n\n Back to top",
+    "crumbs": [
+      "Plot",
+      "5 Map",
+      "World map with GPD per capita"
+    ]
+  },
+  {
+    "objectID": "intro/1 basic R.html#select-python-version",
+    "href": "intro/1 basic R.html#select-python-version",
+    "title": "Basic R",
+    "section": "15.1 select python version",
+    "text": "15.1 select python version\ncheck whether python is available\n\n\nCode\nreticulate::py_available()\n\n\n[1] FALSE\n\n\ncheck python version\n\n\nCode\nreticulate::py_config()\n\n\npython:         /Library/Frameworks/Python.framework/Versions/3.13/bin/python3\nlibpython:      /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/config-3.13-darwin/libpython3.13.dylib\npythonhome:     /Library/Frameworks/Python.framework/Versions/3.13:/Library/Frameworks/Python.framework/Versions/3.13\nversion:        3.13.2 (v3.13.2:4f8bb3947cf, Feb  4 2025, 11:51:10) [Clang 15.0.0 (clang-1500.3.9.4)]\nnumpy:          /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/numpy\nnumpy_version:  2.1.3\n\nNOTE: Python version was forced by RETICULATE_PYTHON",
+    "crumbs": [
+      "Intro",
+      "Basic R"
+    ]
+  },
+  {
+    "objectID": "intro/1 basic R.html#select-python-version-1",
+    "href": "intro/1 basic R.html#select-python-version-1",
+    "title": "Basic R",
+    "section": "15.2 select python version",
+    "text": "15.2 select python version\nSet up Python:Using python 3.11 instead of 3.13. It need to restart first\n\n\nCode\nSys.setenv(RETICULATE_PYTHON = \"/Library/Frameworks/Python.framework/Versions/3.11/bin/python3.11\")\nlibrary(reticulate)\nuse_python(\"/Library/Frameworks/Python.framework/Versions/3.11/bin/python3.11\")\n\n\n\n\nCode\nfrom platform import python_version\nprint(python_version())",
+    "crumbs": [
+      "Intro",
+      "Basic R"
+    ]
+  },
+  {
+    "objectID": "intro/1 basic R.html#run-python-in-r",
+    "href": "intro/1 basic R.html#run-python-in-r",
+    "title": "Basic R",
+    "section": "15.3 run python in R",
+    "text": "15.3 run python in R\n\n\nCode\nsource_python(\"flights.py\")\n\n\n\n\nCode\nsessionInfo()\n\n\nsessionInfo()\nR version 4.4.1 (2024-06-14)\nPlatform: aarch64-apple-darwin20\nRunning under: macOS 15.4\n\nMatrix products: default\nBLAS:   /Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/lib/libRblas.0.dylib \nLAPACK: /Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.0\n\nlocale:\n[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8\n\ntime zone: Asia/Bangkok\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nother attached packages:\n [1] R.utils_2.13.0    R.oo_1.27.0       R.methodsS3_1.8.2 gt_1.0.0         \n [5] janitor_2.2.1     rvest_1.0.4       lubridate_1.9.4   forcats_1.0.0    \n [9] stringr_1.5.1     dplyr_1.1.4       purrr_1.0.4       readr_2.1.5      \n[13] tidyr_1.3.1       tibble_3.2.1      ggplot2_3.5.1     tidyverse_2.0.0  \n\nloaded via a namespace (and not attached):\n [1] gtable_0.3.6      xfun_0.51         htmlwidgets_1.6.4 websocket_1.4.2  \n [5] processx_3.8.6    lattice_0.22-6    callr_3.7.6       tzdb_0.4.0       \n [9] vctrs_0.6.5       tools_4.4.1       pak_0.8.0.1       crosstalk_1.2.1  \n[13] ps_1.9.0          generics_0.1.3    curl_6.2.2        pkgconfig_2.0.3  \n[17] Matrix_1.7-2      lifecycle_1.0.4   compiler_4.4.1    munsell_0.5.1    \n[21] chromote_0.5.0    snakecase_0.11.1  htmltools_0.5.8.1 sass_0.4.9       \n[25] yaml_2.3.10       later_1.4.1       pillar_1.10.1     tidyselect_1.2.1 \n[29] digest_0.6.37     stringi_1.8.4     fastmap_1.2.0     grid_4.4.1       \n[33] colorspace_2.1-1  cli_3.6.4         magrittr_2.0.3    utf8_1.2.4       \n[37] withr_3.0.2       reactR_0.6.1      scales_1.3.0      promises_1.3.2   \n[41] timechange_0.3.0  rmarkdown_2.29    httr_1.4.7        reticulate_1.42.0\n[45] png_0.1-8         hms_1.1.3         evaluate_1.0.3    knitr_1.49       \n[49] rlang_1.1.5       Rcpp_1.0.14       glue_1.8.0        reactable_0.4.4  \n[53] xml2_1.3.8        rstudioapi_0.17.1 jsonlite_2.0.0    R6_2.6.1",
+    "crumbs": [
+      "Intro",
+      "Basic R"
+    ]
+  },
+  {
+    "objectID": "Publish/2 quarto/1 quarto intro.html#embed-bilibili",
+    "href": "Publish/2 quarto/1 quarto intro.html#embed-bilibili",
+    "title": "quarto introduction",
+    "section": "embed bilibili",
+    "text": "embed bilibili",
+    "crumbs": [
+      "Publish",
+      "2 quarto",
+      "quarto introduction"
+    ]
+  },
+  {
+    "objectID": "data manipulation/1 input ouput.html#read-txt",
+    "href": "data manipulation/1 input ouput.html#read-txt",
+    "title": "input & ouput in R",
+    "section": "1.9 read txt",
+    "text": "1.9 read txt\n\n\nCode\nmy_data &lt;- read.delim(\"text.txt\")\nmy_data\n\n\n  X.hello.world.nits.time..\n1    hello world\\nits time!",
+    "crumbs": [
+      "data manipulation",
+      "input & ouput in R"
+    ]
+  },
+  {
+    "objectID": "Publish/2 quarto/2 quarto blog.html#create-password-for-blog",
+    "href": "Publish/2 quarto/2 quarto blog.html#create-password-for-blog",
+    "title": "quarto blog",
+    "section": "",
+    "text": "Code\nremotes::install_github(\"nikitoshina/staticryptR\")\n\n\n\n\n\n\n\nCode\nbrew install node\n\n\n\n\n\n\n\nCode\nnpm install -g staticrypt\n\n\n\n\n\n\n\nCode\n# _quarto.yml\nproject:\n  output-dir: \"./_output\"\n  post-render: encrypt.r\n\n\n\n\n\npassword protect all website\n\n\nCode\n# encrypt.r\nstaticryptR::staticryptr(\n  files = \"_output/\",\n  directory = \".\",\n  password = \"123123\",\n  short = TRUE,\n  recursive = TRUE,\n  template_color_primary = \"#6667AB\",\n  template_color_secondary = \"#f9f9f3\",\n  template_title = \"Your Document Title\",\n  template_instructions = \"Enter the password or contact example@email.com\",\n  template_button = \"Access\"\n)\n\n\npassword protect one posts\n\n\nCode\nstaticryptR::staticryptr(\n  files = c(\"posts/youtube_yt-dlp/\"),\n  directory = c(\"docs/posts/\"),\n  password = \"123123\",\n  short = TRUE,\n  recursive = TRUE,\n  template_color_primary = \"#6667AB\",\n  template_color_secondary = \"#f9f9f3\",\n  template_title = \"Your Document Title\",\n  template_instructions = \"Enter the password or contact TonyJCing@outlook.com\",\n  template_button = \"Access\",\n  print_cmd = TRUE\n)",
+    "crumbs": [
+      "Publish",
+      "2 quarto",
+      "quarto blog"
+    ]
+  },
+  {
+    "objectID": "Publish/1 Shiny/4 shiny in quarto doc.html",
+    "href": "Publish/1 Shiny/4 shiny in quarto doc.html",
+    "title": "Shiny in quarto doc",
+    "section": "",
+    "text": "---\n\nformat: html server: shiny\n  \n---",
+    "crumbs": [
+      "Publish",
+      "1 Shiny",
+      "Shiny in quarto doc"
+    ]
+  },
+  {
+    "objectID": "Publish/1 Shiny/4 shiny in quarto doc.html#server",
+    "href": "Publish/1 Shiny/4 shiny in quarto doc.html#server",
+    "title": "Shiny in quarto doc",
+    "section": "2.1 server",
+    "text": "2.1 server\n\n\nCode\noutput$output_plot &lt;- shiny::renderPlot({\n  palmerpenguins::penguins |&gt; \n    dplyr::filter(\n      species %in% input$select_species,\n      body_mass_g &gt;= input$slider_weight\n    ) |&gt; \n    ggplot(\n      aes(\n        x = bill_length_mm, \n        y = flipper_length_mm, \n        fill = species\n      )\n    ) +\n    geom_point(\n      shape = 21, \n      size = 6, \n      col = 'black'\n    ) +\n    labs(\n      x = 'Bill length (in mm)',\n      y = 'Flipper length (in mm)',\n      fill = 'Species',\n      title = 'Penguins from the Palmer Archipelago'\n    ) +\n    theme_minimal(\n      base_size = 20, \n      base_family = 'Source Sans Pro'\n    ) +\n    scale_fill_manual(\n      values = c(\n        Adelie = '#0072B2', \n        Gentoo = '#009E73',\n        Chinstrap = '#CC79A7'\n      ),\n    ) +\n    coord_cartesian(\n      xlim = c(30, 60), \n      ylim = c(170, 240)\n    )\n})",
+    "crumbs": [
+      "Publish",
+      "1 Shiny",
+      "Shiny in quarto doc"
+    ]
+  },
+  {
+    "objectID": "Publish/1 Shiny/4 shiny in quarto doc.html#ui",
+    "href": "Publish/1 Shiny/4 shiny in quarto doc.html#ui",
+    "title": "Shiny in quarto doc",
+    "section": "2.2 ui",
+    "text": "2.2 ui\n\n\nCode\nlayout_sidebar(\n  height = 600,\n  sidebar =  sidebar(\n    shiny::selectizeInput(\n      'select_species', \n      'Highlighted Species', \n      choices = c('Adelie', 'Chinstrap', 'Gentoo'),\n      selected = c('Adelie', 'Chinstrap', 'Gentoo'),\n      multiple = TRUE\n    ),\n    shiny::sliderInput(\n      'slider_weight',\n      'Minimum Weight (g)',\n      min = 1000,\n      max = 5000,\n      value = 3000\n    )\n  ),\n  shiny::plotOutput('output_plot')\n)",
+    "crumbs": [
+      "Publish",
+      "1 Shiny",
+      "Shiny in quarto doc"
+    ]
+  },
+  {
+    "objectID": "Plot/1 ggplot2.html#patchwork",
+    "href": "Plot/1 ggplot2.html#patchwork",
+    "title": "ggplot2 in R",
+    "section": "13.1 patchwork",
+    "text": "13.1 patchwork\nThe goal of patchwork is to make it ridiculously simple to combine separate ggplots into the same graphic.\n\n\nCode\n#pak::pak('patchwork')\n\n\n\n\nCode\nlibrary(ggplot2)\nlibrary(patchwork)\n\np1 &lt;- ggplot(mtcars) + geom_point(aes(mpg, disp))\np2 &lt;- ggplot(mtcars) + geom_boxplot(aes(gear, disp, group = gear))\n\np3 &lt;- ggplot(mtcars) + geom_smooth(aes(disp, qsec))\np4 &lt;- ggplot(mtcars) + geom_bar(aes(carb))\n\n(p1 | p2 | p3) /\n      p4",
+    "crumbs": [
+      "Plot",
+      "ggplot2 in R"
+    ]
+  },
+  {
+    "objectID": "Plot/1 ggplot2.html#marquee",
+    "href": "Plot/1 ggplot2.html#marquee",
+    "title": "ggplot2 in R",
+    "section": "13.3 marquee",
+    "text": "13.3 marquee",
+    "crumbs": [
+      "Plot",
+      "ggplot2 in R"
+    ]
+  },
+  {
+    "objectID": "Plot/1 ggplot2.html#ggiraph",
+    "href": "Plot/1 ggplot2.html#ggiraph",
+    "title": "ggplot2 in R",
+    "section": "13.4 ggiraph",
+    "text": "13.4 ggiraph",
+    "crumbs": [
+      "Plot",
+      "ggplot2 in R"
+    ]
+  },
+  {
+    "objectID": "Plot/1 ggplot2.html#geomtextpath",
+    "href": "Plot/1 ggplot2.html#geomtextpath",
+    "title": "ggplot2 in R",
+    "section": "13.5 geomtextpath",
+    "text": "13.5 geomtextpath",
+    "crumbs": [
+      "Plot",
+      "ggplot2 in R"
+    ]
+  },
+  {
+    "objectID": "Plot/1 ggplot2.html#ggpattern",
+    "href": "Plot/1 ggplot2.html#ggpattern",
+    "title": "ggplot2 in R",
+    "section": "13.6 ggpattern",
+    "text": "13.6 ggpattern",
+    "crumbs": [
+      "Plot",
+      "ggplot2 in R"
+    ]
+  },
+  {
+    "objectID": "Plot/1 ggplot2.html#ggbump",
+    "href": "Plot/1 ggplot2.html#ggbump",
+    "title": "ggplot2 in R",
+    "section": "13.7 ggbump",
+    "text": "13.7 ggbump",
+    "crumbs": [
+      "Plot",
+      "ggplot2 in R"
+    ]
+  },
+  {
+    "objectID": "Plot/1 ggplot2.html#gghighlight",
+    "href": "Plot/1 ggplot2.html#gghighlight",
+    "title": "ggplot2 in R",
+    "section": "13.8 gghighlight",
+    "text": "13.8 gghighlight",
+    "crumbs": [
+      "Plot",
+      "ggplot2 in R"
+    ]
+  },
+  {
+    "objectID": "Plot/1 ggplot2.html#ggdist",
+    "href": "Plot/1 ggplot2.html#ggdist",
+    "title": "ggplot2 in R",
+    "section": "13.9 ggdist",
+    "text": "13.9 ggdist",
+    "crumbs": [
+      "Plot",
+      "ggplot2 in R"
+    ]
+  },
+  {
+    "objectID": "Plot/1 ggplot2.html#legendry",
+    "href": "Plot/1 ggplot2.html#legendry",
+    "title": "ggplot2 in R",
+    "section": "13.2 legendry",
+    "text": "13.2 legendry\nThe goal of legendry is to provide additional guide functionality to the ggplot2 ecosystem.\n\n\nCode\n#pak::pak('legendry')\n\n\n\n\nCode\nlibrary(ggplot2)\nlibrary(legendry)\n\n\n\n\nCode\nbase &lt;- ggplot(mpg, aes(displ, hwy, colour = cty)) +\n  geom_point() +\n  labs(\n    x = \"Engine displacement\",\n    y = \"Highway miles per gallon\",\n    col = \"City miles\\nper gallon\"\n  ) +\n  theme(axis.line = element_line())\n\n\n\n\nCode\n# A partial guide to display a bracket\nefficient_bracket &lt;- primitive_bracket(\n  # Keys determine what is displayed\n  key = key_range_manual(start = 25, end = Inf, name = \"Efficient\"),\n  bracket = \"square\",\n  # We want vertical text\n  theme = theme(\n    legend.text = element_text(angle = 90, hjust = 0.5),\n    axis.text.y.left = element_text(angle = 90, hjust = 0.5)\n  )\n)\n\nbase + guides(y = guide_axis_stack(\"axis\", efficient_bracket))",
+    "crumbs": [
+      "Plot",
+      "ggplot2 in R"
+    ]
+  },
+  {
+    "objectID": "intro/1 basic R.html#using-map-funcation-for-loop",
+    "href": "intro/1 basic R.html#using-map-funcation-for-loop",
+    "title": "Basic R",
+    "section": "5.2 using map() funcation for loop",
+    "text": "5.2 using map() funcation for loop\nThe map functions transform their input by applying a function to each element and returning a vector the same length as the input.\n\n\nCode\nlibrary(tidyverse)\n\n\n\n\nCode\nmap(\n  1:3, \n    \\(x) x+2\n  )\n\n\n[[1]]\n[1] 3\n\n[[2]]\n[1] 4\n\n[[3]]\n[1] 5\n\n\nreturn number vector\n\n\nCode\nmap_dbl(\n  1:3, \n    \\(x) x+2\n  )\n\n\n[1] 3 4 5\n\n\nreturn char vector\n\n\nCode\nmap_chr(\n  1:3, \n    \\(x) x+2\n  )\n\n\n[1] \"3.000000\" \"4.000000\" \"5.000000\"",
+    "crumbs": [
+      "Intro",
+      "Basic R"
+    ]
+  },
+  {
+    "objectID": "Publish/1 Shiny/5 shiny in web browser.html#r",
+    "href": "Publish/1 Shiny/5 shiny in web browser.html#r",
+    "title": "Shiny in web web browser",
+    "section": "2.1 R",
+    "text": "2.1 R\n\n\nCode\nshinylive::export(app_dir=\"my_shiny_app\",output_dir=\"shiny_web\")\nhttps::run_app(\"shiny_web\")",
+    "crumbs": [
+      "Publish",
+      "1 Shiny",
+      "Shiny in web web browser"
+    ]
+  },
+  {
+    "objectID": "Publish/1 Shiny/5 shiny in web browser.html#python",
+    "href": "Publish/1 Shiny/5 shiny in web browser.html#python",
+    "title": "Shiny in web web browser",
+    "section": "2.2 Python",
+    "text": "2.2 Python\n\n\nCode\nshinylive export my_shiny_app shiny_web\ncd site\npython -m http.server 8000",
+    "crumbs": [
+      "Publish",
+      "1 Shiny",
+      "Shiny in web web browser"
+    ]
+  },
+  {
+    "objectID": "Publish/1 Shiny/5 shiny in web browser.html#r-1",
+    "href": "Publish/1 Shiny/5 shiny in web browser.html#r-1",
+    "title": "Shiny in web web browser",
+    "section": "3.1 R",
+    "text": "3.1 R\nshinylive.io/r/",
+    "crumbs": [
+      "Publish",
+      "1 Shiny",
+      "Shiny in web web browser"
+    ]
+  },
+  {
+    "objectID": "Publish/1 Shiny/5 shiny in web browser.html#python-1",
+    "href": "Publish/1 Shiny/5 shiny in web browser.html#python-1",
+    "title": "Shiny in web web browser",
+    "section": "3.2 Python",
+    "text": "3.2 Python\nshinylive.io/py/",
+    "crumbs": [
+      "Publish",
+      "1 Shiny",
+      "Shiny in web web browser"
+    ]
+  },
+  {
+    "objectID": "Publish/1 Shiny/5 shiny in web browser.html#step-1-add-in-header",
+    "href": "Publish/1 Shiny/5 shiny in web browser.html#step-1-add-in-header",
+    "title": "Shiny in web web browser",
+    "section": "",
+    "text": "---\n\nfilters:\n  - shinylive\n  \n---",
+    "crumbs": [
+      "Publish",
+      "1 Shiny",
+      "Shiny in web web browser"
+    ]
+  },
+  {
+    "objectID": "Publish/1 Shiny/5 shiny in web browser.html#step-2-make-shiny-app",
+    "href": "Publish/1 Shiny/5 shiny in web browser.html#step-2-make-shiny-app",
+    "title": "Shiny in web web browser",
+    "section": "",
+    "text": "#| standalone: true\n#| viewerHeight: 600\n#| components: [editor, viewer]\n\nlibrary(shiny)\nlibrary(bslib)\n\ntheme &lt;- bs_theme(font_scale = 1.5)\n\n# Define UI for app that draws a histogram ----\nui &lt;- page_sidebar(theme = theme,\n  sidebar = sidebar(open = \"open\",\n    numericInput(\"n\", \"Sample count\", 100),\n    checkboxInput(\"pause\", \"Pause\", FALSE),\n  ),\n  plotOutput(\"plot\", width=1100)\n)\n\nserver &lt;- function(input, output, session) {\n  data &lt;- reactive({\n    input$resample\n    if (!isTRUE(input$pause)) {\n      invalidateLater(1000)\n    }\n    rnorm(input$n)\n  })\n  \n  output$plot &lt;- renderPlot({\n    hist(data(),\n      breaks = 40,\n      xlim = c(-2, 2),\n      ylim = c(0, 1),\n      lty = \"blank\",\n      xlab = \"value\",\n      freq = FALSE,\n      main = \"\"\n    )\n    \n    x &lt;- seq(from = -2, to = 2, length.out = 500)\n    y &lt;- dnorm(x)\n    lines(x, y, lwd=1.5)\n    \n    lwd &lt;- 5\n    abline(v=0, col=\"red\", lwd=lwd, lty=2)\n    abline(v=mean(data()), col=\"blue\", lwd=lwd, lty=1)\n\n    legend(legend = c(\"Normal\", \"Mean\", \"Sample mean\"),\n      col = c(\"black\", \"red\", \"blue\"),\n      lty = c(1, 2, 1),\n      lwd = c(1, lwd, lwd),\n      x = 1,\n      y = 0.9\n    )\n  }, res=140)\n}\n\n# Create Shiny app ----\nshinyApp(ui = ui, server = server)",
+    "crumbs": [
+      "Publish",
+      "1 Shiny",
+      "Shiny in web web browser"
+    ]
+  },
+  {
+    "objectID": "Publish/1 Shiny/5 shiny in web browser.html",
+    "href": "Publish/1 Shiny/5 shiny in web browser.html",
+    "title": "Shiny in web web browser",
+    "section": "",
+    "text": "Code\nquarto add quarto-ext/shinylive\n\n\n\n\n\n---\n\nfilters:\n  - shinylive\n  \n---\n\n\n\n#| '!! shinylive warning !!': |\n#|   shinylive does not work in self-contained HTML documents.\n#|   Please set `embed-resources: false` in your metadata.\n#| standalone: true\n#| viewerHeight: 600\n#| components: [editor, viewer]\nlibrary(shiny)\nlibrary(bslib)\n\nui &lt;- page_fluid(\n  h2(\"Simple Histogram App\"),\n  layout_sidebar(\n    sidebar = sidebar(\n      sliderInput(\"n\", \"Number of observations:\", min = 10, max = 100, value = 30)\n    ),\n    plotOutput(\"hist\")\n  )\n)\n\nserver &lt;- function(input, output) {\n  output$hist &lt;- renderPlot({\n    hist(rnorm(input$n), main = \"Random Normal Data\", col = \"skyblue\")\n  })\n}\n\nshinyApp(ui, server)",
+    "crumbs": [
+      "Publish",
+      "1 Shiny",
+      "Shiny in web web browser"
+    ]
+  },
+  {
+    "objectID": "Publish/1 Shiny/5 shiny in web browser.html#step-1-add-quarto-extension",
+    "href": "Publish/1 Shiny/5 shiny in web browser.html#step-1-add-quarto-extension",
+    "title": "Shiny in web web browser",
+    "section": "",
+    "text": "Code\nquarto add quarto-ext/shinylive",
+    "crumbs": [
+      "Publish",
+      "1 Shiny",
+      "Shiny in web web browser"
+    ]
+  },
+  {
+    "objectID": "Publish/1 Shiny/5 shiny in web browser.html#step-2-add-in-header",
+    "href": "Publish/1 Shiny/5 shiny in web browser.html#step-2-add-in-header",
+    "title": "Shiny in web web browser",
+    "section": "",
+    "text": "---\n\nfilters:\n  - shinylive\n  \n---",
+    "crumbs": [
+      "Publish",
+      "1 Shiny",
+      "Shiny in web web browser"
+    ]
+  },
+  {
+    "objectID": "Publish/1 Shiny/5 shiny in web browser.html#step-3-make-shiny-app",
+    "href": "Publish/1 Shiny/5 shiny in web browser.html#step-3-make-shiny-app",
+    "title": "Shiny in web web browser",
+    "section": "",
+    "text": "#| '!! shinylive warning !!': |\n#|   shinylive does not work in self-contained HTML documents.\n#|   Please set `embed-resources: false` in your metadata.\n#| standalone: true\n#| viewerHeight: 600\n#| components: [editor, viewer]\nlibrary(shiny)\nlibrary(bslib)\n\nui &lt;- page_fluid(\n  h2(\"Simple Histogram App\"),\n  layout_sidebar(\n    sidebar = sidebar(\n      sliderInput(\"n\", \"Number of observations:\", min = 10, max = 100, value = 30)\n    ),\n    plotOutput(\"hist\")\n  )\n)\n\nserver &lt;- function(input, output) {\n  output$hist &lt;- renderPlot({\n    hist(rnorm(input$n), main = \"Random Normal Data\", col = \"skyblue\")\n  })\n}\n\nshinyApp(ui, server)",
+    "crumbs": [
+      "Publish",
+      "1 Shiny",
+      "Shiny in web web browser"
+    ]
+  },
+  {
+    "objectID": "Publish/1 Shiny/5 shiny in web browser.html#step-1-add-quarto-extension-in-project-root-folder",
+    "href": "Publish/1 Shiny/5 shiny in web browser.html#step-1-add-quarto-extension-in-project-root-folder",
+    "title": "Shiny in web web browser",
+    "section": "",
+    "text": "Code\nquarto add quarto-ext/shinylive",
+    "crumbs": [
+      "Publish",
+      "1 Shiny",
+      "Shiny in web web browser"
     ]
   }
 ]

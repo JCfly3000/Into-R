@@ -134,3 +134,83 @@ title-block-banner: true
 #| eval: false
 draft:true
 ```
+
+
+## create password for blog
+
+
+### download staticryptR
+
+```{r}
+remotes::install_github("nikitoshina/staticryptR")
+```
+
+
+### download node
+
+```{bash}
+brew install node
+```
+
+
+###  Installing staticrypt
+
+```{bash}
+npm install -g staticrypt
+```
+
+
+###  edit _quarto.yml
+```{r}
+# _quarto.yml
+project:
+  output-dir: "./_output"
+  post-render: encrypt.r
+```
+
+
+### add encrypt.r
+
+password protect all website
+
+```{r}
+# encrypt.r
+staticryptR::staticryptr(
+  files = "_output/",
+  directory = ".",
+  password = "123123",
+  short = TRUE,
+  recursive = TRUE,
+  template_color_primary = "#6667AB",
+  template_color_secondary = "#f9f9f3",
+  template_title = "Your Document Title",
+  template_instructions = "Enter the password or contact example@email.com",
+  template_button = "Access"
+)
+```
+
+
+
+
+password protect one posts
+
+```{r}
+staticryptR::staticryptr(
+  files = c("posts/youtube_yt-dlp/"),
+  directory = c("docs/posts/"),
+  password = "123123",
+  short = TRUE,
+  recursive = TRUE,
+  template_color_primary = "#6667AB",
+  template_color_secondary = "#f9f9f3",
+  template_title = "Your Document Title",
+  template_instructions = "Enter the password or contact TonyJCing@outlook.com",
+  template_button = "Access",
+  print_cmd = TRUE
+)
+
+
+
+```
+
+

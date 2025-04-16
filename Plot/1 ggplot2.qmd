@@ -393,7 +393,7 @@ p+ theme_fivethirtyeight()
 # convert ggplot to plotly
 
 ```{r}
-p=ggplot(tips, aes(tip, total_bill,color=sex)) + geom_point()+ scale_x_continuous(name="new x name")+ scale_y_continuous(name="new y name")
+p=ggplot(data=tips, aes(tip, total_bill,color=sex)) + geom_point()+ scale_x_continuous(name="new x name")+ scale_y_continuous(name="new y name")
 
 pp=ggplotly(p)
 
@@ -460,6 +460,92 @@ p=ggplot(gapminder, aes(gdpPercap, lifeExp, size = pop, colour = country)) +
 p
 ```
 
+
+# ggplot2 extension packages
+
+https://www.youtube.com/watch?v=efj6-aawubs&list=PLBnFxG6owe1FcJnrNbaIJyALHMyoKW27T
+
+## patchwork
+
+The goal of patchwork is to make it ridiculously simple to combine separate ggplots into the same graphic. 
+
+```{r}
+#pak::pak('patchwork')
+```
+
+```{r}
+library(ggplot2)
+library(patchwork)
+
+p1 <- ggplot(mtcars) + geom_point(aes(mpg, disp))
+p2 <- ggplot(mtcars) + geom_boxplot(aes(gear, disp, group = gear))
+
+p3 <- ggplot(mtcars) + geom_smooth(aes(disp, qsec))
+p4 <- ggplot(mtcars) + geom_bar(aes(carb))
+
+(p1 | p2 | p3) /
+      p4
+```
+
+## legendry
+
+
+The goal of legendry is to provide additional guide functionality to the ggplot2 ecosystem.
+
+
+```{r}
+#pak::pak('legendry')
+```
+
+```{r}
+library(ggplot2)
+library(legendry)
+```
+
+
+```{r}
+
+base <- ggplot(mpg, aes(displ, hwy, colour = cty)) +
+  geom_point() +
+  labs(
+    x = "Engine displacement",
+    y = "Highway miles per gallon",
+    col = "City miles\nper gallon"
+  ) +
+  theme(axis.line = element_line())
+```
+
+
+```{r}
+# A partial guide to display a bracket
+efficient_bracket <- primitive_bracket(
+  # Keys determine what is displayed
+  key = key_range_manual(start = 25, end = Inf, name = "Efficient"),
+  bracket = "square",
+  # We want vertical text
+  theme = theme(
+    legend.text = element_text(angle = 90, hjust = 0.5),
+    axis.text.y.left = element_text(angle = 90, hjust = 0.5)
+  )
+)
+
+base + guides(y = guide_axis_stack("axis", efficient_bracket))
+```
+
+
+## marquee
+
+## ggiraph
+
+## geomtextpath
+
+## ggpattern
+
+## ggbump
+
+## gghighlight
+
+## ggdist
 
 
 

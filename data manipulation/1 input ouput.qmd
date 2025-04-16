@@ -201,6 +201,14 @@ table_mat
 ```
 
 
+## read txt
+
+```{r}
+my_data <- read.delim("text.txt")
+my_data
+```
+
+
 # Output 
 
 

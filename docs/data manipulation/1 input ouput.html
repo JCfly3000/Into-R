@@ -385,6 +385,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#read-multiple-data" id="toc-read-multiple-data" class="nav-link" data-scroll-target="#read-multiple-data"><span class="header-section-number">1.7.2</span> read multiple data</a></li>
   </ul></li>
   <li><a href="#read-doxc" id="toc-read-doxc" class="nav-link" data-scroll-target="#read-doxc"><span class="header-section-number">1.8</span> read doxc</a></li>
+  <li><a href="#read-txt" id="toc-read-txt" class="nav-link" data-scroll-target="#read-txt"><span class="header-section-number">1.9</span> read txt</a></li>
   </ul></li>
   <li><a href="#output" id="toc-output" class="nav-link" data-scroll-target="#output"><span class="header-section-number">2</span> Output</a>
   <ul class="collapse">
@@ -1262,6 +1263,20 @@ $margins
 </div>
 </div>
 </section>
+<section id="read-txt" class="level2" data-number="1.9">
+<h2 data-number="1.9" class="anchored" data-anchor-id="read-txt"><span class="header-section-number">1.9</span> read txt</h2>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>my_data <span class="ot">&lt;-</span> <span class="fu">read.delim</span>(<span class="st">"text.txt"</span>)</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>my_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>  X.hello.world.nits.time..
+1    hello world\nits time!</code></pre>
+</div>
+</div>
+</section>
 </section>
 <section id="output" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Output</h1>
@@ -1270,7 +1285,7 @@ $margins
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(data001,<span class="st">'data001 csv output data.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(data001,<span class="st">'data001 csv output data.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -1279,9 +1294,9 @@ $margins
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openxlsx)</span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="fu">write.xlsx</span>(data001,<span class="st">'data001 excel output data.xlsx'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openxlsx)</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="fu">write.xlsx</span>(data001,<span class="st">'data001 excel output data.xlsx'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -1290,15 +1305,15 @@ $margins
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(arrow)</span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write_parquet</span>(data001,<span class="st">'data/df.parquet'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(arrow)</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write_parquet</span>(data001,<span class="st">'data/df.parquet'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>output to zip format</p>
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_parquet</span>(data001,<span class="st">'data/df.parquet.gzip'</span>,<span class="at">compression=</span><span class="st">'gzip'</span>)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_parquet</span>(data001,<span class="st">'data/df.parquet.gzip'</span>,<span class="at">compression=</span><span class="st">'gzip'</span>)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -1307,8 +1322,8 @@ $margins
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(feather)</span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write_feather</span>(data001,<span class="st">'data/feather_file.feather'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(feather)</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write_feather</span>(data001,<span class="st">'data/feather_file.feather'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -1317,10 +1332,10 @@ $margins
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>text<span class="ot">=</span><span class="fu">tibble</span>(<span class="st">'hello world</span></span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="st">its time!'</span>)</span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="fu">write_delim</span>(text, <span class="st">"text.txt"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>text<span class="ot">=</span><span class="fu">tibble</span>(<span class="st">'hello world</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="st">its time!'</span>)</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a><span class="fu">write_delim</span>(text, <span class="st">"text.txt"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -1331,8 +1346,8 @@ $margins
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save a single object to a file</span></span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(mtcars, <span class="st">"mtcars.rds"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save a single object to a file</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(mtcars, <span class="st">"mtcars.rds"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -1341,8 +1356,8 @@ $margins
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save a single object to a file</span></span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(mtcars,iris, <span class="at">file=</span><span class="st">"mtcars_and_iris.RData"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save a single object to a file</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(mtcars,iris, <span class="at">file=</span><span class="st">"mtcars_and_iris.RData"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -1351,8 +1366,8 @@ $margins
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save a single object to a file</span></span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="fu">save.image</span>(<span class="at">file =</span> <span class="st">"my_work_space.RData"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save a single object to a file</span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="fu">save.image</span>(<span class="at">file =</span> <span class="st">"my_work_space.RData"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 
@@ -1832,290 +1847,298 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb47" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "input &amp; ouput in R"</span></span>
-<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Tony Duan"</span></span>
-<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
-<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a><span class="co">  warning: false</span></span>
-<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a><span class="co">  error: false</span></span>
-<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
-<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
-<span id="cb47-11"><a href="#cb47-11" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
-<span id="cb47-12"><a href="#cb47-12" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-location: right</span></span>
-<span id="cb47-13"><a href="#cb47-13" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: show</span></span>
-<span id="cb47-14"><a href="#cb47-14" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
-<span id="cb47-15"><a href="#cb47-15" aria-hidden="true" tabindex="-1"></a><span class="co">    number-sections: true</span></span>
-<span id="cb47-16"><a href="#cb47-16" aria-hidden="true" tabindex="-1"></a><span class="co">    code-block-bg: true</span></span>
-<span id="cb47-17"><a href="#cb47-17" aria-hidden="true" tabindex="-1"></a><span class="co">    code-block-border-left: "#31BAE9"</span></span>
-<span id="cb47-18"><a href="#cb47-18" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb47-19"><a href="#cb47-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-20"><a href="#cb47-20" aria-hidden="true" tabindex="-1"></a>Data input and ouput in R</span>
-<span id="cb47-21"><a href="#cb47-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-22"><a href="#cb47-22" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/1_-OQi5hp-uoL_KdIydr4hew.gif)</span>{width="500"}</span>
-<span id="cb47-23"><a href="#cb47-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-26"><a href="#cb47-26" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb47-27"><a href="#cb47-27" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb47-28"><a href="#cb47-28" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openxlsx)</span>
-<span id="cb47-29"><a href="#cb47-29" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb47-30"><a href="#cb47-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-31"><a href="#cb47-31" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb47-32"><a href="#cb47-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-33"><a href="#cb47-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-34"><a href="#cb47-34" aria-hidden="true" tabindex="-1"></a><span class="fu"># Input</span></span>
-<span id="cb47-35"><a href="#cb47-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-36"><a href="#cb47-36" aria-hidden="true" tabindex="-1"></a><span class="fu">## read CSV</span></span>
-<span id="cb47-37"><a href="#cb47-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-40"><a href="#cb47-40" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb47-41"><a href="#cb47-41" aria-hidden="true" tabindex="-1"></a>data001<span class="ot">=</span><span class="fu">read_csv</span>(<span class="st">'data/Book3.csv'</span>)</span>
-<span id="cb47-42"><a href="#cb47-42" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data001)</span>
-<span id="cb47-43"><a href="#cb47-43" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb47-44"><a href="#cb47-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-45"><a href="#cb47-45" aria-hidden="true" tabindex="-1"></a>read CSV online</span>
-<span id="cb47-46"><a href="#cb47-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-49"><a href="#cb47-49" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb47-50"><a href="#cb47-50" aria-hidden="true" tabindex="-1"></a>url<span class="ot">=</span><span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-02-11/hotels.csv'</span></span>
-<span id="cb47-51"><a href="#cb47-51" aria-hidden="true" tabindex="-1"></a>data001<span class="ot">=</span><span class="fu">read_csv</span>(url)</span>
-<span id="cb47-52"><a href="#cb47-52" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data001)</span>
-<span id="cb47-53"><a href="#cb47-53" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb47-54"><a href="#cb47-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-55"><a href="#cb47-55" aria-hidden="true" tabindex="-1"></a><span class="fu">## read excel</span></span>
-<span id="cb47-56"><a href="#cb47-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-59"><a href="#cb47-59" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb47-60"><a href="#cb47-60" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openxlsx)</span>
-<span id="cb47-61"><a href="#cb47-61" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb47-62"><a href="#cb47-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-63"><a href="#cb47-63" aria-hidden="true" tabindex="-1"></a>data001<span class="ot">=</span><span class="fu">read_excel</span>(<span class="st">'data/Book1.xlsx'</span>)</span>
-<span id="cb47-64"><a href="#cb47-64" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data001)</span>
-<span id="cb47-65"><a href="#cb47-65" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb47-66"><a href="#cb47-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-67"><a href="#cb47-67" aria-hidden="true" tabindex="-1"></a><span class="fu">## read parquet</span></span>
-<span id="cb47-68"><a href="#cb47-68" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-69"><a href="#cb47-69" aria-hidden="true" tabindex="-1"></a>must install in this way,otherwise will report error.</span>
-<span id="cb47-72"><a href="#cb47-72" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb47-73"><a href="#cb47-73" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb47-74"><a href="#cb47-74" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"arrow"</span>, <span class="at">repos =</span> <span class="fu">c</span>(<span class="st">"https://apache.r-universe.dev"</span>))</span>
-<span id="cb47-75"><a href="#cb47-75" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb47-76"><a href="#cb47-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-79"><a href="#cb47-79" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb47-80"><a href="#cb47-80" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(arrow)</span>
-<span id="cb47-81"><a href="#cb47-81" aria-hidden="true" tabindex="-1"></a><span class="fu">arrow_info</span>()</span>
-<span id="cb47-82"><a href="#cb47-82" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb47-83"><a href="#cb47-83" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-86"><a href="#cb47-86" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb47-87"><a href="#cb47-87" aria-hidden="true" tabindex="-1"></a>data001<span class="ot">=</span><span class="fu">read_parquet</span>(<span class="st">'data/df.parquet'</span>)</span>
-<span id="cb47-88"><a href="#cb47-88" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data001)</span>
-<span id="cb47-89"><a href="#cb47-89" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb47-90"><a href="#cb47-90" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-91"><a href="#cb47-91" aria-hidden="true" tabindex="-1"></a>read parquet zip</span>
-<span id="cb47-94"><a href="#cb47-94" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb47-95"><a href="#cb47-95" aria-hidden="true" tabindex="-1"></a>data001<span class="ot">=</span><span class="fu">read_parquet</span>(<span class="st">'data/df.parquet.gzip'</span>)</span>
-<span id="cb47-96"><a href="#cb47-96" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data001)</span>
-<span id="cb47-97"><a href="#cb47-97" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb47-98"><a href="#cb47-98" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-99"><a href="#cb47-99" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-100"><a href="#cb47-100" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-101"><a href="#cb47-101" aria-hidden="true" tabindex="-1"></a><span class="fu">## read feather</span></span>
-<span id="cb47-102"><a href="#cb47-102" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-105"><a href="#cb47-105" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb47-106"><a href="#cb47-106" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(feather)</span>
-<span id="cb47-107"><a href="#cb47-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-108"><a href="#cb47-108" aria-hidden="true" tabindex="-1"></a>data001<span class="ot">=</span><span class="fu">read_feather</span>(<span class="st">'data/feather_file.feather'</span>)</span>
-<span id="cb47-109"><a href="#cb47-109" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data001)</span>
-<span id="cb47-110"><a href="#cb47-110" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-111"><a href="#cb47-111" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb47-112"><a href="#cb47-112" aria-hidden="true" tabindex="-1"></a><span class="fu">## read JSON file and convert into data frame</span></span>
-<span id="cb47-113"><a href="#cb47-113" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-116"><a href="#cb47-116" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb47-117"><a href="#cb47-117" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(jsonlite)</span>
-<span id="cb47-118"><a href="#cb47-118" aria-hidden="true" tabindex="-1"></a>data<span class="ot">=</span><span class="fu">read_json</span>(<span class="st">"./data/dataj.json"</span>)</span>
-<span id="cb47-119"><a href="#cb47-119" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb47-120"><a href="#cb47-120" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-123"><a href="#cb47-123" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb47-124"><a href="#cb47-124" aria-hidden="true" tabindex="-1"></a>data002<span class="ot">=</span>(data) <span class="sc">%&gt;%</span> <span class="fu">as.data.frame</span>()</span>
-<span id="cb47-125"><a href="#cb47-125" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb47-126"><a href="#cb47-126" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-127"><a href="#cb47-127" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-130"><a href="#cb47-130" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb47-131"><a href="#cb47-131" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(data002)</span>
-<span id="cb47-132"><a href="#cb47-132" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb47-133"><a href="#cb47-133" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-134"><a href="#cb47-134" aria-hidden="true" tabindex="-1"></a><span class="fu">## read Data from Images</span></span>
-<span id="cb47-135"><a href="#cb47-135" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-138"><a href="#cb47-138" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb47-139"><a href="#cb47-139" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tesseract)</span>
-<span id="cb47-140"><a href="#cb47-140" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb47-141"><a href="#cb47-141" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-142"><a href="#cb47-142" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-145"><a href="#cb47-145" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb47-146"><a href="#cb47-146" aria-hidden="true" tabindex="-1"></a>eng <span class="ot">&lt;-</span> <span class="fu">tesseract</span>(<span class="st">"eng"</span>)</span>
-<span id="cb47-147"><a href="#cb47-147" aria-hidden="true" tabindex="-1"></a>text001 <span class="ot">&lt;-</span> tesseract<span class="sc">::</span><span class="fu">ocr</span>(<span class="st">"640.png"</span>, <span class="at">engine =</span> eng)</span>
-<span id="cb47-148"><a href="#cb47-148" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb47-149"><a href="#cb47-149" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-150"><a href="#cb47-150" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-153"><a href="#cb47-153" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb47-154"><a href="#cb47-154" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(text001)</span>
-<span id="cb47-155"><a href="#cb47-155" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb47-156"><a href="#cb47-156" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-159"><a href="#cb47-159" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb47-160"><a href="#cb47-160" aria-hidden="true" tabindex="-1"></a>raw_tibble001 <span class="ot">&lt;-</span> text001 <span class="sc">%&gt;%</span> </span>
-<span id="cb47-161"><a href="#cb47-161" aria-hidden="true" tabindex="-1"></a>  <span class="fu">str_split</span>(<span class="at">pattern =</span> <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb47-162"><a href="#cb47-162" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unlist</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb47-163"><a href="#cb47-163" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tibble</span>(<span class="at">data =</span> .) <span class="sc">%&gt;%</span> <span class="fu">slice</span>(<span class="dv">6</span><span class="sc">:</span><span class="fu">n</span>()) <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="fu">str_length</span>(data) <span class="sc">&gt;=</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span>  <span class="fu">mutate</span>(<span class="at">old=</span>data</span>
-<span id="cb47-164"><a href="#cb47-164" aria-hidden="true" tabindex="-1"></a>         ,<span class="at">data=</span>data <span class="sc">%&gt;%</span><span class="fu">str_replace_all</span>(<span class="st">'_'</span>,<span class="st">''</span>)<span class="sc">%&gt;%</span><span class="fu">str_replace_all</span>(<span class="st">'—'</span>,<span class="st">''</span>)<span class="sc">%&gt;%</span><span class="fu">str_replace_all</span>(<span class="st">"'"</span>,<span class="st">''</span>)<span class="sc">%&gt;%</span><span class="fu">str_replace_all</span>(<span class="st">'"'</span>,<span class="st">''</span>)</span>
-<span id="cb47-165"><a href="#cb47-165" aria-hidden="true" tabindex="-1"></a>         ) <span class="sc">%&gt;%</span> <span class="fu">separate</span>(</span>
-<span id="cb47-166"><a href="#cb47-166" aria-hidden="true" tabindex="-1"></a>    data, </span>
-<span id="cb47-167"><a href="#cb47-167" aria-hidden="true" tabindex="-1"></a>    <span class="at">into =</span> <span class="fu">c</span>(<span class="st">"one"</span>, <span class="st">"price"</span>), </span>
-<span id="cb47-168"><a href="#cb47-168" aria-hidden="true" tabindex="-1"></a>    <span class="at">sep =</span> <span class="fu">c</span>(<span class="st">"¥"</span>)</span>
-<span id="cb47-169"><a href="#cb47-169" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(</span>
-<span id="cb47-170"><a href="#cb47-170" aria-hidden="true" tabindex="-1"></a>    <span class="at">id =</span> <span class="fu">str_extract</span>(one, <span class="st">"^</span><span class="sc">\\</span><span class="st">S+ "</span>)</span>
-<span id="cb47-171"><a href="#cb47-171" aria-hidden="true" tabindex="-1"></a>    ,<span class="at">name=</span><span class="fu">gsub</span>(<span class="st">"^</span><span class="sc">\\</span><span class="st">S+ "</span>, <span class="st">""</span>,one)</span>
-<span id="cb47-172"><a href="#cb47-172" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb47-173"><a href="#cb47-173" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-174"><a href="#cb47-174" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-175"><a href="#cb47-175" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(raw_tibble001)</span>
-<span id="cb47-176"><a href="#cb47-176" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb47-177"><a href="#cb47-177" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-178"><a href="#cb47-178" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-179"><a href="#cb47-179" aria-hidden="true" tabindex="-1"></a><span class="fu">## read data from RData/Rds</span></span>
-<span id="cb47-180"><a href="#cb47-180" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-181"><a href="#cb47-181" aria-hidden="true" tabindex="-1"></a>Rda is just a short name for RData.Rds stores a single R object.RData can store multiple R objects in a single file. </span>
-<span id="cb47-182"><a href="#cb47-182" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-183"><a href="#cb47-183" aria-hidden="true" tabindex="-1"></a><span class="fu">### read one data </span></span>
-<span id="cb47-184"><a href="#cb47-184" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-187"><a href="#cb47-187" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb47-188"><a href="#cb47-188" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb47-189"><a href="#cb47-189" aria-hidden="true" tabindex="-1"></a>my_data <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"mtcars.rds"</span>)</span>
-<span id="cb47-190"><a href="#cb47-190" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb47-191"><a href="#cb47-191" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-192"><a href="#cb47-192" aria-hidden="true" tabindex="-1"></a><span class="fu">### read multiple data</span></span>
-<span id="cb47-193"><a href="#cb47-193" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-196"><a href="#cb47-196" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb47-197"><a href="#cb47-197" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb47-198"><a href="#cb47-198" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">"my_work_space.RData"</span>)</span>
-<span id="cb47-199"><a href="#cb47-199" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb47-200"><a href="#cb47-200" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-201"><a href="#cb47-201" aria-hidden="true" tabindex="-1"></a><span class="fu">## read doxc</span></span>
-<span id="cb47-202"><a href="#cb47-202" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-205"><a href="#cb47-205" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb47-206"><a href="#cb47-206" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pkg_install</span>(<span class="st">'officer'</span>)</span>
-<span id="cb47-207"><a href="#cb47-207" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(officer)</span>
-<span id="cb47-208"><a href="#cb47-208" aria-hidden="true" tabindex="-1"></a>docx<span class="ot">=</span><span class="fu">read_docx</span>(<span class="st">"data/example03.docx"</span>)</span>
-<span id="cb47-209"><a href="#cb47-209" aria-hidden="true" tabindex="-1"></a><span class="co">#docx</span></span>
-<span id="cb47-210"><a href="#cb47-210" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb47-211"><a href="#cb47-211" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-214"><a href="#cb47-214" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb47-215"><a href="#cb47-215" aria-hidden="true" tabindex="-1"></a><span class="fu">docx_dim</span>(docx)</span>
-<span id="cb47-216"><a href="#cb47-216" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb47-217"><a href="#cb47-217" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-220"><a href="#cb47-220" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb47-221"><a href="#cb47-221" aria-hidden="true" tabindex="-1"></a><span class="fu">docx_summary</span>(docx)</span>
-<span id="cb47-222"><a href="#cb47-222" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb47-223"><a href="#cb47-223" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-224"><a href="#cb47-224" aria-hidden="true" tabindex="-1"></a>filter table section</span>
-<span id="cb47-225"><a href="#cb47-225" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-228"><a href="#cb47-228" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb47-229"><a href="#cb47-229" aria-hidden="true" tabindex="-1"></a>table_cells<span class="ot">=</span><span class="fu">docx_summary</span>(docx) <span class="sc">%&gt;%</span> <span class="fu">filter</span>(content_type <span class="sc">==</span> <span class="st">"table cell"</span>)</span>
-<span id="cb47-230"><a href="#cb47-230" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-231"><a href="#cb47-231" aria-hidden="true" tabindex="-1"></a>table_data <span class="ot">&lt;-</span> table_cells <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="sc">!</span>is_header) <span class="sc">%&gt;%</span> <span class="fu">select</span>(row_id, cell_id, text)</span>
-<span id="cb47-232"><a href="#cb47-232" aria-hidden="true" tabindex="-1"></a>table_data</span>
-<span id="cb47-233"><a href="#cb47-233" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb47-234"><a href="#cb47-234" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-235"><a href="#cb47-235" aria-hidden="true" tabindex="-1"></a>transform the table data into a data frame</span>
-<span id="cb47-236"><a href="#cb47-236" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-239"><a href="#cb47-239" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb47-240"><a href="#cb47-240" aria-hidden="true" tabindex="-1"></a><span class="co"># The content of the table is in 'long' format, but we can 're-rectangularise'</span></span>
-<span id="cb47-241"><a href="#cb47-241" aria-hidden="true" tabindex="-1"></a>table_names <span class="ot">&lt;-</span> table_cells[table_cells<span class="sc">$</span>is_header, <span class="st">"text"</span>]</span>
-<span id="cb47-242"><a href="#cb47-242" aria-hidden="true" tabindex="-1"></a>table_content <span class="ot">&lt;-</span> table_cells[<span class="sc">!</span>table_cells<span class="sc">$</span>is_header, <span class="st">"text"</span>]</span>
-<span id="cb47-243"><a href="#cb47-243" aria-hidden="true" tabindex="-1"></a>row_count <span class="ot">&lt;-</span> <span class="fu">nrow</span>(table_cells) <span class="sc">/</span> <span class="fu">nrow</span>(table_cells[table_cells<span class="sc">$</span>is_header, ]) <span class="sc">-</span> <span class="dv">1</span></span>
-<span id="cb47-244"><a href="#cb47-244" aria-hidden="true" tabindex="-1"></a>table_mat <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">matrix</span>(table_content, <span class="at">nrow =</span> row_count))</span>
-<span id="cb47-245"><a href="#cb47-245" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(table_mat) <span class="ot">&lt;-</span> table_names</span>
-<span id="cb47-246"><a href="#cb47-246" aria-hidden="true" tabindex="-1"></a>table_mat</span>
-<span id="cb47-247"><a href="#cb47-247" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb47-248"><a href="#cb47-248" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-249"><a href="#cb47-249" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-250"><a href="#cb47-250" aria-hidden="true" tabindex="-1"></a><span class="fu"># Output </span></span>
-<span id="cb47-251"><a href="#cb47-251" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-252"><a href="#cb47-252" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-253"><a href="#cb47-253" aria-hidden="true" tabindex="-1"></a><span class="fu">## write csv </span></span>
-<span id="cb47-254"><a href="#cb47-254" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-257"><a href="#cb47-257" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb47-258"><a href="#cb47-258" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(data001,<span class="st">'data001 csv output data.csv'</span>)</span>
-<span id="cb47-259"><a href="#cb47-259" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb47-260"><a href="#cb47-260" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-261"><a href="#cb47-261" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-262"><a href="#cb47-262" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-263"><a href="#cb47-263" aria-hidden="true" tabindex="-1"></a><span class="fu">## write excel</span></span>
-<span id="cb47-264"><a href="#cb47-264" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-267"><a href="#cb47-267" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb47-268"><a href="#cb47-268" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openxlsx)</span>
-<span id="cb47-269"><a href="#cb47-269" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb47-270"><a href="#cb47-270" aria-hidden="true" tabindex="-1"></a><span class="fu">write.xlsx</span>(data001,<span class="st">'data001 excel output data.xlsx'</span>)</span>
-<span id="cb47-271"><a href="#cb47-271" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb47-272"><a href="#cb47-272" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-273"><a href="#cb47-273" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-274"><a href="#cb47-274" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-275"><a href="#cb47-275" aria-hidden="true" tabindex="-1"></a><span class="fu">## write parquet</span></span>
-<span id="cb47-276"><a href="#cb47-276" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-279"><a href="#cb47-279" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb47-280"><a href="#cb47-280" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(arrow)</span>
-<span id="cb47-281"><a href="#cb47-281" aria-hidden="true" tabindex="-1"></a><span class="fu">write_parquet</span>(data001,<span class="st">'data/df.parquet'</span>)</span>
-<span id="cb47-282"><a href="#cb47-282" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb47-283"><a href="#cb47-283" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-284"><a href="#cb47-284" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-285"><a href="#cb47-285" aria-hidden="true" tabindex="-1"></a>output to zip format</span>
-<span id="cb47-286"><a href="#cb47-286" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-289"><a href="#cb47-289" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb47-290"><a href="#cb47-290" aria-hidden="true" tabindex="-1"></a><span class="fu">write_parquet</span>(data001,<span class="st">'data/df.parquet.gzip'</span>,<span class="at">compression=</span><span class="st">'gzip'</span>)  </span>
-<span id="cb47-291"><a href="#cb47-291" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb47-292"><a href="#cb47-292" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-293"><a href="#cb47-293" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-294"><a href="#cb47-294" aria-hidden="true" tabindex="-1"></a><span class="fu">## write feather</span></span>
-<span id="cb47-295"><a href="#cb47-295" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-296"><a href="#cb47-296" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-297"><a href="#cb47-297" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-300"><a href="#cb47-300" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb47-301"><a href="#cb47-301" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(feather)</span>
-<span id="cb47-302"><a href="#cb47-302" aria-hidden="true" tabindex="-1"></a><span class="fu">write_feather</span>(data001,<span class="st">'data/feather_file.feather'</span>)</span>
-<span id="cb47-303"><a href="#cb47-303" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-304"><a href="#cb47-304" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb47-305"><a href="#cb47-305" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-306"><a href="#cb47-306" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-307"><a href="#cb47-307" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-308"><a href="#cb47-308" aria-hidden="true" tabindex="-1"></a><span class="fu">## write txt</span></span>
-<span id="cb47-309"><a href="#cb47-309" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-312"><a href="#cb47-312" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb47-313"><a href="#cb47-313" aria-hidden="true" tabindex="-1"></a>text<span class="ot">=</span><span class="fu">tibble</span>(<span class="st">'hello world</span></span>
-<span id="cb47-314"><a href="#cb47-314" aria-hidden="true" tabindex="-1"></a><span class="st">its time!'</span>)</span>
-<span id="cb47-315"><a href="#cb47-315" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-316"><a href="#cb47-316" aria-hidden="true" tabindex="-1"></a><span class="fu">write_delim</span>(text, <span class="st">"text.txt"</span>)</span>
-<span id="cb47-317"><a href="#cb47-317" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb47-318"><a href="#cb47-318" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-319"><a href="#cb47-319" aria-hidden="true" tabindex="-1"></a><span class="fu">## write to RData/Rds</span></span>
-<span id="cb47-320"><a href="#cb47-320" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-321"><a href="#cb47-321" aria-hidden="true" tabindex="-1"></a><span class="fu">### write one data</span></span>
-<span id="cb47-322"><a href="#cb47-322" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-325"><a href="#cb47-325" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb47-326"><a href="#cb47-326" aria-hidden="true" tabindex="-1"></a><span class="co"># Save a single object to a file</span></span>
-<span id="cb47-327"><a href="#cb47-327" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(mtcars, <span class="st">"mtcars.rds"</span>)</span>
-<span id="cb47-328"><a href="#cb47-328" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb47-329"><a href="#cb47-329" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-330"><a href="#cb47-330" aria-hidden="true" tabindex="-1"></a><span class="fu">### write multiple data</span></span>
-<span id="cb47-331"><a href="#cb47-331" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-334"><a href="#cb47-334" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb47-335"><a href="#cb47-335" aria-hidden="true" tabindex="-1"></a><span class="co"># Save a single object to a file</span></span>
-<span id="cb47-336"><a href="#cb47-336" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(mtcars,iris, <span class="at">file=</span><span class="st">"mtcars_and_iris.RData"</span>)</span>
-<span id="cb47-337"><a href="#cb47-337" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb47-338"><a href="#cb47-338" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-339"><a href="#cb47-339" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-340"><a href="#cb47-340" aria-hidden="true" tabindex="-1"></a><span class="fu">### write all working space data</span></span>
-<span id="cb47-341"><a href="#cb47-341" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-344"><a href="#cb47-344" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb47-345"><a href="#cb47-345" aria-hidden="true" tabindex="-1"></a><span class="co"># Save a single object to a file</span></span>
-<span id="cb47-346"><a href="#cb47-346" aria-hidden="true" tabindex="-1"></a><span class="fu">save.image</span>(<span class="at">file =</span> <span class="st">"my_work_space.RData"</span>)</span>
-<span id="cb47-347"><a href="#cb47-347" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb47-348"><a href="#cb47-348" aria-hidden="true" tabindex="-1"></a></span>
+<div class="sourceCode" id="cb49" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "input &amp; ouput in R"</span></span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Tony Duan"</span></span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
+<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a><span class="co">  warning: false</span></span>
+<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a><span class="co">  error: false</span></span>
+<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb49-10"><a href="#cb49-10" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb49-11"><a href="#cb49-11" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb49-12"><a href="#cb49-12" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-location: right</span></span>
+<span id="cb49-13"><a href="#cb49-13" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: show</span></span>
+<span id="cb49-14"><a href="#cb49-14" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
+<span id="cb49-15"><a href="#cb49-15" aria-hidden="true" tabindex="-1"></a><span class="co">    number-sections: true</span></span>
+<span id="cb49-16"><a href="#cb49-16" aria-hidden="true" tabindex="-1"></a><span class="co">    code-block-bg: true</span></span>
+<span id="cb49-17"><a href="#cb49-17" aria-hidden="true" tabindex="-1"></a><span class="co">    code-block-border-left: "#31BAE9"</span></span>
+<span id="cb49-18"><a href="#cb49-18" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb49-19"><a href="#cb49-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-20"><a href="#cb49-20" aria-hidden="true" tabindex="-1"></a>Data input and ouput in R</span>
+<span id="cb49-21"><a href="#cb49-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-22"><a href="#cb49-22" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/1_-OQi5hp-uoL_KdIydr4hew.gif)</span>{width="500"}</span>
+<span id="cb49-23"><a href="#cb49-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-26"><a href="#cb49-26" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb49-27"><a href="#cb49-27" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb49-28"><a href="#cb49-28" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openxlsx)</span>
+<span id="cb49-29"><a href="#cb49-29" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb49-30"><a href="#cb49-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-31"><a href="#cb49-31" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb49-32"><a href="#cb49-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-33"><a href="#cb49-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-34"><a href="#cb49-34" aria-hidden="true" tabindex="-1"></a><span class="fu"># Input</span></span>
+<span id="cb49-35"><a href="#cb49-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-36"><a href="#cb49-36" aria-hidden="true" tabindex="-1"></a><span class="fu">## read CSV</span></span>
+<span id="cb49-37"><a href="#cb49-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-40"><a href="#cb49-40" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb49-41"><a href="#cb49-41" aria-hidden="true" tabindex="-1"></a>data001<span class="ot">=</span><span class="fu">read_csv</span>(<span class="st">'data/Book3.csv'</span>)</span>
+<span id="cb49-42"><a href="#cb49-42" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data001)</span>
+<span id="cb49-43"><a href="#cb49-43" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb49-44"><a href="#cb49-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-45"><a href="#cb49-45" aria-hidden="true" tabindex="-1"></a>read CSV online</span>
+<span id="cb49-46"><a href="#cb49-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-49"><a href="#cb49-49" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb49-50"><a href="#cb49-50" aria-hidden="true" tabindex="-1"></a>url<span class="ot">=</span><span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-02-11/hotels.csv'</span></span>
+<span id="cb49-51"><a href="#cb49-51" aria-hidden="true" tabindex="-1"></a>data001<span class="ot">=</span><span class="fu">read_csv</span>(url)</span>
+<span id="cb49-52"><a href="#cb49-52" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data001)</span>
+<span id="cb49-53"><a href="#cb49-53" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb49-54"><a href="#cb49-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-55"><a href="#cb49-55" aria-hidden="true" tabindex="-1"></a><span class="fu">## read excel</span></span>
+<span id="cb49-56"><a href="#cb49-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-59"><a href="#cb49-59" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb49-60"><a href="#cb49-60" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openxlsx)</span>
+<span id="cb49-61"><a href="#cb49-61" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb49-62"><a href="#cb49-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-63"><a href="#cb49-63" aria-hidden="true" tabindex="-1"></a>data001<span class="ot">=</span><span class="fu">read_excel</span>(<span class="st">'data/Book1.xlsx'</span>)</span>
+<span id="cb49-64"><a href="#cb49-64" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data001)</span>
+<span id="cb49-65"><a href="#cb49-65" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb49-66"><a href="#cb49-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-67"><a href="#cb49-67" aria-hidden="true" tabindex="-1"></a><span class="fu">## read parquet</span></span>
+<span id="cb49-68"><a href="#cb49-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-69"><a href="#cb49-69" aria-hidden="true" tabindex="-1"></a>must install in this way,otherwise will report error.</span>
+<span id="cb49-72"><a href="#cb49-72" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb49-73"><a href="#cb49-73" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb49-74"><a href="#cb49-74" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"arrow"</span>, <span class="at">repos =</span> <span class="fu">c</span>(<span class="st">"https://apache.r-universe.dev"</span>))</span>
+<span id="cb49-75"><a href="#cb49-75" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb49-76"><a href="#cb49-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-79"><a href="#cb49-79" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb49-80"><a href="#cb49-80" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(arrow)</span>
+<span id="cb49-81"><a href="#cb49-81" aria-hidden="true" tabindex="-1"></a><span class="fu">arrow_info</span>()</span>
+<span id="cb49-82"><a href="#cb49-82" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb49-83"><a href="#cb49-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-86"><a href="#cb49-86" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb49-87"><a href="#cb49-87" aria-hidden="true" tabindex="-1"></a>data001<span class="ot">=</span><span class="fu">read_parquet</span>(<span class="st">'data/df.parquet'</span>)</span>
+<span id="cb49-88"><a href="#cb49-88" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data001)</span>
+<span id="cb49-89"><a href="#cb49-89" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb49-90"><a href="#cb49-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-91"><a href="#cb49-91" aria-hidden="true" tabindex="-1"></a>read parquet zip</span>
+<span id="cb49-94"><a href="#cb49-94" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb49-95"><a href="#cb49-95" aria-hidden="true" tabindex="-1"></a>data001<span class="ot">=</span><span class="fu">read_parquet</span>(<span class="st">'data/df.parquet.gzip'</span>)</span>
+<span id="cb49-96"><a href="#cb49-96" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data001)</span>
+<span id="cb49-97"><a href="#cb49-97" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb49-98"><a href="#cb49-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-99"><a href="#cb49-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-100"><a href="#cb49-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-101"><a href="#cb49-101" aria-hidden="true" tabindex="-1"></a><span class="fu">## read feather</span></span>
+<span id="cb49-102"><a href="#cb49-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-105"><a href="#cb49-105" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb49-106"><a href="#cb49-106" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(feather)</span>
+<span id="cb49-107"><a href="#cb49-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-108"><a href="#cb49-108" aria-hidden="true" tabindex="-1"></a>data001<span class="ot">=</span><span class="fu">read_feather</span>(<span class="st">'data/feather_file.feather'</span>)</span>
+<span id="cb49-109"><a href="#cb49-109" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data001)</span>
+<span id="cb49-110"><a href="#cb49-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-111"><a href="#cb49-111" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb49-112"><a href="#cb49-112" aria-hidden="true" tabindex="-1"></a><span class="fu">## read JSON file and convert into data frame</span></span>
+<span id="cb49-113"><a href="#cb49-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-116"><a href="#cb49-116" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb49-117"><a href="#cb49-117" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(jsonlite)</span>
+<span id="cb49-118"><a href="#cb49-118" aria-hidden="true" tabindex="-1"></a>data<span class="ot">=</span><span class="fu">read_json</span>(<span class="st">"./data/dataj.json"</span>)</span>
+<span id="cb49-119"><a href="#cb49-119" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb49-120"><a href="#cb49-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-123"><a href="#cb49-123" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb49-124"><a href="#cb49-124" aria-hidden="true" tabindex="-1"></a>data002<span class="ot">=</span>(data) <span class="sc">%&gt;%</span> <span class="fu">as.data.frame</span>()</span>
+<span id="cb49-125"><a href="#cb49-125" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb49-126"><a href="#cb49-126" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-127"><a href="#cb49-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-130"><a href="#cb49-130" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb49-131"><a href="#cb49-131" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(data002)</span>
+<span id="cb49-132"><a href="#cb49-132" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb49-133"><a href="#cb49-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-134"><a href="#cb49-134" aria-hidden="true" tabindex="-1"></a><span class="fu">## read Data from Images</span></span>
+<span id="cb49-135"><a href="#cb49-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-138"><a href="#cb49-138" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb49-139"><a href="#cb49-139" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tesseract)</span>
+<span id="cb49-140"><a href="#cb49-140" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb49-141"><a href="#cb49-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-142"><a href="#cb49-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-145"><a href="#cb49-145" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb49-146"><a href="#cb49-146" aria-hidden="true" tabindex="-1"></a>eng <span class="ot">&lt;-</span> <span class="fu">tesseract</span>(<span class="st">"eng"</span>)</span>
+<span id="cb49-147"><a href="#cb49-147" aria-hidden="true" tabindex="-1"></a>text001 <span class="ot">&lt;-</span> tesseract<span class="sc">::</span><span class="fu">ocr</span>(<span class="st">"640.png"</span>, <span class="at">engine =</span> eng)</span>
+<span id="cb49-148"><a href="#cb49-148" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb49-149"><a href="#cb49-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-150"><a href="#cb49-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-153"><a href="#cb49-153" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb49-154"><a href="#cb49-154" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(text001)</span>
+<span id="cb49-155"><a href="#cb49-155" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb49-156"><a href="#cb49-156" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-159"><a href="#cb49-159" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb49-160"><a href="#cb49-160" aria-hidden="true" tabindex="-1"></a>raw_tibble001 <span class="ot">&lt;-</span> text001 <span class="sc">%&gt;%</span> </span>
+<span id="cb49-161"><a href="#cb49-161" aria-hidden="true" tabindex="-1"></a>  <span class="fu">str_split</span>(<span class="at">pattern =</span> <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb49-162"><a href="#cb49-162" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unlist</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb49-163"><a href="#cb49-163" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tibble</span>(<span class="at">data =</span> .) <span class="sc">%&gt;%</span> <span class="fu">slice</span>(<span class="dv">6</span><span class="sc">:</span><span class="fu">n</span>()) <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="fu">str_length</span>(data) <span class="sc">&gt;=</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span>  <span class="fu">mutate</span>(<span class="at">old=</span>data</span>
+<span id="cb49-164"><a href="#cb49-164" aria-hidden="true" tabindex="-1"></a>         ,<span class="at">data=</span>data <span class="sc">%&gt;%</span><span class="fu">str_replace_all</span>(<span class="st">'_'</span>,<span class="st">''</span>)<span class="sc">%&gt;%</span><span class="fu">str_replace_all</span>(<span class="st">'—'</span>,<span class="st">''</span>)<span class="sc">%&gt;%</span><span class="fu">str_replace_all</span>(<span class="st">"'"</span>,<span class="st">''</span>)<span class="sc">%&gt;%</span><span class="fu">str_replace_all</span>(<span class="st">'"'</span>,<span class="st">''</span>)</span>
+<span id="cb49-165"><a href="#cb49-165" aria-hidden="true" tabindex="-1"></a>         ) <span class="sc">%&gt;%</span> <span class="fu">separate</span>(</span>
+<span id="cb49-166"><a href="#cb49-166" aria-hidden="true" tabindex="-1"></a>    data, </span>
+<span id="cb49-167"><a href="#cb49-167" aria-hidden="true" tabindex="-1"></a>    <span class="at">into =</span> <span class="fu">c</span>(<span class="st">"one"</span>, <span class="st">"price"</span>), </span>
+<span id="cb49-168"><a href="#cb49-168" aria-hidden="true" tabindex="-1"></a>    <span class="at">sep =</span> <span class="fu">c</span>(<span class="st">"¥"</span>)</span>
+<span id="cb49-169"><a href="#cb49-169" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(</span>
+<span id="cb49-170"><a href="#cb49-170" aria-hidden="true" tabindex="-1"></a>    <span class="at">id =</span> <span class="fu">str_extract</span>(one, <span class="st">"^</span><span class="sc">\\</span><span class="st">S+ "</span>)</span>
+<span id="cb49-171"><a href="#cb49-171" aria-hidden="true" tabindex="-1"></a>    ,<span class="at">name=</span><span class="fu">gsub</span>(<span class="st">"^</span><span class="sc">\\</span><span class="st">S+ "</span>, <span class="st">""</span>,one)</span>
+<span id="cb49-172"><a href="#cb49-172" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb49-173"><a href="#cb49-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-174"><a href="#cb49-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-175"><a href="#cb49-175" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(raw_tibble001)</span>
+<span id="cb49-176"><a href="#cb49-176" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb49-177"><a href="#cb49-177" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-178"><a href="#cb49-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-179"><a href="#cb49-179" aria-hidden="true" tabindex="-1"></a><span class="fu">## read data from RData/Rds</span></span>
+<span id="cb49-180"><a href="#cb49-180" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-181"><a href="#cb49-181" aria-hidden="true" tabindex="-1"></a>Rda is just a short name for RData.Rds stores a single R object.RData can store multiple R objects in a single file. </span>
+<span id="cb49-182"><a href="#cb49-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-183"><a href="#cb49-183" aria-hidden="true" tabindex="-1"></a><span class="fu">### read one data </span></span>
+<span id="cb49-184"><a href="#cb49-184" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-187"><a href="#cb49-187" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb49-188"><a href="#cb49-188" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb49-189"><a href="#cb49-189" aria-hidden="true" tabindex="-1"></a>my_data <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"mtcars.rds"</span>)</span>
+<span id="cb49-190"><a href="#cb49-190" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb49-191"><a href="#cb49-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-192"><a href="#cb49-192" aria-hidden="true" tabindex="-1"></a><span class="fu">### read multiple data</span></span>
+<span id="cb49-193"><a href="#cb49-193" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-196"><a href="#cb49-196" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb49-197"><a href="#cb49-197" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb49-198"><a href="#cb49-198" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">"my_work_space.RData"</span>)</span>
+<span id="cb49-199"><a href="#cb49-199" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb49-200"><a href="#cb49-200" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-201"><a href="#cb49-201" aria-hidden="true" tabindex="-1"></a><span class="fu">## read doxc</span></span>
+<span id="cb49-202"><a href="#cb49-202" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-205"><a href="#cb49-205" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb49-206"><a href="#cb49-206" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pkg_install</span>(<span class="st">'officer'</span>)</span>
+<span id="cb49-207"><a href="#cb49-207" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(officer)</span>
+<span id="cb49-208"><a href="#cb49-208" aria-hidden="true" tabindex="-1"></a>docx<span class="ot">=</span><span class="fu">read_docx</span>(<span class="st">"data/example03.docx"</span>)</span>
+<span id="cb49-209"><a href="#cb49-209" aria-hidden="true" tabindex="-1"></a><span class="co">#docx</span></span>
+<span id="cb49-210"><a href="#cb49-210" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb49-211"><a href="#cb49-211" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-214"><a href="#cb49-214" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb49-215"><a href="#cb49-215" aria-hidden="true" tabindex="-1"></a><span class="fu">docx_dim</span>(docx)</span>
+<span id="cb49-216"><a href="#cb49-216" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb49-217"><a href="#cb49-217" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-220"><a href="#cb49-220" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb49-221"><a href="#cb49-221" aria-hidden="true" tabindex="-1"></a><span class="fu">docx_summary</span>(docx)</span>
+<span id="cb49-222"><a href="#cb49-222" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb49-223"><a href="#cb49-223" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-224"><a href="#cb49-224" aria-hidden="true" tabindex="-1"></a>filter table section</span>
+<span id="cb49-225"><a href="#cb49-225" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-228"><a href="#cb49-228" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb49-229"><a href="#cb49-229" aria-hidden="true" tabindex="-1"></a>table_cells<span class="ot">=</span><span class="fu">docx_summary</span>(docx) <span class="sc">%&gt;%</span> <span class="fu">filter</span>(content_type <span class="sc">==</span> <span class="st">"table cell"</span>)</span>
+<span id="cb49-230"><a href="#cb49-230" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-231"><a href="#cb49-231" aria-hidden="true" tabindex="-1"></a>table_data <span class="ot">&lt;-</span> table_cells <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="sc">!</span>is_header) <span class="sc">%&gt;%</span> <span class="fu">select</span>(row_id, cell_id, text)</span>
+<span id="cb49-232"><a href="#cb49-232" aria-hidden="true" tabindex="-1"></a>table_data</span>
+<span id="cb49-233"><a href="#cb49-233" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb49-234"><a href="#cb49-234" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-235"><a href="#cb49-235" aria-hidden="true" tabindex="-1"></a>transform the table data into a data frame</span>
+<span id="cb49-236"><a href="#cb49-236" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-239"><a href="#cb49-239" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb49-240"><a href="#cb49-240" aria-hidden="true" tabindex="-1"></a><span class="co"># The content of the table is in 'long' format, but we can 're-rectangularise'</span></span>
+<span id="cb49-241"><a href="#cb49-241" aria-hidden="true" tabindex="-1"></a>table_names <span class="ot">&lt;-</span> table_cells[table_cells<span class="sc">$</span>is_header, <span class="st">"text"</span>]</span>
+<span id="cb49-242"><a href="#cb49-242" aria-hidden="true" tabindex="-1"></a>table_content <span class="ot">&lt;-</span> table_cells[<span class="sc">!</span>table_cells<span class="sc">$</span>is_header, <span class="st">"text"</span>]</span>
+<span id="cb49-243"><a href="#cb49-243" aria-hidden="true" tabindex="-1"></a>row_count <span class="ot">&lt;-</span> <span class="fu">nrow</span>(table_cells) <span class="sc">/</span> <span class="fu">nrow</span>(table_cells[table_cells<span class="sc">$</span>is_header, ]) <span class="sc">-</span> <span class="dv">1</span></span>
+<span id="cb49-244"><a href="#cb49-244" aria-hidden="true" tabindex="-1"></a>table_mat <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">matrix</span>(table_content, <span class="at">nrow =</span> row_count))</span>
+<span id="cb49-245"><a href="#cb49-245" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(table_mat) <span class="ot">&lt;-</span> table_names</span>
+<span id="cb49-246"><a href="#cb49-246" aria-hidden="true" tabindex="-1"></a>table_mat</span>
+<span id="cb49-247"><a href="#cb49-247" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb49-248"><a href="#cb49-248" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-249"><a href="#cb49-249" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-250"><a href="#cb49-250" aria-hidden="true" tabindex="-1"></a><span class="fu">## read txt</span></span>
+<span id="cb49-251"><a href="#cb49-251" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-254"><a href="#cb49-254" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb49-255"><a href="#cb49-255" aria-hidden="true" tabindex="-1"></a>my_data <span class="ot">&lt;-</span> <span class="fu">read.delim</span>(<span class="st">"text.txt"</span>)</span>
+<span id="cb49-256"><a href="#cb49-256" aria-hidden="true" tabindex="-1"></a>my_data</span>
+<span id="cb49-257"><a href="#cb49-257" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb49-258"><a href="#cb49-258" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-259"><a href="#cb49-259" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-260"><a href="#cb49-260" aria-hidden="true" tabindex="-1"></a><span class="fu"># Output </span></span>
+<span id="cb49-261"><a href="#cb49-261" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-262"><a href="#cb49-262" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-263"><a href="#cb49-263" aria-hidden="true" tabindex="-1"></a><span class="fu">## write csv </span></span>
+<span id="cb49-264"><a href="#cb49-264" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-267"><a href="#cb49-267" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb49-268"><a href="#cb49-268" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(data001,<span class="st">'data001 csv output data.csv'</span>)</span>
+<span id="cb49-269"><a href="#cb49-269" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb49-270"><a href="#cb49-270" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-271"><a href="#cb49-271" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-272"><a href="#cb49-272" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-273"><a href="#cb49-273" aria-hidden="true" tabindex="-1"></a><span class="fu">## write excel</span></span>
+<span id="cb49-274"><a href="#cb49-274" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-277"><a href="#cb49-277" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb49-278"><a href="#cb49-278" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openxlsx)</span>
+<span id="cb49-279"><a href="#cb49-279" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb49-280"><a href="#cb49-280" aria-hidden="true" tabindex="-1"></a><span class="fu">write.xlsx</span>(data001,<span class="st">'data001 excel output data.xlsx'</span>)</span>
+<span id="cb49-281"><a href="#cb49-281" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb49-282"><a href="#cb49-282" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-283"><a href="#cb49-283" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-284"><a href="#cb49-284" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-285"><a href="#cb49-285" aria-hidden="true" tabindex="-1"></a><span class="fu">## write parquet</span></span>
+<span id="cb49-286"><a href="#cb49-286" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-289"><a href="#cb49-289" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb49-290"><a href="#cb49-290" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(arrow)</span>
+<span id="cb49-291"><a href="#cb49-291" aria-hidden="true" tabindex="-1"></a><span class="fu">write_parquet</span>(data001,<span class="st">'data/df.parquet'</span>)</span>
+<span id="cb49-292"><a href="#cb49-292" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb49-293"><a href="#cb49-293" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-294"><a href="#cb49-294" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-295"><a href="#cb49-295" aria-hidden="true" tabindex="-1"></a>output to zip format</span>
+<span id="cb49-296"><a href="#cb49-296" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-299"><a href="#cb49-299" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb49-300"><a href="#cb49-300" aria-hidden="true" tabindex="-1"></a><span class="fu">write_parquet</span>(data001,<span class="st">'data/df.parquet.gzip'</span>,<span class="at">compression=</span><span class="st">'gzip'</span>)  </span>
+<span id="cb49-301"><a href="#cb49-301" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb49-302"><a href="#cb49-302" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-303"><a href="#cb49-303" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-304"><a href="#cb49-304" aria-hidden="true" tabindex="-1"></a><span class="fu">## write feather</span></span>
+<span id="cb49-305"><a href="#cb49-305" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-306"><a href="#cb49-306" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-307"><a href="#cb49-307" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-310"><a href="#cb49-310" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb49-311"><a href="#cb49-311" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(feather)</span>
+<span id="cb49-312"><a href="#cb49-312" aria-hidden="true" tabindex="-1"></a><span class="fu">write_feather</span>(data001,<span class="st">'data/feather_file.feather'</span>)</span>
+<span id="cb49-313"><a href="#cb49-313" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-314"><a href="#cb49-314" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb49-315"><a href="#cb49-315" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-316"><a href="#cb49-316" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-317"><a href="#cb49-317" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-318"><a href="#cb49-318" aria-hidden="true" tabindex="-1"></a><span class="fu">## write txt</span></span>
+<span id="cb49-319"><a href="#cb49-319" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-322"><a href="#cb49-322" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb49-323"><a href="#cb49-323" aria-hidden="true" tabindex="-1"></a>text<span class="ot">=</span><span class="fu">tibble</span>(<span class="st">'hello world</span></span>
+<span id="cb49-324"><a href="#cb49-324" aria-hidden="true" tabindex="-1"></a><span class="st">its time!'</span>)</span>
+<span id="cb49-325"><a href="#cb49-325" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-326"><a href="#cb49-326" aria-hidden="true" tabindex="-1"></a><span class="fu">write_delim</span>(text, <span class="st">"text.txt"</span>)</span>
+<span id="cb49-327"><a href="#cb49-327" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb49-328"><a href="#cb49-328" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-329"><a href="#cb49-329" aria-hidden="true" tabindex="-1"></a><span class="fu">## write to RData/Rds</span></span>
+<span id="cb49-330"><a href="#cb49-330" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-331"><a href="#cb49-331" aria-hidden="true" tabindex="-1"></a><span class="fu">### write one data</span></span>
+<span id="cb49-332"><a href="#cb49-332" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-335"><a href="#cb49-335" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb49-336"><a href="#cb49-336" aria-hidden="true" tabindex="-1"></a><span class="co"># Save a single object to a file</span></span>
+<span id="cb49-337"><a href="#cb49-337" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(mtcars, <span class="st">"mtcars.rds"</span>)</span>
+<span id="cb49-338"><a href="#cb49-338" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb49-339"><a href="#cb49-339" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-340"><a href="#cb49-340" aria-hidden="true" tabindex="-1"></a><span class="fu">### write multiple data</span></span>
+<span id="cb49-341"><a href="#cb49-341" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-344"><a href="#cb49-344" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb49-345"><a href="#cb49-345" aria-hidden="true" tabindex="-1"></a><span class="co"># Save a single object to a file</span></span>
+<span id="cb49-346"><a href="#cb49-346" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(mtcars,iris, <span class="at">file=</span><span class="st">"mtcars_and_iris.RData"</span>)</span>
+<span id="cb49-347"><a href="#cb49-347" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb49-348"><a href="#cb49-348" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-349"><a href="#cb49-349" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-350"><a href="#cb49-350" aria-hidden="true" tabindex="-1"></a><span class="fu">### write all working space data</span></span>
+<span id="cb49-351"><a href="#cb49-351" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-354"><a href="#cb49-354" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb49-355"><a href="#cb49-355" aria-hidden="true" tabindex="-1"></a><span class="co"># Save a single object to a file</span></span>
+<span id="cb49-356"><a href="#cb49-356" aria-hidden="true" tabindex="-1"></a><span class="fu">save.image</span>(<span class="at">file =</span> <span class="st">"my_work_space.RData"</span>)</span>
+<span id="cb49-357"><a href="#cb49-357" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb49-358"><a href="#cb49-358" aria-hidden="true" tabindex="-1"></a></span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
