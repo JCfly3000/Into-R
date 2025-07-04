@@ -18,56 +18,72 @@ format:
 
 ![](images/R_logo.svg.png){width="300"}
 
+
 # R version
+
+The `version` object in R holds information about the current R version you are running.
 
 ```{r}
 version
 ```
 
-# work with file
+# Work with files
 
-## get current directory
+## Get current directory
+
+The `getwd()` function returns your current working directory as a string.
 
 ```{r}
 #| eval: false
 getwd()
 ```
 
-## get all file name under current directory
+## Get all file names under the current directory
+
+The `list.files()` function returns a character vector of file and directory names in the specified directory. Without an argument, it lists files in the current directory.
 
 ```{r}
 list.files()
 ```
 
-## get all file name under currrents parent directory
+## Get all file names under one level up directory
+
+You can use `..` to refer to the parent directory.
 
 ```{r}
-list.files("../")
+list.files('../')
 ```
 
+## Get file info
 
-## get file info
+The `file.info()` function returns a data frame with information about the specified file, such as its size, creation time, and modification time.
 
 ```{r}
 #| eval: false
 file.info("6 data analytic in R book.qmd")
 ```
 
-## create folder
+## Create folder
+
+The `dir.create()` function creates a new directory (folder).
 
 ```{r}
 #| eval: false
 dir.create('testing_folder')
 ```
 
-## delete folder/file
+## Delete folder/file
+
+The `file.remove()` function can be used to delete files. To delete an empty directory, you can also use `unlink()`.
 
 ```{r}
 #| eval: false
 file.remove('testing_folder')
 ```
 
-## copy file
+## Copy file
+
+The `file_copy()` function from the `fs` package copies files from one location to another.
 
 ```{r}
 #| eval: false
@@ -75,7 +91,9 @@ library(fs)
 file_copy('test.csv', 'test2.csv')
 ```
 
-## download file from internet
+## Download file from the internet
+
+The `download.file()` function downloads a file from a given URL.
 
 ```{r}
 #| eval: false
@@ -84,8 +102,9 @@ url="https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2
 download.file(url = url, destfile = "hotels.csv")
 ```
 
+## Download table from the internet
 
-## download table from internet
+This code scrapes a table from a Wikipedia page. It uses `rvest` to read the HTML content, `html_table` to extract tables, `janitor::clean_names` to clean up column names, and `dplyr` verbs (`filter`, `mutate`) to clean the data.
 
 ```{r}
 library(tidyverse)
@@ -104,13 +123,13 @@ tail(nba_wiki_data003)
 
 ```
 
-# handle error
+# Handle errors
 
-using tryCatch to continues the code chunk.
+`tryCatch` allows you to handle errors gracefully. The code in the first block is executed. If an error occurs, the `error` function is called.
 
 ```{r}
 tryCatch({
-  1+who
+  1+who # This will cause an error because 'who' is not defined
 },error=function(e){
   message(paste0('Here is some error:',e))
 })
@@ -118,9 +137,9 @@ tryCatch({
 print('end of the code chunk')
 ```
 
-
-
 # Condition with if/elif/else
+
+This is a standard conditional statement. It checks a condition and executes different code blocks based on whether the condition is true or false.
 
 ```{r}
 x <- -5
@@ -133,11 +152,11 @@ print("Negative number")
 }
 ```
 
-
-
-# Loop
+# Loops
 
 ## for Loop
+
+A `for` loop iterates over a sequence of values.
 
 ```{r}
 for (x in 1:4) {
@@ -145,8 +164,7 @@ for (x in 1:4) {
 }
 ```
 
-
-with break statement
+`break` exits the loop prematurely.
 
 ```{r}
 for (x in 1:6) {
@@ -154,7 +172,8 @@ for (x in 1:6) {
   print(x)
 }
 ```
-with next statement
+
+`next` skips the current iteration and proceeds to the next one.
 
 ```{r}
 for (x in 1:6) {
@@ -163,10 +182,9 @@ for (x in 1:6) {
 }
 ```
 
+## Using map() function for loops
 
-## using map() funcation for loop
-
-The map functions transform their input by applying a function to each element and returning a vector the same length as the input.
+The `map` functions from the `purrr` package (part of `tidyverse`) provide a more functional approach to iteration. `map` returns a list, `map_dbl` returns a numeric vector, and `map_chr` returns a character vector.
 
 ```{r}
 library(tidyverse)
@@ -178,7 +196,6 @@ map(
     \(x) x+2
   )
 ```
-return number vector
 
 ```{r}
 map_dbl(
@@ -187,8 +204,6 @@ map_dbl(
   )
 ```
 
-return char vector
-
 ```{r}
 map_chr(
   1:3, 
@@ -196,67 +211,38 @@ map_chr(
   )
 ```
 
-## Error handling on for Loop:print out error
+## Error handling in a for loop: printing out errors
+
+You can use `tryCatch` inside a loop to handle errors on a per-iteration basis.
 
 ```{r}
 stuff <- list(12, 9, 2, "cat", 25, 10, "bird")
-#stuff
-```
 
-
-```{r}
 loop_num=0
-
 for (i in 1:6) {
   loop_num=loop_num+1
   tryCatch (print(1+i),
-           
            error = function(e){
            message(paste("An error occurred for loop num", loop_num,":\n"), e)
-             
          })
 }
 ```
 
-
-
-
 ## while Loop
 
-```{r}
-i <- 1
-while (i < 6) {
-  print(i)
-  i <- i + 1
-}
-```
-
-with break statement
+A `while` loop continues as long as a condition is true.
 
 ```{r}
 i <- 1
 while (i < 6) {
   print(i)
   i <- i + 1
-  if (i == 4) {break}
 }
 ```
 
-with next statement
+## Error handling in a while loop: retrying until the error is gone
 
-```{r}
-i =1
-
-while (i < 6) {
-  i <- i + 1
-  if (i == 4){next}
-  print(i)
-}
-```
-
-
-
-## Error handling on whie Loop: try when the error gone
+This example shows a `while` loop that attempts to run code that causes an error. The `tryCatch` block catches the error and modifies a variable, allowing the loop to eventually terminate.
 
 ```{r}
 i=0
@@ -265,23 +251,22 @@ while (i < 4) {
   a=a+1
   print(i)
   tryCatch({
-  asdfgaergae5gh5hae5h
+  asdfgaergae5gh5hae5h # This will cause an error
     i=i+1
   },error = function(msg){print('eeeeeeee')
     i=i-1
     print(paste0("new i : ",i))
    
     })
-   if(a>10){break}
+   if(a>10){break} # Safety break to prevent an infinite loop
   }
 ```
 
+# Functions
 
+## Without Arguments
 
-
-# function
-
-## without Arguments
+This defines and calls a simple function that takes no arguments.
 
 ```{r}
 my_function <- function() { 
@@ -291,7 +276,9 @@ my_function <- function() {
 my_function()
 ```
 
-## with Arguments
+## With Arguments
+
+This function takes one argument, `x`, and returns its value plus 10.
 
 ```{r}
 adding_ten <- function(x) { 
@@ -302,7 +289,9 @@ adding_ten <- function(x) {
 adding_ten(5)
 ```
 
-## with default Arguments
+## With default Arguments
+
+This function has a default value for `x`. If the function is called without an argument for `x`, the default value of 10 is used.
 
 ```{r}
 adding_ten <- function(x=10) { 
@@ -310,26 +299,20 @@ adding_ten <- function(x=10) {
   return(a)
 }
 
-#if not define x, then x=10
-
 adding_ten()
 ```
 
-## check function Arguments
+## Check function Arguments
+
+The `args()` function displays the arguments of a function.
 
 ```{r}
 args(adding_ten)
 ```
 
-Many functions exhibit variadic behavior. That is, they can accept any num- ber of arguments, and it’s up to the user to decide how many arguments to provide. The functions c, data.frame, and list are all like this. When you call a function like data.frame, you can specify any number of members as arguments.
+## Warning in function
 
-```{r}
-args(data.frame)
-```
-
-## warning in function
-
-print out warning
+The `warning()` function issues a warning message without stopping the execution of the function.
 
 ```{r}
 adding_ten <- function(x=10) { 
@@ -339,15 +322,13 @@ adding_ten <- function(x=10) {
   }
   return(a)
 }
-```
 
-```{r}
 adding_ten(100)
 ```
 
-## stop in function
+## Stop in function
 
-print out stop error message
+The `stop()` function halts the execution of the function and prints an error message.
 
 ```{r}
 #| eval: false
@@ -360,19 +341,18 @@ adding_ten <- function(x=10) {
 }
 ```
 
-```{r}
-#| eval: false
-adding_ten(100)
-```
+## Use try to bypass errors
 
-## use try to by pass error
+The `try()` function is a simplified version of `tryCatch`. It runs an expression and if an error occurs, it returns an object of class `try-error` but allows the script to continue.
 
 ```{r}
 try(adding_ten(100))
 5+10
 ```
 
-# program running time
+# Program running time
+
+This code measures the time it takes to run a piece of code by recording the start and end times.
 
 ```{r}
 start_time=Sys.time()
@@ -381,38 +361,26 @@ v=matrix(1:100000000)
 c=v*v
 
 end_time=Sys.time()
-```
 
-```{r}
-start_time
-```
-
-```{r}
-end_time
-```
-
-```{r}
 end_time-start_time
 ```
 
-# Package
+# Packages
 
+## Install R package
 
+### Install from CRAN
 
-## install R package
-
-### install from Cran
-
-99% of the time will install pacakge from The Comprehensive R Archive Network(cran).<https://cran.r-project.org/>
-
-![](images/1_wcX2tfGe4til0PmjxhKuQA.png){width="300"}
+`install.packages()` is the standard way to install packages from CRAN.
 
 ```{r}
 #| eval: false
 install.packages('dplyr',repos = "http://cran.us.r-project.org")
 ```
 
-### install old version from Cran
+### Install old version from CRAN
+
+The `remotes` package allows you to install specific versions of packages.
 
 ```{r}
 #| eval: false
@@ -420,53 +388,42 @@ require(remotes)
 install_version("plotly", version = "4.10.2")
 ```
 
-### install from Github
+### Install from Github
+
+The `pak` package can install packages directly from GitHub repositories.
 
 ```{r}
 #| eval: false
 pak::pkg_install("tidymodels/learntidymodels")
 ```
 
-### install from .tar.gz
+## Check one package version
 
-```{r}
-#| eval: false
-install.packages("https://cran.r-project.org/src/contrib/Archive/maptools/maptools_1.1-8.tar.gz")
-```
-
-### install from Bioconductor
-
-```{r}
-#| eval: false
-pak::pkg_install("text2vec")
-```
-
-### install from local
-
-```{r}
-#| eval: false
-pak::local_install("cli")
-```
-
-## check one package version
+`packageVersion()` returns the version of the specified package.
 
 ```{r}
 packageVersion("tidyverse")
 ```
 
-## check pacakge relationship
+## Check package location
+
+`pak::pkg_status()` provides detailed information about a package, including its installation path.
 
 ```{r}
-pak::pkg_deps_explain("tibble", "rlang")
+pak::pkg_status("ggplot2") |> t()
 ```
 
-## check pacakge dependencies
+## Check package dependencies
+
+`pak::pkg_deps_tree()` shows a tree of the dependencies for a given package.
 
 ```{r}
 pak::pkg_deps_tree("tibble")
 ```
 
-## check all installed package
+## Check all installed packages
+
+`installed.packages()` returns a matrix of all installed packages. This code filters it and displays it in an interactive table using `gt`.
 
 ```{r}
 library(gt)
@@ -475,210 +432,84 @@ ip = ip[is.na(ip$Priority),1:2,drop=FALSE]
 ip |> gt() |> opt_interactive()
 ```
 
+## Check currently loaded packages
 
-## check current loaded package
+`.packages()` returns a character vector of the packages that are currently loaded in your R session.
 
 ```{r}
 library(dplyr)
-installed_pacakge = as.data.frame(installed.packages()[,c(1,3:4)])
-installed_pacakge = installed_pacakge[is.na(installed_pacakge$Priority),1:2,drop=FALSE]
-installed_pacakge |> filter(Package %in% (.packages()))|> gt() |> opt_interactive()
+installed_package = as.data.frame(installed.packages()[,c(1,3:4)])
+installed_package = installed_package[is.na(installed_package$Priority),1:2,drop=FALSE]
+installed_package |> filter(Package %in% (.packages()))|> gt() |> opt_interactive()
 ```
 
-## list all  packages on cran 
+## List all packages on CRAN
 
+`available.packages()` returns a matrix of all packages available on CRAN.
 
 ```{r}
-cran_pacakge_num=available.packages(repos = "http://cran.us.r-project.org") |> as.data.frame()
+cran_package_num=available.packages(repos = "http://cran.us.r-project.org") |> as.data.frame()
 ```
 
-As `r Sys.Date()` ,there are total library `r nrow(cran_pacakge_num)` on cran
+## Check local installed old packages compared with CRAN
 
-```{r}
-cran_pacakge_num|> gt() |> opt_interactive()
-```
-
-
-## check local installed old package compare with cran
+`old.packages()` checks for installed packages that have newer versions available on CRAN.
 
 ```{r}
 old.packages(repos = "http://cran.us.r-project.org")
 ```
 
+## Update all installed packages
 
-
-## update all installed package
-
-Update packages which are currently out-of-date. Currently supports CRAN, Bioconductor, other CRAN-like repositories, GitHub, GitLab, Git, and BitBucket.
-
+`update.packages()` updates all installed packages to their latest versions.
 
 ```{r}
 #| eval: false
 update.packages(ask = FALSE, checkBuilt = TRUE)
 ```
 
+## Check package install location
 
-
-## check package install loaciton
+`.libPaths()` shows the library paths where R packages are installed.
 
 ```{r}
 .libPaths()
 ```
 
-## uninstall pacakge
+# Version control
 
-```{r}
-#| eval: false
-remove.packages('xxxxx')
-```
+The `renv` package helps manage project-specific package libraries, making your projects more reproducible.
 
-# sleep
+## Initialize renv and create renv.lock with currently loaded packages
 
-The time interval to suspend execution for, in seconds.
-
-```{r}
-Sys.sleep(3)
-```
-
-# open two R session on Mac
-
-```{r filename="Terminal"}
-#| eval: false
-open -n /Applications/RStudio.app
-```
-
-
-# version control
-
-The renv package helps you create reproducible environments for your R projects
-
-![](https://rstudio.github.io/renv/articles/renv.png)
-
-
-## inital renv and create renv.lock with current loaded pacakge
+`renv::init()` initializes `renv` in a project, creating a private library and a `renv.lock` file that records the package versions used.
 
 ```{r}
 #| eval: false
 renv::init()
 ```
 
+## Update lock file
 
-## show all installed pacakge
-
-```{r}
-library(gt)
-installed_pacakge = as.data.frame(installed.packages()[,c(1,3:4)])
-installed_pacakge = installed_pacakge[is.na(installed_pacakge$Priority),1:2,drop=FALSE]
-```
-
-
-## show all installed pacakge and loaded pacakge
-```{r}
-library(dplyr)
-installed_pacakge = as.data.frame(installed.packages()[,c(1,3:4)])
-installed_pacakge = installed_pacakge[is.na(installed_pacakge$Priority),1:2,drop=FALSE]
-installed_pacakge |> filter(Package %in% (.packages()))|> gt() |> opt_interactive()
-```
-
-
-
-
-## when using renv and install new pakcage
-
-```{r}
-# it will not work
-# library(lubridate)
-```
-
-## install new package with renv::install
-
-```{r}
-#| eval: false
-renv::install('lubridate')
-```
-
-```{r}
-library(lubridate)
-```
-
-
-## check current package and renv package
-
-```{r}
-#| eval: false
-renv::status()
-```
-
-## update lock file
+`renv::snapshot()` updates the `renv.lock` file to reflect the current state of the project's library.
 
 ```{r}
 #| eval: false
 renv::snapshot()
 ```
 
-## check status again
+## Make all current package versions back to the renv list
 
-```{r}
-#| eval: false
-renv::status()
-```
-
-## make all current pakcage version back to renv list
+`renv::restore()` restores the project library to the state recorded in `renv.lock`.
 
 ```{r}
 #| eval: false
 renv::restore()
 ```
 
-## update all pakcage in renv. recommand do it once a year to keep package updated.
+# Stop when code runs too long
 
-Update packages which are currently out-of-date. Currently supports CRAN, Bioconductor, other CRAN-like repositories, GitHub, GitLab, Git, and BitBucket.
-
-
-```{r}
-#| eval: false
-renv::update()
-```
-
-## update renv itself only
-
-```{r}
-#| eval: false
-renv::upgrade()
-```
-## close renv in a project
-
-```{r}
-#| eval: false
-renv::deactivate()
-```
-
-
-## re enable renv in a project
-
-```{r}
-#| eval: false
-renv::activate()
-```
-
-# reccord code run time
-
-```{r}
-start_time=Sys.time()
-
-for (kk in 1:5) {
-    print(kk)
-    Sys.sleep(1)
-  }
-
-end_time=Sys.time()
-time_used=end_time-start_time
-time_used
-```
-
-# stop when code run too long
-
-stop the count down at 1.5 sec
+The `withTimeout()` function from the `R.utils` package runs an expression and stops it if it exceeds the specified timeout.
 
 ```{r}
 #|  warning: true
@@ -699,10 +530,9 @@ withTimeout({
 }, timeout = 1.5, onTimeout = "warning")
 ```
 
+# Check website connection
 
-# check website connection
-
-when connect_result= 2 it means connection is ok
+The `system()` function can run shell commands. Here, it uses `ping` to check if a website is reachable.
 
 ```{r}
 url='www.bing.com'
@@ -710,73 +540,31 @@ connect_result=system(paste0('ping -c 1 ',url))
 connect_result
 ```
 
-when connect_result= 68 it means connection is fail
-
-```{r}
-url='www.bingxxxxx.com'
-connect_result=system(paste0('ping -c 1 ',url))
-connect_result
-```
-
-
-
-
 # Using Python
 
+The `reticulate` package allows you to call Python from within R.
 
-## select python version
+## Select Python version
 
-check whether python is available
+`reticulate::py_available()` checks if Python is available, and `reticulate::py_config()` shows the Python configuration that `reticulate` is using.
 
 ```{r}
 reticulate::py_available()
 ```
 
-check python version
-
 ```{r}
 reticulate::py_config()
 ```
 
+## Run Python in R
 
-
-
-## select python version
-
-Set up Python:Using python 3.11 instead of 3.13. It need to restart first
-
-
-```{r}
-#| eval: false
-Sys.setenv(RETICULATE_PYTHON = "/Library/Frameworks/Python.framework/Versions/3.11/bin/python3.11")
-library(reticulate)
-use_python("/Library/Frameworks/Python.framework/Versions/3.11/bin/python3.11")
-```
-
-
-```{python}
-#| eval: false
-from platform import python_version
-print(python_version())
-```
-
-
-
-
-
-
-## run python in R
+`source_python()` executes a Python script and makes its objects available in the R environment.
 
 ```{r}
 #| eval: false
 source_python("flights.py")
 ```
 
-
-
-
 ```{r, attr.output='.details summary="sessionInfo()"'}
 sessionInfo()
 ```
-
-

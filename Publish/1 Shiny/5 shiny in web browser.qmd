@@ -1,5 +1,5 @@
 ---
-title: "Shiny in web web browser"
+title: "Shiny in web browser"
 author: "Tony Duan"
 
 execute:

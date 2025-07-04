@@ -8,7 +8,7 @@
 
 <meta name="author" content="Tony Duan">
 
-<title>SQL database with R – Into R</title>
+<title>Working with SQL Databases in R – R Handbook</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -75,7 +75,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-494121dfa8658343c03537e94414993d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-c40501fda89cbc240d84efadedcf7c79.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-f99d74084a9a188c2dfc40352fff8fcd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -106,7 +106,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="../styles.css">
-<meta name="twitter:title" content="SQL database with R – Into R">
+<meta name="twitter:title" content="Working with SQL Databases in R – R Handbook">
+<meta name="twitter:description" content="">
 <meta name="twitter:image" content="images/1594917913096.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -122,7 +123,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <img src="../Rlogo.png" alt="" class="navbar-logo">
     </a>
     <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">Into R</span>
+    <span class="navbar-title">R Handbook</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -175,23 +176,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="dropdown-header">data manipulation</li>
         <li>
     <a class="dropdown-item" href="../data manipulation/1 input ouput.html">
- <span class="dropdown-text">input &amp; ouput in R</span></a>
+ <span class="dropdown-text">Input &amp; Output in R</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../data manipulation/2 data structure in R.html">
- <span class="dropdown-text">Data structure in R</span></a>
+    <a class="dropdown-item" href="../data manipulation/2 data_structure.html">
+ <span class="dropdown-text">Data Structures in R</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../data manipulation/3 data manipulation with tidyverse.html">
- <span class="dropdown-text">Data manipulation with tidyverse</span></a>
+ <span class="dropdown-text">Data Manipulation with tidyverse</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../data manipulation/4 data table.html">
- <span class="dropdown-text">Data table</span></a>
+ <span class="dropdown-text">Data Tables in R</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../data manipulation/5 recipe.html">
- <span class="dropdown-text">recipe</span></a>
+ <span class="dropdown-text">Recipe in tidymodels</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../data manipulation/5 resample.html">
@@ -199,7 +200,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
         <li>
     <a class="dropdown-item" href="../data manipulation/6 SQL database.html">
- <span class="dropdown-text">SQL database with R</span></a>
+ <span class="dropdown-text">Working with SQL Databases in R</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../data manipulation/7 data management.html">
+ <span class="dropdown-text">Data management</span></a>
   </li>  
     </ul>
   </li>
@@ -226,6 +231,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">Financial data</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../Plot/5 chart club.html">
+ <span class="dropdown-text">Chart club</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../Plot/5 Map/1 leaflet.html">
  <span class="dropdown-text">5 Map</span></a>
   </li>  
@@ -242,7 +251,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">1 Shiny</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../Publish/2 quarto/1 quarto tips.html">
+    <a class="dropdown-item" href="../Publish/2 quarto/1 quarto intro.html">
  <span class="dropdown-text">2 quarto</span></a>
   </li>  
         <li>
@@ -250,8 +259,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">3 dashboard</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../Publish/4 email/1 email.html">
+    <a class="dropdown-item" href="../Publish/4 email/email.html">
  <span class="dropdown-text">4 email</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../Publish/5 git/git.html">
+ <span class="dropdown-text">5 git</span></a>
   </li>  
     </ul>
   </li>
@@ -266,7 +279,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">1 google analytics</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../other/2 web scrap/web scrap.html">
+    <a class="dropdown-item" href="../other/2 web scrap/1 web scrap with rvest.html">
  <span class="dropdown-text">2 web scrap</span></a>
   </li>  
         <li>
@@ -291,7 +304,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../data manipulation/1 input ouput.html">data manipulation</a></li><li class="breadcrumb-item"><a href="../data manipulation/6 SQL database.html">SQL database with R</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../data manipulation/1 input ouput.html">data manipulation</a></li><li class="breadcrumb-item"><a href="../data manipulation/6 SQL database.html">Working with SQL Databases in R</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -315,31 +328,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../data manipulation/1 input ouput.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">input &amp; ouput in R</span></a>
+ <span class="menu-text">Input &amp; Output in R</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../data manipulation/2 data structure in R.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data structure in R</span></a>
+  <a href="../data manipulation/2 data_structure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Structures in R</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../data manipulation/3 data manipulation with tidyverse.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data manipulation with tidyverse</span></a>
+ <span class="menu-text">Data Manipulation with tidyverse</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../data manipulation/4 data table.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data table</span></a>
+ <span class="menu-text">Data Tables in R</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../data manipulation/5 recipe.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">recipe</span></a>
+ <span class="menu-text">Recipe in tidymodels</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -351,7 +364,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../data manipulation/6 SQL database.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">SQL database with R</span></a>
+ <span class="menu-text">Working with SQL Databases in R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../data manipulation/7 data management.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data management</span></a>
   </div>
 </li>
       </ul>
@@ -366,75 +385,42 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#connection-with-database" id="toc-connection-with-database" class="nav-link active" data-scroll-target="#connection-with-database"><span class="header-section-number">1</span> Connection with database</a>
+  <li><a href="#connecting-to-a-database" id="toc-connecting-to-a-database" class="nav-link active" data-scroll-target="#connecting-to-a-database">1. Connecting to a Database</a>
   <ul class="collapse">
-  <li><a href="#create-database-file-pythonsqlite.db-and-copy-mtcars-data-and-iris-data-into-database" id="toc-create-database-file-pythonsqlite.db-and-copy-mtcars-data-and-iris-data-into-database" class="nav-link" data-scroll-target="#create-database-file-pythonsqlite.db-and-copy-mtcars-data-and-iris-data-into-database"><span class="header-section-number">1.1</span> create database file pythonsqlite.db and copy mtcars data and iris data into database</a></li>
-  <li><a href="#check-all-table-in-database" id="toc-check-all-table-in-database" class="nav-link" data-scroll-target="#check-all-table-in-database"><span class="header-section-number">1.2</span> check all table in database</a></li>
+  <li><a href="#create-and-populate-a-database" id="toc-create-and-populate-a-database" class="nav-link" data-scroll-target="#create-and-populate-a-database">Create and Populate a Database</a></li>
   </ul></li>
-  <li><a href="#sql" id="toc-sql" class="nav-link" data-scroll-target="#sql"><span class="header-section-number">2</span> SQL</a>
+  <li><a href="#method-1-writing-raw-sql-queries" id="toc-method-1-writing-raw-sql-queries" class="nav-link" data-scroll-target="#method-1-writing-raw-sql-queries">2. Method 1: Writing Raw SQL Queries</a>
   <ul class="collapse">
-  <li><a href="#select" id="toc-select" class="nav-link" data-scroll-target="#select"><span class="header-section-number">2.1</span> select</a></li>
-  <li><a href="#renaming-column" id="toc-renaming-column" class="nav-link" data-scroll-target="#renaming-column"><span class="header-section-number">2.2</span> Renaming column</a></li>
-  <li><a href="#create-column" id="toc-create-column" class="nav-link" data-scroll-target="#create-column"><span class="header-section-number">2.3</span> create column</a></li>
-  <li><a href="#filter-rows" id="toc-filter-rows" class="nav-link" data-scroll-target="#filter-rows"><span class="header-section-number">2.4</span> Filter rows</a>
+  <li><a href="#select-statement" id="toc-select-statement" class="nav-link" data-scroll-target="#select-statement">SELECT Statement</a></li>
+  <li><a href="#column-aliasing-and-creation" id="toc-column-aliasing-and-creation" class="nav-link" data-scroll-target="#column-aliasing-and-creation">Column Aliasing and Creation</a></li>
+  <li><a href="#filtering-with-where" id="toc-filtering-with-where" class="nav-link" data-scroll-target="#filtering-with-where">Filtering with WHERE</a></li>
+  <li><a href="#aggregation-with-group-by" id="toc-aggregation-with-group-by" class="nav-link" data-scroll-target="#aggregation-with-group-by">Aggregation with GROUP BY</a></li>
+  <li><a href="#sorting-with-order-by" id="toc-sorting-with-order-by" class="nav-link" data-scroll-target="#sorting-with-order-by">Sorting with ORDER BY</a></li>
+  <li><a href="#joins" id="toc-joins" class="nav-link" data-scroll-target="#joins">Joins</a>
   <ul class="collapse">
-  <li><a href="#filters-with-and-conditions" id="toc-filters-with-and-conditions" class="nav-link" data-scroll-target="#filters-with-and-conditions"><span class="header-section-number">2.4.1</span> Filters with AND conditions</a></li>
-  <li><a href="#filters-with-or-conditions" id="toc-filters-with-or-conditions" class="nav-link" data-scroll-target="#filters-with-or-conditions"><span class="header-section-number">2.4.2</span> Filters with or conditions</a></li>
+  <li><a href="#inner-join" id="toc-inner-join" class="nav-link" data-scroll-target="#inner-join">INNER JOIN</a></li>
+  <li><a href="#left-join" id="toc-left-join" class="nav-link" data-scroll-target="#left-join">LEFT JOIN</a></li>
   </ul></li>
-  <li><a href="#append" id="toc-append" class="nav-link" data-scroll-target="#append"><span class="header-section-number">2.5</span> Append</a>
+  <li><a href="#string-and-date-functions" id="toc-string-and-date-functions" class="nav-link" data-scroll-target="#string-and-date-functions">String and Date Functions</a></li>
+  <li><a href="#modifying-data" id="toc-modifying-data" class="nav-link" data-scroll-target="#modifying-data">Modifying Data</a>
   <ul class="collapse">
-  <li><a href="#append-by-row" id="toc-append-by-row" class="nav-link" data-scroll-target="#append-by-row"><span class="header-section-number">2.5.1</span> append by row</a></li>
-  <li><a href="#append-by-column" id="toc-append-by-column" class="nav-link" data-scroll-target="#append-by-column"><span class="header-section-number">2.5.2</span> append by column</a></li>
-  <li><a href="#dropping-na-values" id="toc-dropping-na-values" class="nav-link" data-scroll-target="#dropping-na-values"><span class="header-section-number">2.5.3</span> Dropping NA values</a></li>
-  <li><a href="#keep-na-values" id="toc-keep-na-values" class="nav-link" data-scroll-target="#keep-na-values"><span class="header-section-number">2.5.4</span> keep NA values</a></li>
+  <li><a href="#update-table" id="toc-update-table" class="nav-link" data-scroll-target="#update-table">UPDATE Table</a></li>
+  <li><a href="#create-and-drop-table" id="toc-create-and-drop-table" class="nav-link" data-scroll-target="#create-and-drop-table">CREATE and DROP Table</a></li>
   </ul></li>
-  <li><a href="#group-by" id="toc-group-by" class="nav-link" data-scroll-target="#group-by"><span class="header-section-number">2.6</span> group by</a>
-  <ul class="collapse">
-  <li><a href="#averageminmaxsum" id="toc-averageminmaxsum" class="nav-link" data-scroll-target="#averageminmaxsum"><span class="header-section-number">2.6.1</span> average,min,max,sum</a></li>
-  <li><a href="#count-record-and-count-distinct-record" id="toc-count-record-and-count-distinct-record" class="nav-link" data-scroll-target="#count-record-and-count-distinct-record"><span class="header-section-number">2.6.2</span> count record and count distinct record</a></li>
   </ul></li>
-  <li><a href="#order-rows" id="toc-order-rows" class="nav-link" data-scroll-target="#order-rows"><span class="header-section-number">2.7</span> order rows</a>
-  <ul class="collapse">
-  <li><a href="#sort-in-descending-order" id="toc-sort-in-descending-order" class="nav-link" data-scroll-target="#sort-in-descending-order"><span class="header-section-number">2.7.1</span> Sort in descending order</a></li>
-  <li><a href="#arrange-by-multiple-variables" id="toc-arrange-by-multiple-variables" class="nav-link" data-scroll-target="#arrange-by-multiple-variables"><span class="header-section-number">2.7.2</span> Arrange by multiple variables</a></li>
-  </ul></li>
-  <li><a href="#join" id="toc-join" class="nav-link" data-scroll-target="#join"><span class="header-section-number">2.8</span> join</a>
-  <ul class="collapse">
-  <li><a href="#inner_join" id="toc-inner_join" class="nav-link" data-scroll-target="#inner_join"><span class="header-section-number">2.8.1</span> inner_join</a></li>
-  <li><a href="#full-join" id="toc-full-join" class="nav-link" data-scroll-target="#full-join"><span class="header-section-number">2.8.2</span> full join</a></li>
-  <li><a href="#left-join" id="toc-left-join" class="nav-link" data-scroll-target="#left-join"><span class="header-section-number">2.8.3</span> left join</a></li>
-  <li><a href="#anti-join" id="toc-anti-join" class="nav-link" data-scroll-target="#anti-join"><span class="header-section-number">2.8.4</span> anti join</a></li>
-  </ul></li>
-  <li><a href="#reshape-tables" id="toc-reshape-tables" class="nav-link" data-scroll-target="#reshape-tables"><span class="header-section-number">2.9</span> Reshape tables</a>
-  <ul class="collapse">
-  <li><a href="#gather-data-longwide-to-long" id="toc-gather-data-longwide-to-long" class="nav-link" data-scroll-target="#gather-data-longwide-to-long"><span class="header-section-number">2.9.1</span> Gather data long(wide to long)</a></li>
-  <li><a href="#spread-data-wide-long-to-wide" id="toc-spread-data-wide-long-to-wide" class="nav-link" data-scroll-target="#spread-data-wide-long-to-wide"><span class="header-section-number">2.9.2</span> Spread data wide (long to wide)</a></li>
-  </ul></li>
-  <li><a href="#string" id="toc-string" class="nav-link" data-scroll-target="#string"><span class="header-section-number">2.10</span> string</a>
-  <ul class="collapse">
-  <li><a href="#upper-case" id="toc-upper-case" class="nav-link" data-scroll-target="#upper-case"><span class="header-section-number">2.10.1</span> upper case</a></li>
-  <li><a href="#lower-case" id="toc-lower-case" class="nav-link" data-scroll-target="#lower-case"><span class="header-section-number">2.10.2</span> lower case</a></li>
-  <li><a href="#match" id="toc-match" class="nav-link" data-scroll-target="#match"><span class="header-section-number">2.10.3</span> match</a></li>
-  <li><a href="#concatenation" id="toc-concatenation" class="nav-link" data-scroll-target="#concatenation"><span class="header-section-number">2.10.4</span> concatenation</a></li>
-  <li><a href="#replace" id="toc-replace" class="nav-link" data-scroll-target="#replace"><span class="header-section-number">2.10.5</span> replace</a></li>
-  <li><a href="#extract" id="toc-extract" class="nav-link" data-scroll-target="#extract"><span class="header-section-number">2.10.6</span> extract</a></li>
-  </ul></li>
-  <li><a href="#date" id="toc-date" class="nav-link" data-scroll-target="#date"><span class="header-section-number">2.11</span> date</a></li>
-  <li><a href="#create-table-into-database" id="toc-create-table-into-database" class="nav-link" data-scroll-target="#create-table-into-database"><span class="header-section-number">2.12</span> create table into database</a></li>
-  <li><a href="#delete-table-in-database" id="toc-delete-table-in-database" class="nav-link" data-scroll-target="#delete-table-in-database"><span class="header-section-number">2.13</span> delete table in database</a></li>
-  <li><a href="#edit-table-in-database" id="toc-edit-table-in-database" class="nav-link" data-scroll-target="#edit-table-in-database"><span class="header-section-number">2.14</span> edit table in database</a></li>
-  </ul></li>
-  <li><a href="#using-sql-with-r-dataframe" id="toc-using-sql-with-r-dataframe" class="nav-link" data-scroll-target="#using-sql-with-r-dataframe"><span class="header-section-number">3</span> Using SQL with R dataframe</a></li>
-  <li><a href="#reference" id="toc-reference" class="nav-link" data-scroll-target="#reference"><span class="header-section-number">4</span> reference:</a></li>
+  <li><a href="#method-2-using-dbplyr" id="toc-method-2-using-dbplyr" class="nav-link" data-scroll-target="#method-2-using-dbplyr">3. Method 2: Using <code>dbplyr</code></a></li>
+  <li><a href="#best-practice-parameterized-queries" id="toc-best-practice-parameterized-queries" class="nav-link" data-scroll-target="#best-practice-parameterized-queries">4. Best Practice: Parameterized Queries</a></li>
+  <li><a href="#method-3-using-sqldf-on-local-data-frames" id="toc-method-3-using-sqldf-on-local-data-frames" class="nav-link" data-scroll-target="#method-3-using-sqldf-on-local-data-frames">5. Method 3: Using <code>sqldf</code> on Local Data Frames</a></li>
+  <li><a href="#disconnecting-from-the-database" id="toc-disconnecting-from-the-database" class="nav-link" data-scroll-target="#disconnecting-from-the-database">6. Disconnecting from the Database</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../data manipulation/1 input ouput.html">data manipulation</a></li><li class="breadcrumb-item"><a href="../data manipulation/6 SQL database.html">SQL database with R</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../data manipulation/1 input ouput.html">data manipulation</a></li><li class="breadcrumb-item"><a href="../data manipulation/6 SQL database.html">Working with SQL Databases in R</a></li></ol></nav>
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">SQL database with R</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
+<div class="quarto-title-block"><div><h1 class="title">Working with SQL Databases in R</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
 </div>
 
 
@@ -457,454 +443,387 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<p>This document explains how to connect to and interact with SQL databases from within R. We will cover writing raw SQL queries, using the <code>tidyverse</code>-friendly <code>dbplyr</code> package, and other best practices.</p>
 <p><img src="images/1594917913096.png" class="img-fluid" width="600"></p>
-<section id="connection-with-database" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Connection with database</h1>
+<section id="connecting-to-a-database" class="level1">
+<h1>1. Connecting to a Database</h1>
+<p>The <code>DBI</code> package provides a universal, consistent interface for connecting to any database. Specific packages like <code>RSQLite</code>, <code>RPostgres</code>, or <code>odbc</code> provide the actual drivers to connect to different database systems.</p>
+<p>For these examples, we will use <code>RSQLite</code>, which creates a lightweight, file-based SQL database.</p>
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DBI)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RSQLite)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(connections)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<section id="create-database-file-pythonsqlite.db-and-copy-mtcars-data-and-iris-data-into-database" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="create-database-file-pythonsqlite.db-and-copy-mtcars-data-and-iris-data-into-database"><span class="header-section-number">1.1</span> create database file pythonsqlite.db and copy mtcars data and iris data into database</h2>
+<section id="create-and-populate-a-database" class="level2">
+<h2 class="anchored" data-anchor-id="create-and-populate-a-database">Create and Populate a Database</h2>
+<p>First, we connect to a database file (it will be created if it doesn’t exist). Then, we write the <code>mtcars</code> and <code>iris</code> R data frames into the database as new tables.</p>
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>mtcars<span class="ot">=</span><span class="fu">cbind</span>(<span class="at">newColName =</span> <span class="fu">rownames</span>(mtcars), mtcars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Add car names as a column in mtcars</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>mtcars_df <span class="ot">=</span><span class="fu">cbind</span>(<span class="at">car_name =</span> <span class="fu">rownames</span>(mtcars), mtcars)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a connection to an SQLite database file</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> <span class="fu">dbConnect</span>(RSQLite<span class="sc">::</span><span class="fu">SQLite</span>(), <span class="st">"data/my_sql_database.db"</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Write the R data frames to the database</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># `overwrite = TRUE` will replace the table if it already exists</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">dbWriteTable</span>(con, <span class="st">"mtcars"</span>, mtcars_df, <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu">dbWriteTable</span>(con, <span class="st">"iris"</span>, iris, <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
+<p>We can list the tables to confirm they were created.</p>
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create an ephemeral in-memory RSQLite database</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> <span class="fu">dbConnect</span>(RSQLite<span class="sc">::</span><span class="fu">SQLite</span>(), <span class="st">"my_sql_database"</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># view database on IDE</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">connection_view</span>(con)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbWriteTable</span>(con, <span class="st">"mtcars"</span>, mtcars,<span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dbWriteTable</span>(con, <span class="st">"iris"</span>, iris,<span class="at">overwrite=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-</section>
-<section id="check-all-table-in-database" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="check-all-table-in-database"><span class="header-section-number">1.2</span> check all table in database</h2>
-<div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbListTables</span>(con)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbListTables</span>(con)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "iris"   "mtcars"</code></pre>
+<pre><code>[1] "car_parts" "iris"      "mtcars"    "part_info"</code></pre>
 </div>
 </div>
 </section>
 </section>
-<section id="sql" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> SQL</h1>
+<section id="method-1-writing-raw-sql-queries" class="level1">
+<h1>2. Method 1: Writing Raw SQL Queries</h1>
+<p>The <code>dbGetQuery()</code> function sends a SQL statement to the database and returns the result as a data frame.</p>
+<section id="select-statement" class="level2">
+<h2 class="anchored" data-anchor-id="select-statement">SELECT Statement</h2>
+<p>Select all columns from the <code>mtcars</code> table, limiting the result to the first 3 rows.</p>
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>data<span class="ot">=</span><span class="fu">dbReadTable</span>(con, <span class="st">"mtcars"</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>sql_select <span class="ot">&lt;-</span> <span class="st">"SELECT * FROM mtcars LIMIT 3"</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dbGetQuery</span>(con, sql_select)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>         newColName  mpg cyl disp  hp drat    wt  qsec vs am gear carb
-1         Mazda RX4 21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
-2     Mazda RX4 Wag 21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
-3        Datsun 710 22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
-4    Hornet 4 Drive 21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
-5 Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
-6           Valiant 18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre>
-</div>
-</div>
-<section id="select" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="select"><span class="header-section-number">2.1</span> select</h2>
-<div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>sql <span class="ot">=</span><span class="st">"SELECT * FROM mtcars LIMIT 3"</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>table<span class="ot">=</span><span class="fu">dbGetQuery</span>(con,sql)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>table</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>     newColName  mpg cyl disp  hp drat    wt  qsec vs am gear carb
+<pre><code>       car_name  mpg cyl disp  hp drat    wt  qsec vs am gear carb
 1     Mazda RX4 21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
 2 Mazda RX4 Wag 21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
 3    Datsun 710 22.8   4  108  93 3.85 2.320 18.61  1  1    4    1</code></pre>
 </div>
 </div>
 </section>
-<section id="renaming-column" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="renaming-column"><span class="header-section-number">2.2</span> Renaming column</h2>
+<section id="column-aliasing-and-creation" class="level2">
+<h2 class="anchored" data-anchor-id="column-aliasing-and-creation">Column Aliasing and Creation</h2>
+<p>Use <code>AS</code> to rename a column in the output. You can also create new columns based on calculations.</p>
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>sql<span class="ot">=</span><span class="st">"select mpg as new_mpg from mtcars"</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>table<span class="ot">=</span><span class="fu">dbGetQuery</span>(con,sql)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>sql_create_col <span class="ot">&lt;-</span> <span class="st">"SELECT mpg, mpg + 1 AS mpg_plus_one FROM mtcars"</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">dbGetQuery</span>(con, sql_create_col))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>  new_mpg
-1    21.0
-2    21.0
-3    22.8
-4    21.4
-5    18.7
-6    18.1</code></pre>
+<pre><code>   mpg mpg_plus_one
+1 21.0         22.0
+2 21.0         22.0
+3 22.8         23.8
+4 21.4         22.4
+5 18.7         19.7
+6 18.1         19.1</code></pre>
 </div>
 </div>
 </section>
-<section id="create-column" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="create-column"><span class="header-section-number">2.3</span> create column</h2>
+<section id="filtering-with-where" class="level2">
+<h2 class="anchored" data-anchor-id="filtering-with-where">Filtering with WHERE</h2>
+<p>The <code>WHERE</code> clause filters rows based on a condition.</p>
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>sql<span class="ot">=</span><span class="st">"select mpg+1 as new_mpg,mpg from mtcars"</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>table<span class="ot">=</span><span class="fu">dbGetQuery</span>(con,sql)</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>sql_filter <span class="ot">&lt;-</span> <span class="st">"SELECT * FROM mtcars WHERE hp &gt; 200 AND cyl = 8"</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">dbGetQuery</span>(con, sql_filter))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>  new_mpg  mpg
-1    22.0 21.0
-2    22.0 21.0
-3    23.8 22.8
-4    22.4 21.4
-5    19.7 18.7
-6    19.1 18.1</code></pre>
+<pre><code>             car_name  mpg cyl disp  hp drat    wt  qsec vs am gear carb
+1          Duster 360 14.3   8  360 245 3.21 3.570 15.84  0  0    3    4
+2  Cadillac Fleetwood 10.4   8  472 205 2.93 5.250 17.98  0  0    3    4
+3 Lincoln Continental 10.4   8  460 215 3.00 5.424 17.82  0  0    3    4
+4   Chrysler Imperial 14.7   8  440 230 3.23 5.345 17.42  0  0    3    4
+5          Camaro Z28 13.3   8  350 245 3.73 3.840 15.41  0  0    3    4
+6      Ford Pantera L 15.8   8  351 264 4.22 3.170 14.50  0  1    5    4</code></pre>
 </div>
 </div>
 </section>
-<section id="filter-rows" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="filter-rows"><span class="header-section-number">2.4</span> Filter rows</h2>
+<section id="aggregation-with-group-by" class="level2">
+<h2 class="anchored" data-anchor-id="aggregation-with-group-by">Aggregation with GROUP BY</h2>
+<p><code>GROUP BY</code> collapses multiple rows into a single summary row. It’s used with aggregate functions like <code>AVG()</code>, <code>COUNT()</code>, <code>MIN()</code>, and <code>MAX()</code>.</p>
+<p>This query calculates the average horsepower and row count for each cylinder group.</p>
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>sql<span class="ot">=</span><span class="st">"select * from mtcars where hp&gt;100"</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>table<span class="ot">=</span><span class="fu">dbGetQuery</span>(con,sql)</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>sql_groupby <span class="ot">&lt;-</span> <span class="st">"SELECT cyl, AVG(hp) AS avg_hp, COUNT(*) AS num_cars FROM mtcars GROUP BY cyl"</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dbGetQuery</span>(con, sql_groupby)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>         newColName  mpg cyl disp  hp drat    wt  qsec vs am gear carb
-1         Mazda RX4 21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
-2     Mazda RX4 Wag 21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
-3    Hornet 4 Drive 21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
-4 Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
-5           Valiant 18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
-6        Duster 360 14.3   8  360 245 3.21 3.570 15.84  0  0    3    4</code></pre>
+<pre><code>  cyl    avg_hp num_cars
+1   4  82.63636       11
+2   6 122.28571        7
+3   8 209.21429       14</code></pre>
 </div>
 </div>
-<section id="filters-with-and-conditions" class="level3" data-number="2.4.1">
-<h3 data-number="2.4.1" class="anchored" data-anchor-id="filters-with-and-conditions"><span class="header-section-number">2.4.1</span> Filters with AND conditions</h3>
+</section>
+<section id="sorting-with-order-by" class="level2">
+<h2 class="anchored" data-anchor-id="sorting-with-order-by">Sorting with ORDER BY</h2>
+<p><code>ORDER BY</code> sorts the result set in ascending (<code>ASC</code>) or descending (<code>DESC</code>) order.</p>
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>sql<span class="ot">=</span><span class="st">"select * from mtcars where hp&gt;100 and drat&lt;3"</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>table<span class="ot">=</span><span class="fu">dbGetQuery</span>(con,sql)</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>sql_orderby <span class="ot">&lt;-</span> <span class="st">"SELECT car_name, mpg, hp FROM mtcars ORDER BY hp DESC LIMIT 5"</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dbGetQuery</span>(con, sql_orderby)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>          newColName  mpg cyl disp  hp drat   wt  qsec vs am gear carb
-1            Valiant 18.1   6  225 105 2.76 3.46 20.22  1  0    3    1
-2 Cadillac Fleetwood 10.4   8  472 205 2.93 5.25 17.98  0  0    3    4
-3   Dodge Challenger 15.5   8  318 150 2.76 3.52 16.87  0  0    3    2</code></pre>
+<pre><code>           car_name  mpg  hp
+1     Maserati Bora 15.0 335
+2    Ford Pantera L 15.8 264
+3        Duster 360 14.3 245
+4        Camaro Z28 13.3 245
+5 Chrysler Imperial 14.7 230</code></pre>
 </div>
 </div>
 </section>
-<section id="filters-with-or-conditions" class="level3" data-number="2.4.2">
-<h3 data-number="2.4.2" class="anchored" data-anchor-id="filters-with-or-conditions"><span class="header-section-number">2.4.2</span> Filters with or conditions</h3>
+<section id="joins" class="level2">
+<h2 class="anchored" data-anchor-id="joins">Joins</h2>
+<p>This example creates two tables, <code>car_parts</code> and <code>part_info</code>, to demonstrate joins.</p>
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>sql<span class="ot">=</span><span class="st">"select * from mtcars where hp&gt;100 or drat&lt;3"</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>table<span class="ot">=</span><span class="fu">dbGetQuery</span>(con,sql)</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbWriteTable</span>(con, <span class="st">"car_parts"</span>, <span class="fu">data.frame</span>(<span class="at">car_name =</span> <span class="fu">c</span>(<span class="st">"Mazda RX4"</span>, <span class="st">"Datsun 710"</span>, <span class="st">"Hornet 4 Drive"</span>), <span class="at">part_id =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)), <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dbWriteTable</span>(con, <span class="st">"part_info"</span>, <span class="fu">data.frame</span>(<span class="at">part_id =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>), <span class="at">part_name =</span> <span class="fu">c</span>(<span class="st">"Engine"</span>, <span class="st">"Tire"</span>, <span class="st">"Brake"</span>)), <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-stdout">
-<pre><code>         newColName  mpg cyl disp  hp drat    wt  qsec vs am gear carb
-1         Mazda RX4 21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
-2     Mazda RX4 Wag 21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
-3    Hornet 4 Drive 21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
-4 Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
-5           Valiant 18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
-6        Duster 360 14.3   8  360 245 3.21 3.570 15.84  0  0    3    4</code></pre>
 </div>
-</div>
-</section>
-</section>
-<section id="append" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="append"><span class="header-section-number">2.5</span> Append</h2>
-<section id="append-by-row" class="level3" data-number="2.5.1">
-<h3 data-number="2.5.1" class="anchored" data-anchor-id="append-by-row"><span class="header-section-number">2.5.1</span> append by row</h3>
+<section id="inner-join" class="level3">
+<h3 class="anchored" data-anchor-id="inner-join">INNER JOIN</h3>
+<p>Returns only the rows where the join key (<code>part_id</code>) exists in both tables.</p>
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>sql<span class="ot">=</span><span class="st">"select * from mtcars union all select * from mtcars "</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>table<span class="ot">=</span><span class="fu">dbGetQuery</span>(con,sql)</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>sql_inner_join <span class="ot">&lt;-</span> <span class="st">"</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT cp.car_name, pi.part_name</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="st">FROM car_parts cp</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="st">INNER JOIN part_info pi ON cp.part_id = pi.part_id"</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="fu">dbGetQuery</span>(con, sql_inner_join)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>         newColName  mpg cyl disp  hp drat    wt  qsec vs am gear carb
-1         Mazda RX4 21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
-2     Mazda RX4 Wag 21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
-3        Datsun 710 22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
-4    Hornet 4 Drive 21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
-5 Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
-6           Valiant 18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre>
+<pre><code>    car_name part_name
+1  Mazda RX4    Engine
+2 Datsun 710      Tire</code></pre>
 </div>
 </div>
 </section>
-<section id="append-by-column" class="level3" data-number="2.5.2">
-<h3 data-number="2.5.2" class="anchored" data-anchor-id="append-by-column"><span class="header-section-number">2.5.2</span> append by column</h3>
-</section>
-<section id="dropping-na-values" class="level3" data-number="2.5.3">
-<h3 data-number="2.5.3" class="anchored" data-anchor-id="dropping-na-values"><span class="header-section-number">2.5.3</span> Dropping NA values</h3>
-</section>
-<section id="keep-na-values" class="level3" data-number="2.5.4">
-<h3 data-number="2.5.4" class="anchored" data-anchor-id="keep-na-values"><span class="header-section-number">2.5.4</span> keep NA values</h3>
-</section>
-</section>
-<section id="group-by" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="group-by"><span class="header-section-number">2.6</span> group by</h2>
-<section id="averageminmaxsum" class="level3" data-number="2.6.1">
-<h3 data-number="2.6.1" class="anchored" data-anchor-id="averageminmaxsum"><span class="header-section-number">2.6.1</span> average,min,max,sum</h3>
+<section id="left-join" class="level3">
+<h3 class="anchored" data-anchor-id="left-join">LEFT JOIN</h3>
+<p>Returns all rows from the left table (<code>car_parts</code>) and the matched rows from the right table (<code>part_info</code>).</p>
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>sql<span class="ot">=</span><span class="st">"select AVG(hp),min(hp),max(hp),sum(hp) from mtcars"</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>table<span class="ot">=</span><span class="fu">dbGetQuery</span>(con,sql)</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>sql_left_join <span class="ot">&lt;-</span> <span class="st">"</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT cp.car_name, pi.part_name</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="st">FROM car_parts cp</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="st">LEFT JOIN part_info pi ON cp.part_id = pi.part_id"</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="fu">dbGetQuery</span>(con, sql_left_join)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>   AVG(hp) min(hp) max(hp) sum(hp)
-1 146.6875      52     335    4694</code></pre>
+<pre><code>        car_name part_name
+1      Mazda RX4    Engine
+2     Datsun 710      Tire
+3 Hornet 4 Drive      &lt;NA&gt;</code></pre>
 </div>
 </div>
 </section>
-<section id="count-record-and-count-distinct-record" class="level3" data-number="2.6.2">
-<h3 data-number="2.6.2" class="anchored" data-anchor-id="count-record-and-count-distinct-record"><span class="header-section-number">2.6.2</span> count record and count distinct record</h3>
+</section>
+<section id="string-and-date-functions" class="level2">
+<h2 class="anchored" data-anchor-id="string-and-date-functions">String and Date Functions</h2>
+<p>SQL has functions for manipulating strings and dates. The exact syntax can vary by database. In SQLite, you can use <code>UPPER()</code> and <code>strftime()</code>.</p>
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>sql<span class="ot">=</span><span class="st">"select vs, count(*),count(distinct cyl) from mtcars group by vs"</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>table<span class="ot">=</span><span class="fu">dbGetQuery</span>(con,sql)</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>sql_string_date <span class="ot">&lt;-</span> <span class="st">"SELECT car_name, UPPER(car_name) AS upper_name, '2023-10-27' AS today from car_parts"</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">dbGetQuery</span>(con, sql_string_date))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>  vs count(*) count(distinct cyl)
-1  0       18                   3
-2  1       14                   2</code></pre>
+<pre><code>        car_name     upper_name      today
+1      Mazda RX4      MAZDA RX4 2023-10-27
+2     Datsun 710     DATSUN 710 2023-10-27
+3 Hornet 4 Drive HORNET 4 DRIVE 2023-10-27</code></pre>
 </div>
 </div>
 </section>
-</section>
-<section id="order-rows" class="level2" data-number="2.7">
-<h2 data-number="2.7" class="anchored" data-anchor-id="order-rows"><span class="header-section-number">2.7</span> order rows</h2>
+<section id="modifying-data" class="level2">
+<h2 class="anchored" data-anchor-id="modifying-data">Modifying Data</h2>
+<section id="update-table" class="level3">
+<h3 class="anchored" data-anchor-id="update-table">UPDATE Table</h3>
+<p><code>UPDATE</code> modifies existing records in a table.</p>
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>sql<span class="ot">=</span><span class="st">"select * from mtcars order by mpg"</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>table<span class="ot">=</span><span class="fu">dbGetQuery</span>(con,sql)</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Note: dbExecute is used for statements that don't return data</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dbExecute</span>(con, <span class="st">"UPDATE mtcars SET hp = 120 WHERE car_name = 'Mazda RX4'"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>           newColName  mpg cyl disp  hp drat    wt  qsec vs am gear carb
-1  Cadillac Fleetwood 10.4   8  472 205 2.93 5.250 17.98  0  0    3    4
-2 Lincoln Continental 10.4   8  460 215 3.00 5.424 17.82  0  0    3    4
-3          Camaro Z28 13.3   8  350 245 3.73 3.840 15.41  0  0    3    4
-4          Duster 360 14.3   8  360 245 3.21 3.570 15.84  0  0    3    4
-5   Chrysler Imperial 14.7   8  440 230 3.23 5.345 17.42  0  0    3    4
-6       Maserati Bora 15.0   8  301 335 3.54 3.570 14.60  0  1    5    8</code></pre>
+<pre><code>[1] 1</code></pre>
+</div>
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbGetQuery</span>(con, <span class="st">"SELECT car_name, hp FROM mtcars WHERE car_name = 'Mazda RX4'"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>   car_name  hp
+1 Mazda RX4 120</code></pre>
 </div>
 </div>
-<section id="sort-in-descending-order" class="level3" data-number="2.7.1">
-<h3 data-number="2.7.1" class="anchored" data-anchor-id="sort-in-descending-order"><span class="header-section-number">2.7.1</span> Sort in descending order</h3>
+</section>
+<section id="create-and-drop-table" class="level3">
+<h3 class="anchored" data-anchor-id="create-and-drop-table">CREATE and DROP Table</h3>
+<p><code>CREATE TABLE</code> builds a new table, and <code>DROP TABLE</code> deletes it.</p>
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>sql<span class="ot">=</span><span class="st">"select * from mtcars order by mpg desc"</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>table<span class="ot">=</span><span class="fu">dbGetQuery</span>(con,sql)</span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>sql_create <span class="ot">&lt;-</span> <span class="st">"CREATE TABLE mtcars_copy AS SELECT * FROM mtcars"</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dbExecute</span>(con, sql_create)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>      newColName  mpg cyl  disp  hp drat    wt  qsec vs am gear carb
-1 Toyota Corolla 33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1
-2       Fiat 128 32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1
-3    Honda Civic 30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2
-4   Lotus Europa 30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2
-5      Fiat X1-9 27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1
-6  Porsche 914-2 26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2</code></pre>
-</div>
-</div>
-</section>
-<section id="arrange-by-multiple-variables" class="level3" data-number="2.7.2">
-<h3 data-number="2.7.2" class="anchored" data-anchor-id="arrange-by-multiple-variables"><span class="header-section-number">2.7.2</span> Arrange by multiple variables</h3>
-<div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>sql<span class="ot">=</span><span class="st">"select * from mtcars order by mpg ,cyl"</span></span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>table<span class="ot">=</span><span class="fu">dbGetQuery</span>(con,sql)</span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>           newColName  mpg cyl disp  hp drat    wt  qsec vs am gear carb
-1  Cadillac Fleetwood 10.4   8  472 205 2.93 5.250 17.98  0  0    3    4
-2 Lincoln Continental 10.4   8  460 215 3.00 5.424 17.82  0  0    3    4
-3          Camaro Z28 13.3   8  350 245 3.73 3.840 15.41  0  0    3    4
-4          Duster 360 14.3   8  360 245 3.21 3.570 15.84  0  0    3    4
-5   Chrysler Imperial 14.7   8  440 230 3.23 5.345 17.42  0  0    3    4
-6       Maserati Bora 15.0   8  301 335 3.54 3.570 14.60  0  1    5    8</code></pre>
-</div>
-</div>
-</section>
-</section>
-<section id="join" class="level2" data-number="2.8">
-<h2 data-number="2.8" class="anchored" data-anchor-id="join"><span class="header-section-number">2.8</span> join</h2>
-<section id="inner_join" class="level3" data-number="2.8.1">
-<h3 data-number="2.8.1" class="anchored" data-anchor-id="inner_join"><span class="header-section-number">2.8.1</span> inner_join</h3>
-<div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>sql<span class="ot">=</span><span class="st">"select a.newColName,a.mpg,b.mpg as new_mpg from mtcars a left join mtcars b on a.newColName=b.newColName"</span></span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>table<span class="ot">=</span><span class="fu">dbGetQuery</span>(con,sql)</span>
-<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>         newColName  mpg new_mpg
-1         Mazda RX4 21.0    21.0
-2     Mazda RX4 Wag 21.0    21.0
-3        Datsun 710 22.8    22.8
-4    Hornet 4 Drive 21.4    21.4
-5 Hornet Sportabout 18.7    18.7
-6           Valiant 18.1    18.1</code></pre>
-</div>
-</div>
-</section>
-<section id="full-join" class="level3" data-number="2.8.2">
-<h3 data-number="2.8.2" class="anchored" data-anchor-id="full-join"><span class="header-section-number">2.8.2</span> full join</h3>
-</section>
-<section id="left-join" class="level3" data-number="2.8.3">
-<h3 data-number="2.8.3" class="anchored" data-anchor-id="left-join"><span class="header-section-number">2.8.3</span> left join</h3>
-</section>
-<section id="anti-join" class="level3" data-number="2.8.4">
-<h3 data-number="2.8.4" class="anchored" data-anchor-id="anti-join"><span class="header-section-number">2.8.4</span> anti join</h3>
-</section>
-</section>
-<section id="reshape-tables" class="level2" data-number="2.9">
-<h2 data-number="2.9" class="anchored" data-anchor-id="reshape-tables"><span class="header-section-number">2.9</span> Reshape tables</h2>
-<section id="gather-data-longwide-to-long" class="level3" data-number="2.9.1">
-<h3 data-number="2.9.1" class="anchored" data-anchor-id="gather-data-longwide-to-long"><span class="header-section-number">2.9.1</span> Gather data long(wide to long)</h3>
-</section>
-<section id="spread-data-wide-long-to-wide" class="level3" data-number="2.9.2">
-<h3 data-number="2.9.2" class="anchored" data-anchor-id="spread-data-wide-long-to-wide"><span class="header-section-number">2.9.2</span> Spread data wide (long to wide)</h3>
-</section>
-</section>
-<section id="string" class="level2" data-number="2.10">
-<h2 data-number="2.10" class="anchored" data-anchor-id="string"><span class="header-section-number">2.10</span> string</h2>
-<section id="upper-case" class="level3" data-number="2.10.1">
-<h3 data-number="2.10.1" class="anchored" data-anchor-id="upper-case"><span class="header-section-number">2.10.1</span> upper case</h3>
-</section>
-<section id="lower-case" class="level3" data-number="2.10.2">
-<h3 data-number="2.10.2" class="anchored" data-anchor-id="lower-case"><span class="header-section-number">2.10.2</span> lower case</h3>
-</section>
-<section id="match" class="level3" data-number="2.10.3">
-<h3 data-number="2.10.3" class="anchored" data-anchor-id="match"><span class="header-section-number">2.10.3</span> match</h3>
-</section>
-<section id="concatenation" class="level3" data-number="2.10.4">
-<h3 data-number="2.10.4" class="anchored" data-anchor-id="concatenation"><span class="header-section-number">2.10.4</span> concatenation</h3>
-</section>
-<section id="replace" class="level3" data-number="2.10.5">
-<h3 data-number="2.10.5" class="anchored" data-anchor-id="replace"><span class="header-section-number">2.10.5</span> replace</h3>
-</section>
-<section id="extract" class="level3" data-number="2.10.6">
-<h3 data-number="2.10.6" class="anchored" data-anchor-id="extract"><span class="header-section-number">2.10.6</span> extract</h3>
-</section>
-</section>
-<section id="date" class="level2" data-number="2.11">
-<h2 data-number="2.11" class="anchored" data-anchor-id="date"><span class="header-section-number">2.11</span> date</h2>
-</section>
-<section id="create-table-into-database" class="level2" data-number="2.12">
-<h2 data-number="2.12" class="anchored" data-anchor-id="create-table-into-database"><span class="header-section-number">2.12</span> create table into database</h2>
-<div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>sql<span class="ot">=</span><span class="st">"create table if not exists new_mtcars as select * from mtcars order by mpg ,cyl"</span></span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dbSendQuery</span>(con,sql)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>&lt;SQLiteResult&gt;
-  SQL  create table if not exists new_mtcars as select * from mtcars order by mpg ,cyl
-  ROWS Fetched: 0 [complete]
-       Changed: 0</code></pre>
+<pre><code>[1] 0</code></pre>
 </div>
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbListTables</span>(con)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbListTables</span>(con)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "iris"       "mtcars"     "new_mtcars"</code></pre>
+<pre><code>[1] "car_parts"   "iris"        "mtcars"      "mtcars_copy" "part_info"  </code></pre>
 </div>
-</div>
-</section>
-<section id="delete-table-in-database" class="level2" data-number="2.13">
-<h2 data-number="2.13" class="anchored" data-anchor-id="delete-table-in-database"><span class="header-section-number">2.13</span> delete table in database</h2>
-<div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>sql<span class="ot">=</span><span class="st">"drop table if  exists  new_mtcars"</span></span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dbSendQuery</span>(con,sql)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>&lt;SQLiteResult&gt;
-  SQL  drop table if  exists  new_mtcars
-  ROWS Fetched: 0 [complete]
-       Changed: 0</code></pre>
-</div>
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbListTables</span>(con)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "iris"   "mtcars"</code></pre>
-</div>
-</div>
-</section>
-<section id="edit-table-in-database" class="level2" data-number="2.14">
-<h2 data-number="2.14" class="anchored" data-anchor-id="edit-table-in-database"><span class="header-section-number">2.14</span> edit table in database</h2>
-</section>
-</section>
-<section id="using-sql-with-r-dataframe" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Using SQL with R dataframe</h1>
-<div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sqldf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>data<span class="ot">=</span><span class="fu">sqldf</span>(<span class="st">"select * from mtcars LIMIT 3;"</span>)</span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>sql_drop <span class="ot">&lt;-</span> <span class="st">"DROP TABLE mtcars_copy"</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dbExecute</span>(con, sql_drop)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>     newColName  mpg cyl disp  hp drat    wt  qsec vs am gear carb
-1     Mazda RX4 21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
-2 Mazda RX4 Wag 21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
-3    Datsun 710 22.8   4  108  93 3.85 2.320 18.61  1  1    4    1</code></pre>
+<pre><code>[1] 0</code></pre>
+</div>
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbListTables</span>(con)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "car_parts" "iris"      "mtcars"    "part_info"</code></pre>
 </div>
 </div>
 </section>
-<section id="reference" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> reference:</h1>
+</section>
+</section>
+<section id="method-2-using-dbplyr" class="level1">
+<h1>3. Method 2: Using <code>dbplyr</code></h1>
+<p><code>dbplyr</code> is a <code>tidyverse</code> backend for databases. It allows you to write familiar <code>dplyr</code> code, which <code>dbplyr</code> translates into SQL for you. This is the recommended modern approach as it is easier to write and less prone to SQL injection errors.</p>
+<p>First, we create a connection to the <code>mtcars</code> table in the database.</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>mtcars_db <span class="ot">&lt;-</span> <span class="fu">tbl</span>(con, <span class="st">"mtcars"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Now, we can use <code>dplyr</code> verbs on this object. The code is not run in R; it is translated to SQL and sent to the database.</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>query <span class="ot">&lt;-</span> mtcars_db <span class="sc">%&gt;%</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(car_name, mpg, hp, cyl) <span class="sc">%&gt;%</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(hp <span class="sc">&gt;</span> <span class="dv">150</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(cyl) <span class="sc">%&gt;%</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">avg_mpg =</span> <span class="fu">mean</span>(mpg, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(avg_mpg))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>We can use <code>show_query()</code> to see the SQL that <code>dbplyr</code> generated.</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">show_query</span>(query)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;SQL&gt;
+SELECT `cyl`, AVG(`mpg`) AS `avg_mpg`
+FROM (
+  SELECT `car_name`, `mpg`, `hp`, `cyl`
+  FROM `mtcars`
+  WHERE (`hp` &gt; 150.0)
+) AS `q01`
+GROUP BY `cyl`
+ORDER BY `avg_mpg` DESC</code></pre>
+</div>
+</div>
+<p>To execute the query and pull the results back into an R data frame, we use <code>collect()</code>.</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">collect</span>(query)</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>results</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+    cyl avg_mpg
+  &lt;dbl&gt;   &lt;dbl&gt;
+1     6    19.7
+2     8    15.1</code></pre>
+</div>
+</div>
+</section>
+<section id="best-practice-parameterized-queries" class="level1">
+<h1>4. Best Practice: Parameterized Queries</h1>
+<p>To prevent SQL injection attacks, you should not use <code>paste()</code> to insert values into a SQL query. Instead, use parameterized queries with <code>?</code> as a placeholder. <code>DBI</code> will safely insert the values for you.</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>hp_threshold <span class="ot">&lt;-</span> <span class="dv">150</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>sql_safe <span class="ot">&lt;-</span> <span class="st">"SELECT car_name, hp FROM mtcars WHERE hp &gt; ?"</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="co"># dbGetQuery can take a `params` list</span></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="fu">dbGetQuery</span>(con, sql_safe, <span class="at">params =</span> <span class="fu">list</span>(hp_threshold)) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>            car_name  hp
+1  Hornet Sportabout 175
+2         Duster 360 245
+3         Merc 450SE 180
+4         Merc 450SL 180
+5        Merc 450SLC 180
+6 Cadillac Fleetwood 205</code></pre>
+</div>
+</div>
+</section>
+<section id="method-3-using-sqldf-on-local-data-frames" class="level1">
+<h1>5. Method 3: Using <code>sqldf</code> on Local Data Frames</h1>
+<p>The <code>sqldf</code> package allows you to run SQL queries on local R data frames, not on an external database. This can be useful for users who are more comfortable with SQL than with <code>dplyr</code> syntax for data manipulation.</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sqldf)</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Note the use of the R data frame `mtcars_df`</span></span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sqldf</span>(<span class="st">"SELECT car_name, mpg FROM mtcars_df WHERE cyl = 8 LIMIT 5"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>           car_name  mpg
+1 Hornet Sportabout 18.7
+2        Duster 360 14.3
+3        Merc 450SE 16.4
+4        Merc 450SL 17.3
+5       Merc 450SLC 15.2</code></pre>
+</div>
+</div>
+</section>
+<section id="disconnecting-from-the-database" class="level1">
+<h1>6. Disconnecting from the Database</h1>
+<p>It is very important to close the database connection when you are finished to release resources.</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbDisconnect</span>(con)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 
 
 <!-- -->
@@ -1380,261 +1299,247 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb46" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "SQL database with R"</span></span>
-<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Tony Duan"</span></span>
-<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
-<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a><span class="co">  warning: false</span></span>
-<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a><span class="co">  error: false</span></span>
-<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
-<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
-<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
-<span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-location: right</span></span>
-<span id="cb46-12"><a href="#cb46-12" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: show</span></span>
-<span id="cb46-13"><a href="#cb46-13" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
-<span id="cb46-14"><a href="#cb46-14" aria-hidden="true" tabindex="-1"></a><span class="co">    number-sections: true</span></span>
-<span id="cb46-15"><a href="#cb46-15" aria-hidden="true" tabindex="-1"></a><span class="co">    code-block-bg: true</span></span>
-<span id="cb46-16"><a href="#cb46-16" aria-hidden="true" tabindex="-1"></a><span class="co">    code-block-border-left: "#31BAE9"</span></span>
-<span id="cb46-17"><a href="#cb46-17" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb46-18"><a href="#cb46-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-19"><a href="#cb46-19" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/1594917913096.png)</span>{width="600"}</span>
-<span id="cb46-20"><a href="#cb46-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-21"><a href="#cb46-21" aria-hidden="true" tabindex="-1"></a><span class="fu"># Connection with database</span></span>
-<span id="cb46-22"><a href="#cb46-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-25"><a href="#cb46-25" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb46-26"><a href="#cb46-26" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DBI)</span>
-<span id="cb46-27"><a href="#cb46-27" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RSQLite)</span>
-<span id="cb46-28"><a href="#cb46-28" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(connections)</span>
-<span id="cb46-29"><a href="#cb46-29" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb46-30"><a href="#cb46-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-31"><a href="#cb46-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-32"><a href="#cb46-32" aria-hidden="true" tabindex="-1"></a><span class="fu">## create database file pythonsqlite.db and copy mtcars data and iris data into database</span></span>
-<span id="cb46-33"><a href="#cb46-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-34"><a href="#cb46-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-37"><a href="#cb46-37" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb46-38"><a href="#cb46-38" aria-hidden="true" tabindex="-1"></a>mtcars<span class="ot">=</span><span class="fu">cbind</span>(<span class="at">newColName =</span> <span class="fu">rownames</span>(mtcars), mtcars)</span>
-<span id="cb46-39"><a href="#cb46-39" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb46-40"><a href="#cb46-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-41"><a href="#cb46-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-42"><a href="#cb46-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-45"><a href="#cb46-45" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb46-46"><a href="#cb46-46" aria-hidden="true" tabindex="-1"></a><span class="co"># Create an ephemeral in-memory RSQLite database</span></span>
-<span id="cb46-47"><a href="#cb46-47" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> <span class="fu">dbConnect</span>(RSQLite<span class="sc">::</span><span class="fu">SQLite</span>(), <span class="st">"my_sql_database"</span>)</span>
-<span id="cb46-48"><a href="#cb46-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-49"><a href="#cb46-49" aria-hidden="true" tabindex="-1"></a><span class="co"># view database on IDE</span></span>
-<span id="cb46-50"><a href="#cb46-50" aria-hidden="true" tabindex="-1"></a><span class="fu">connection_view</span>(con)</span>
-<span id="cb46-51"><a href="#cb46-51" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb46-52"><a href="#cb46-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-53"><a href="#cb46-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-56"><a href="#cb46-56" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb46-57"><a href="#cb46-57" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb46-58"><a href="#cb46-58" aria-hidden="true" tabindex="-1"></a><span class="fu">dbWriteTable</span>(con, <span class="st">"mtcars"</span>, mtcars,<span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
-<span id="cb46-59"><a href="#cb46-59" aria-hidden="true" tabindex="-1"></a><span class="fu">dbWriteTable</span>(con, <span class="st">"iris"</span>, iris,<span class="at">overwrite=</span><span class="cn">TRUE</span>)</span>
-<span id="cb46-60"><a href="#cb46-60" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb46-61"><a href="#cb46-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-62"><a href="#cb46-62" aria-hidden="true" tabindex="-1"></a><span class="fu">## check all table in database</span></span>
-<span id="cb46-63"><a href="#cb46-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-66"><a href="#cb46-66" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb46-67"><a href="#cb46-67" aria-hidden="true" tabindex="-1"></a><span class="fu">dbListTables</span>(con)</span>
-<span id="cb46-68"><a href="#cb46-68" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb46-69"><a href="#cb46-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-70"><a href="#cb46-70" aria-hidden="true" tabindex="-1"></a><span class="fu"># SQL</span></span>
-<span id="cb46-71"><a href="#cb46-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-72"><a href="#cb46-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-75"><a href="#cb46-75" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb46-76"><a href="#cb46-76" aria-hidden="true" tabindex="-1"></a>data<span class="ot">=</span><span class="fu">dbReadTable</span>(con, <span class="st">"mtcars"</span>)</span>
-<span id="cb46-77"><a href="#cb46-77" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data)</span>
-<span id="cb46-78"><a href="#cb46-78" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb46-79"><a href="#cb46-79" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-80"><a href="#cb46-80" aria-hidden="true" tabindex="-1"></a><span class="fu">## select</span></span>
-<span id="cb46-81"><a href="#cb46-81" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-84"><a href="#cb46-84" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb46-85"><a href="#cb46-85" aria-hidden="true" tabindex="-1"></a>sql <span class="ot">=</span><span class="st">"SELECT * FROM mtcars LIMIT 3"</span></span>
-<span id="cb46-86"><a href="#cb46-86" aria-hidden="true" tabindex="-1"></a>table<span class="ot">=</span><span class="fu">dbGetQuery</span>(con,sql)</span>
-<span id="cb46-87"><a href="#cb46-87" aria-hidden="true" tabindex="-1"></a>table</span>
-<span id="cb46-88"><a href="#cb46-88" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-89"><a href="#cb46-89" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb46-90"><a href="#cb46-90" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-91"><a href="#cb46-91" aria-hidden="true" tabindex="-1"></a><span class="fu">## Renaming column</span></span>
-<span id="cb46-92"><a href="#cb46-92" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-95"><a href="#cb46-95" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb46-96"><a href="#cb46-96" aria-hidden="true" tabindex="-1"></a>sql<span class="ot">=</span><span class="st">"select mpg as new_mpg from mtcars"</span></span>
-<span id="cb46-97"><a href="#cb46-97" aria-hidden="true" tabindex="-1"></a>table<span class="ot">=</span><span class="fu">dbGetQuery</span>(con,sql)</span>
-<span id="cb46-98"><a href="#cb46-98" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(table)</span>
-<span id="cb46-99"><a href="#cb46-99" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-100"><a href="#cb46-100" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb46-101"><a href="#cb46-101" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-102"><a href="#cb46-102" aria-hidden="true" tabindex="-1"></a><span class="fu">## create column</span></span>
-<span id="cb46-103"><a href="#cb46-103" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-104"><a href="#cb46-104" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-107"><a href="#cb46-107" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb46-108"><a href="#cb46-108" aria-hidden="true" tabindex="-1"></a>sql<span class="ot">=</span><span class="st">"select mpg+1 as new_mpg,mpg from mtcars"</span></span>
-<span id="cb46-109"><a href="#cb46-109" aria-hidden="true" tabindex="-1"></a>table<span class="ot">=</span><span class="fu">dbGetQuery</span>(con,sql)</span>
-<span id="cb46-110"><a href="#cb46-110" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(table)</span>
-<span id="cb46-111"><a href="#cb46-111" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb46-112"><a href="#cb46-112" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-113"><a href="#cb46-113" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-114"><a href="#cb46-114" aria-hidden="true" tabindex="-1"></a><span class="fu">## Filter rows</span></span>
-<span id="cb46-115"><a href="#cb46-115" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-118"><a href="#cb46-118" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb46-119"><a href="#cb46-119" aria-hidden="true" tabindex="-1"></a>sql<span class="ot">=</span><span class="st">"select * from mtcars where hp&gt;100"</span></span>
-<span id="cb46-120"><a href="#cb46-120" aria-hidden="true" tabindex="-1"></a>table<span class="ot">=</span><span class="fu">dbGetQuery</span>(con,sql)</span>
-<span id="cb46-121"><a href="#cb46-121" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(table)</span>
-<span id="cb46-122"><a href="#cb46-122" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb46-123"><a href="#cb46-123" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-124"><a href="#cb46-124" aria-hidden="true" tabindex="-1"></a><span class="fu">### Filters with AND conditions</span></span>
-<span id="cb46-125"><a href="#cb46-125" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-128"><a href="#cb46-128" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb46-129"><a href="#cb46-129" aria-hidden="true" tabindex="-1"></a>sql<span class="ot">=</span><span class="st">"select * from mtcars where hp&gt;100 and drat&lt;3"</span></span>
-<span id="cb46-130"><a href="#cb46-130" aria-hidden="true" tabindex="-1"></a>table<span class="ot">=</span><span class="fu">dbGetQuery</span>(con,sql)</span>
-<span id="cb46-131"><a href="#cb46-131" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(table)</span>
-<span id="cb46-132"><a href="#cb46-132" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb46-133"><a href="#cb46-133" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-134"><a href="#cb46-134" aria-hidden="true" tabindex="-1"></a><span class="fu">### Filters with or conditions</span></span>
-<span id="cb46-135"><a href="#cb46-135" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-138"><a href="#cb46-138" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb46-139"><a href="#cb46-139" aria-hidden="true" tabindex="-1"></a>sql<span class="ot">=</span><span class="st">"select * from mtcars where hp&gt;100 or drat&lt;3"</span></span>
-<span id="cb46-140"><a href="#cb46-140" aria-hidden="true" tabindex="-1"></a>table<span class="ot">=</span><span class="fu">dbGetQuery</span>(con,sql)</span>
-<span id="cb46-141"><a href="#cb46-141" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(table)</span>
-<span id="cb46-142"><a href="#cb46-142" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb46-143"><a href="#cb46-143" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-144"><a href="#cb46-144" aria-hidden="true" tabindex="-1"></a><span class="fu">## Append</span></span>
-<span id="cb46-145"><a href="#cb46-145" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-146"><a href="#cb46-146" aria-hidden="true" tabindex="-1"></a><span class="fu">### append by row</span></span>
-<span id="cb46-147"><a href="#cb46-147" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-150"><a href="#cb46-150" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb46-151"><a href="#cb46-151" aria-hidden="true" tabindex="-1"></a>sql<span class="ot">=</span><span class="st">"select * from mtcars union all select * from mtcars "</span></span>
-<span id="cb46-152"><a href="#cb46-152" aria-hidden="true" tabindex="-1"></a>table<span class="ot">=</span><span class="fu">dbGetQuery</span>(con,sql)</span>
-<span id="cb46-153"><a href="#cb46-153" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(table)</span>
-<span id="cb46-154"><a href="#cb46-154" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb46-155"><a href="#cb46-155" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-156"><a href="#cb46-156" aria-hidden="true" tabindex="-1"></a><span class="fu">### append by column</span></span>
-<span id="cb46-157"><a href="#cb46-157" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-158"><a href="#cb46-158" aria-hidden="true" tabindex="-1"></a><span class="fu">### Dropping NA values</span></span>
-<span id="cb46-159"><a href="#cb46-159" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-160"><a href="#cb46-160" aria-hidden="true" tabindex="-1"></a><span class="fu">### keep NA values</span></span>
-<span id="cb46-161"><a href="#cb46-161" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-162"><a href="#cb46-162" aria-hidden="true" tabindex="-1"></a><span class="fu">## group by</span></span>
-<span id="cb46-163"><a href="#cb46-163" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-164"><a href="#cb46-164" aria-hidden="true" tabindex="-1"></a><span class="fu">### average,min,max,sum</span></span>
-<span id="cb46-165"><a href="#cb46-165" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-166"><a href="#cb46-166" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-169"><a href="#cb46-169" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb46-170"><a href="#cb46-170" aria-hidden="true" tabindex="-1"></a>sql<span class="ot">=</span><span class="st">"select AVG(hp),min(hp),max(hp),sum(hp) from mtcars"</span></span>
-<span id="cb46-171"><a href="#cb46-171" aria-hidden="true" tabindex="-1"></a>table<span class="ot">=</span><span class="fu">dbGetQuery</span>(con,sql)</span>
-<span id="cb46-172"><a href="#cb46-172" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(table)</span>
-<span id="cb46-173"><a href="#cb46-173" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb46-174"><a href="#cb46-174" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-175"><a href="#cb46-175" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-176"><a href="#cb46-176" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-177"><a href="#cb46-177" aria-hidden="true" tabindex="-1"></a><span class="fu">### count record and count distinct record</span></span>
-<span id="cb46-178"><a href="#cb46-178" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-179"><a href="#cb46-179" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-182"><a href="#cb46-182" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb46-183"><a href="#cb46-183" aria-hidden="true" tabindex="-1"></a>sql<span class="ot">=</span><span class="st">"select vs, count(*),count(distinct cyl) from mtcars group by vs"</span></span>
-<span id="cb46-184"><a href="#cb46-184" aria-hidden="true" tabindex="-1"></a>table<span class="ot">=</span><span class="fu">dbGetQuery</span>(con,sql)</span>
-<span id="cb46-185"><a href="#cb46-185" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(table)</span>
-<span id="cb46-186"><a href="#cb46-186" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb46-187"><a href="#cb46-187" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-188"><a href="#cb46-188" aria-hidden="true" tabindex="-1"></a><span class="fu">## order rows</span></span>
-<span id="cb46-189"><a href="#cb46-189" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-192"><a href="#cb46-192" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb46-193"><a href="#cb46-193" aria-hidden="true" tabindex="-1"></a>sql<span class="ot">=</span><span class="st">"select * from mtcars order by mpg"</span></span>
-<span id="cb46-194"><a href="#cb46-194" aria-hidden="true" tabindex="-1"></a>table<span class="ot">=</span><span class="fu">dbGetQuery</span>(con,sql)</span>
-<span id="cb46-195"><a href="#cb46-195" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(table)</span>
-<span id="cb46-196"><a href="#cb46-196" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb46-197"><a href="#cb46-197" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-198"><a href="#cb46-198" aria-hidden="true" tabindex="-1"></a><span class="fu">### Sort in descending order</span></span>
-<span id="cb46-199"><a href="#cb46-199" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-200"><a href="#cb46-200" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-203"><a href="#cb46-203" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb46-204"><a href="#cb46-204" aria-hidden="true" tabindex="-1"></a>sql<span class="ot">=</span><span class="st">"select * from mtcars order by mpg desc"</span></span>
-<span id="cb46-205"><a href="#cb46-205" aria-hidden="true" tabindex="-1"></a>table<span class="ot">=</span><span class="fu">dbGetQuery</span>(con,sql)</span>
-<span id="cb46-206"><a href="#cb46-206" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(table)</span>
-<span id="cb46-207"><a href="#cb46-207" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb46-208"><a href="#cb46-208" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-209"><a href="#cb46-209" aria-hidden="true" tabindex="-1"></a><span class="fu">### Arrange by multiple variables</span></span>
-<span id="cb46-210"><a href="#cb46-210" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-213"><a href="#cb46-213" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb46-214"><a href="#cb46-214" aria-hidden="true" tabindex="-1"></a>sql<span class="ot">=</span><span class="st">"select * from mtcars order by mpg ,cyl"</span></span>
-<span id="cb46-215"><a href="#cb46-215" aria-hidden="true" tabindex="-1"></a>table<span class="ot">=</span><span class="fu">dbGetQuery</span>(con,sql)</span>
-<span id="cb46-216"><a href="#cb46-216" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(table)</span>
-<span id="cb46-217"><a href="#cb46-217" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb46-218"><a href="#cb46-218" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-219"><a href="#cb46-219" aria-hidden="true" tabindex="-1"></a><span class="fu">## join</span></span>
-<span id="cb46-220"><a href="#cb46-220" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-221"><a href="#cb46-221" aria-hidden="true" tabindex="-1"></a><span class="fu">### inner_join</span></span>
-<span id="cb46-222"><a href="#cb46-222" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-225"><a href="#cb46-225" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb46-226"><a href="#cb46-226" aria-hidden="true" tabindex="-1"></a>sql<span class="ot">=</span><span class="st">"select a.newColName,a.mpg,b.mpg as new_mpg from mtcars a left join mtcars b on a.newColName=b.newColName"</span></span>
-<span id="cb46-227"><a href="#cb46-227" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-228"><a href="#cb46-228" aria-hidden="true" tabindex="-1"></a>table<span class="ot">=</span><span class="fu">dbGetQuery</span>(con,sql)</span>
-<span id="cb46-229"><a href="#cb46-229" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(table)</span>
-<span id="cb46-230"><a href="#cb46-230" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb46-231"><a href="#cb46-231" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-232"><a href="#cb46-232" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-233"><a href="#cb46-233" aria-hidden="true" tabindex="-1"></a><span class="fu">### full join</span></span>
-<span id="cb46-234"><a href="#cb46-234" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-235"><a href="#cb46-235" aria-hidden="true" tabindex="-1"></a><span class="fu">### left join</span></span>
-<span id="cb46-236"><a href="#cb46-236" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-237"><a href="#cb46-237" aria-hidden="true" tabindex="-1"></a><span class="fu">### anti join</span></span>
-<span id="cb46-238"><a href="#cb46-238" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-239"><a href="#cb46-239" aria-hidden="true" tabindex="-1"></a><span class="fu">## Reshape tables</span></span>
-<span id="cb46-240"><a href="#cb46-240" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-241"><a href="#cb46-241" aria-hidden="true" tabindex="-1"></a><span class="fu">### Gather data long(wide to long)</span></span>
-<span id="cb46-242"><a href="#cb46-242" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-243"><a href="#cb46-243" aria-hidden="true" tabindex="-1"></a><span class="fu">### Spread data wide (long to wide)</span></span>
-<span id="cb46-244"><a href="#cb46-244" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-245"><a href="#cb46-245" aria-hidden="true" tabindex="-1"></a><span class="fu">## string</span></span>
-<span id="cb46-246"><a href="#cb46-246" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-247"><a href="#cb46-247" aria-hidden="true" tabindex="-1"></a><span class="fu">### upper case</span></span>
-<span id="cb46-248"><a href="#cb46-248" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-249"><a href="#cb46-249" aria-hidden="true" tabindex="-1"></a><span class="fu">### lower case</span></span>
-<span id="cb46-250"><a href="#cb46-250" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-251"><a href="#cb46-251" aria-hidden="true" tabindex="-1"></a><span class="fu">### match</span></span>
-<span id="cb46-252"><a href="#cb46-252" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-253"><a href="#cb46-253" aria-hidden="true" tabindex="-1"></a><span class="fu">### concatenation</span></span>
-<span id="cb46-254"><a href="#cb46-254" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-255"><a href="#cb46-255" aria-hidden="true" tabindex="-1"></a><span class="fu">### replace</span></span>
-<span id="cb46-256"><a href="#cb46-256" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-257"><a href="#cb46-257" aria-hidden="true" tabindex="-1"></a><span class="fu">### extract</span></span>
-<span id="cb46-258"><a href="#cb46-258" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-259"><a href="#cb46-259" aria-hidden="true" tabindex="-1"></a><span class="fu">## date</span></span>
-<span id="cb46-260"><a href="#cb46-260" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-261"><a href="#cb46-261" aria-hidden="true" tabindex="-1"></a><span class="fu">## create table into database</span></span>
-<span id="cb46-262"><a href="#cb46-262" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-265"><a href="#cb46-265" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb46-266"><a href="#cb46-266" aria-hidden="true" tabindex="-1"></a>sql<span class="ot">=</span><span class="st">"create table if not exists new_mtcars as select * from mtcars order by mpg ,cyl"</span></span>
-<span id="cb46-267"><a href="#cb46-267" aria-hidden="true" tabindex="-1"></a><span class="fu">dbSendQuery</span>(con,sql)</span>
-<span id="cb46-268"><a href="#cb46-268" aria-hidden="true" tabindex="-1"></a><span class="fu">dbListTables</span>(con)</span>
-<span id="cb46-269"><a href="#cb46-269" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-270"><a href="#cb46-270" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb46-271"><a href="#cb46-271" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-272"><a href="#cb46-272" aria-hidden="true" tabindex="-1"></a><span class="fu">## delete table in database</span></span>
-<span id="cb46-273"><a href="#cb46-273" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-276"><a href="#cb46-276" aria-hidden="true" tabindex="-1"></a><span class="in">```{R}</span></span>
-<span id="cb46-277"><a href="#cb46-277" aria-hidden="true" tabindex="-1"></a>sql<span class="ot">=</span><span class="st">"drop table if  exists  new_mtcars"</span></span>
-<span id="cb46-278"><a href="#cb46-278" aria-hidden="true" tabindex="-1"></a><span class="fu">dbSendQuery</span>(con,sql)</span>
-<span id="cb46-279"><a href="#cb46-279" aria-hidden="true" tabindex="-1"></a><span class="fu">dbListTables</span>(con)</span>
-<span id="cb46-280"><a href="#cb46-280" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-281"><a href="#cb46-281" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb46-282"><a href="#cb46-282" aria-hidden="true" tabindex="-1"></a><span class="fu">## edit table in database</span></span>
-<span id="cb46-283"><a href="#cb46-283" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-284"><a href="#cb46-284" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-285"><a href="#cb46-285" aria-hidden="true" tabindex="-1"></a><span class="fu"># Using SQL with R dataframe</span></span>
-<span id="cb46-286"><a href="#cb46-286" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-289"><a href="#cb46-289" aria-hidden="true" tabindex="-1"></a><span class="in">```{R}</span></span>
-<span id="cb46-290"><a href="#cb46-290" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sqldf)</span>
-<span id="cb46-291"><a href="#cb46-291" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb46-292"><a href="#cb46-292" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-295"><a href="#cb46-295" aria-hidden="true" tabindex="-1"></a><span class="in">```{R}</span></span>
-<span id="cb46-296"><a href="#cb46-296" aria-hidden="true" tabindex="-1"></a>data<span class="ot">=</span><span class="fu">sqldf</span>(<span class="st">"select * from mtcars LIMIT 3;"</span>)</span>
-<span id="cb46-297"><a href="#cb46-297" aria-hidden="true" tabindex="-1"></a>data</span>
-<span id="cb46-298"><a href="#cb46-298" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb46-299"><a href="#cb46-299" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-300"><a href="#cb46-300" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-301"><a href="#cb46-301" aria-hidden="true" tabindex="-1"></a><span class="fu"># reference:</span></span>
+<div class="sourceCode" id="cb45" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Working with SQL Databases in R"</span></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Tony Duan"</span></span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a><span class="co">  warning: false</span></span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a><span class="co">  error: false</span></span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-location: right</span></span>
+<span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: show</span></span>
+<span id="cb45-12"><a href="#cb45-12" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
+<span id="cb45-13"><a href="#cb45-13" aria-hidden="true" tabindex="-1"></a><span class="co">    number-sections: false</span></span>
+<span id="cb45-14"><a href="#cb45-14" aria-hidden="true" tabindex="-1"></a><span class="co">    code-block-bg: true</span></span>
+<span id="cb45-15"><a href="#cb45-15" aria-hidden="true" tabindex="-1"></a><span class="co">    code-block-border-left: "#31BAE9"</span></span>
+<span id="cb45-16"><a href="#cb45-16" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb45-17"><a href="#cb45-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-18"><a href="#cb45-18" aria-hidden="true" tabindex="-1"></a>This document explains how to connect to and interact with SQL databases from within R. We will cover writing raw SQL queries, using the <span class="in">`tidyverse`</span>-friendly <span class="in">`dbplyr`</span> package, and other best practices.</span>
+<span id="cb45-19"><a href="#cb45-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-20"><a href="#cb45-20" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/1594917913096.png)</span>{width="600"}</span>
+<span id="cb45-21"><a href="#cb45-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-22"><a href="#cb45-22" aria-hidden="true" tabindex="-1"></a><span class="fu"># 1. Connecting to a Database</span></span>
+<span id="cb45-23"><a href="#cb45-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-24"><a href="#cb45-24" aria-hidden="true" tabindex="-1"></a>The <span class="in">`DBI`</span> package provides a universal, consistent interface for connecting to any database. Specific packages like <span class="in">`RSQLite`</span>, <span class="in">`RPostgres`</span>, or <span class="in">`odbc`</span> provide the actual drivers to connect to different database systems.</span>
+<span id="cb45-25"><a href="#cb45-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-26"><a href="#cb45-26" aria-hidden="true" tabindex="-1"></a>For these examples, we will use <span class="in">`RSQLite`</span>, which creates a lightweight, file-based SQL database.</span>
+<span id="cb45-27"><a href="#cb45-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-30"><a href="#cb45-30" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb45-31"><a href="#cb45-31" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DBI)</span>
+<span id="cb45-32"><a href="#cb45-32" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RSQLite)</span>
+<span id="cb45-33"><a href="#cb45-33" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb45-34"><a href="#cb45-34" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb45-35"><a href="#cb45-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-36"><a href="#cb45-36" aria-hidden="true" tabindex="-1"></a><span class="fu">## Create and Populate a Database</span></span>
+<span id="cb45-37"><a href="#cb45-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-38"><a href="#cb45-38" aria-hidden="true" tabindex="-1"></a>First, we connect to a database file (it will be created if it doesn't exist). Then, we write the <span class="in">`mtcars`</span> and <span class="in">`iris`</span> R data frames into the database as new tables.</span>
+<span id="cb45-39"><a href="#cb45-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-42"><a href="#cb45-42" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb45-43"><a href="#cb45-43" aria-hidden="true" tabindex="-1"></a><span class="co"># Add car names as a column in mtcars</span></span>
+<span id="cb45-44"><a href="#cb45-44" aria-hidden="true" tabindex="-1"></a>mtcars_df <span class="ot">=</span><span class="fu">cbind</span>(<span class="at">car_name =</span> <span class="fu">rownames</span>(mtcars), mtcars)</span>
+<span id="cb45-45"><a href="#cb45-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-46"><a href="#cb45-46" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a connection to an SQLite database file</span></span>
+<span id="cb45-47"><a href="#cb45-47" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> <span class="fu">dbConnect</span>(RSQLite<span class="sc">::</span><span class="fu">SQLite</span>(), <span class="st">"data/my_sql_database.db"</span>)</span>
+<span id="cb45-48"><a href="#cb45-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-49"><a href="#cb45-49" aria-hidden="true" tabindex="-1"></a><span class="co"># Write the R data frames to the database</span></span>
+<span id="cb45-50"><a href="#cb45-50" aria-hidden="true" tabindex="-1"></a><span class="co"># `overwrite = TRUE` will replace the table if it already exists</span></span>
+<span id="cb45-51"><a href="#cb45-51" aria-hidden="true" tabindex="-1"></a><span class="fu">dbWriteTable</span>(con, <span class="st">"mtcars"</span>, mtcars_df, <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb45-52"><a href="#cb45-52" aria-hidden="true" tabindex="-1"></a><span class="fu">dbWriteTable</span>(con, <span class="st">"iris"</span>, iris, <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb45-53"><a href="#cb45-53" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb45-54"><a href="#cb45-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-55"><a href="#cb45-55" aria-hidden="true" tabindex="-1"></a>We can list the tables to confirm they were created.</span>
+<span id="cb45-56"><a href="#cb45-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-59"><a href="#cb45-59" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb45-60"><a href="#cb45-60" aria-hidden="true" tabindex="-1"></a><span class="fu">dbListTables</span>(con)</span>
+<span id="cb45-61"><a href="#cb45-61" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb45-62"><a href="#cb45-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-63"><a href="#cb45-63" aria-hidden="true" tabindex="-1"></a><span class="fu"># 2. Method 1: Writing Raw SQL Queries</span></span>
+<span id="cb45-64"><a href="#cb45-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-65"><a href="#cb45-65" aria-hidden="true" tabindex="-1"></a>The <span class="in">`dbGetQuery()`</span> function sends a SQL statement to the database and returns the result as a data frame.</span>
+<span id="cb45-66"><a href="#cb45-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-67"><a href="#cb45-67" aria-hidden="true" tabindex="-1"></a><span class="fu">## SELECT Statement</span></span>
+<span id="cb45-68"><a href="#cb45-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-69"><a href="#cb45-69" aria-hidden="true" tabindex="-1"></a>Select all columns from the <span class="in">`mtcars`</span> table, limiting the result to the first 3 rows.</span>
+<span id="cb45-70"><a href="#cb45-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-73"><a href="#cb45-73" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb45-74"><a href="#cb45-74" aria-hidden="true" tabindex="-1"></a>sql_select <span class="ot">&lt;-</span> <span class="st">"SELECT * FROM mtcars LIMIT 3"</span></span>
+<span id="cb45-75"><a href="#cb45-75" aria-hidden="true" tabindex="-1"></a><span class="fu">dbGetQuery</span>(con, sql_select)</span>
+<span id="cb45-76"><a href="#cb45-76" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb45-77"><a href="#cb45-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-78"><a href="#cb45-78" aria-hidden="true" tabindex="-1"></a><span class="fu">## Column Aliasing and Creation</span></span>
+<span id="cb45-79"><a href="#cb45-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-80"><a href="#cb45-80" aria-hidden="true" tabindex="-1"></a>Use <span class="in">`AS`</span> to rename a column in the output. You can also create new columns based on calculations.</span>
+<span id="cb45-81"><a href="#cb45-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-84"><a href="#cb45-84" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb45-85"><a href="#cb45-85" aria-hidden="true" tabindex="-1"></a>sql_create_col <span class="ot">&lt;-</span> <span class="st">"SELECT mpg, mpg + 1 AS mpg_plus_one FROM mtcars"</span></span>
+<span id="cb45-86"><a href="#cb45-86" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">dbGetQuery</span>(con, sql_create_col))</span>
+<span id="cb45-87"><a href="#cb45-87" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb45-88"><a href="#cb45-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-89"><a href="#cb45-89" aria-hidden="true" tabindex="-1"></a><span class="fu">## Filtering with WHERE</span></span>
+<span id="cb45-90"><a href="#cb45-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-91"><a href="#cb45-91" aria-hidden="true" tabindex="-1"></a>The <span class="in">`WHERE`</span> clause filters rows based on a condition.</span>
+<span id="cb45-92"><a href="#cb45-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-95"><a href="#cb45-95" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb45-96"><a href="#cb45-96" aria-hidden="true" tabindex="-1"></a>sql_filter <span class="ot">&lt;-</span> <span class="st">"SELECT * FROM mtcars WHERE hp &gt; 200 AND cyl = 8"</span></span>
+<span id="cb45-97"><a href="#cb45-97" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">dbGetQuery</span>(con, sql_filter))</span>
+<span id="cb45-98"><a href="#cb45-98" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb45-99"><a href="#cb45-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-100"><a href="#cb45-100" aria-hidden="true" tabindex="-1"></a><span class="fu">## Aggregation with GROUP BY</span></span>
+<span id="cb45-101"><a href="#cb45-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-102"><a href="#cb45-102" aria-hidden="true" tabindex="-1"></a><span class="in">`GROUP BY`</span> collapses multiple rows into a single summary row. It's used with aggregate functions like <span class="in">`AVG()`</span>, <span class="in">`COUNT()`</span>, <span class="in">`MIN()`</span>, and <span class="in">`MAX()`</span>.</span>
+<span id="cb45-103"><a href="#cb45-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-104"><a href="#cb45-104" aria-hidden="true" tabindex="-1"></a>This query calculates the average horsepower and row count for each cylinder group.</span>
+<span id="cb45-105"><a href="#cb45-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-108"><a href="#cb45-108" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb45-109"><a href="#cb45-109" aria-hidden="true" tabindex="-1"></a>sql_groupby <span class="ot">&lt;-</span> <span class="st">"SELECT cyl, AVG(hp) AS avg_hp, COUNT(*) AS num_cars FROM mtcars GROUP BY cyl"</span></span>
+<span id="cb45-110"><a href="#cb45-110" aria-hidden="true" tabindex="-1"></a><span class="fu">dbGetQuery</span>(con, sql_groupby)</span>
+<span id="cb45-111"><a href="#cb45-111" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb45-112"><a href="#cb45-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-113"><a href="#cb45-113" aria-hidden="true" tabindex="-1"></a><span class="fu">## Sorting with ORDER BY</span></span>
+<span id="cb45-114"><a href="#cb45-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-115"><a href="#cb45-115" aria-hidden="true" tabindex="-1"></a><span class="in">`ORDER BY`</span> sorts the result set in ascending (<span class="in">`ASC`</span>) or descending (<span class="in">`DESC`</span>) order.</span>
+<span id="cb45-116"><a href="#cb45-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-119"><a href="#cb45-119" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb45-120"><a href="#cb45-120" aria-hidden="true" tabindex="-1"></a>sql_orderby <span class="ot">&lt;-</span> <span class="st">"SELECT car_name, mpg, hp FROM mtcars ORDER BY hp DESC LIMIT 5"</span></span>
+<span id="cb45-121"><a href="#cb45-121" aria-hidden="true" tabindex="-1"></a><span class="fu">dbGetQuery</span>(con, sql_orderby)</span>
+<span id="cb45-122"><a href="#cb45-122" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb45-123"><a href="#cb45-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-124"><a href="#cb45-124" aria-hidden="true" tabindex="-1"></a><span class="fu">## Joins</span></span>
+<span id="cb45-125"><a href="#cb45-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-126"><a href="#cb45-126" aria-hidden="true" tabindex="-1"></a>This example creates two tables, <span class="in">`car_parts`</span> and <span class="in">`part_info`</span>, to demonstrate joins.</span>
+<span id="cb45-127"><a href="#cb45-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-130"><a href="#cb45-130" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb45-131"><a href="#cb45-131" aria-hidden="true" tabindex="-1"></a><span class="fu">dbWriteTable</span>(con, <span class="st">"car_parts"</span>, <span class="fu">data.frame</span>(<span class="at">car_name =</span> <span class="fu">c</span>(<span class="st">"Mazda RX4"</span>, <span class="st">"Datsun 710"</span>, <span class="st">"Hornet 4 Drive"</span>), <span class="at">part_id =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)), <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb45-132"><a href="#cb45-132" aria-hidden="true" tabindex="-1"></a><span class="fu">dbWriteTable</span>(con, <span class="st">"part_info"</span>, <span class="fu">data.frame</span>(<span class="at">part_id =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>), <span class="at">part_name =</span> <span class="fu">c</span>(<span class="st">"Engine"</span>, <span class="st">"Tire"</span>, <span class="st">"Brake"</span>)), <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb45-133"><a href="#cb45-133" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb45-134"><a href="#cb45-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-135"><a href="#cb45-135" aria-hidden="true" tabindex="-1"></a><span class="fu">### INNER JOIN</span></span>
+<span id="cb45-136"><a href="#cb45-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-137"><a href="#cb45-137" aria-hidden="true" tabindex="-1"></a>Returns only the rows where the join key (<span class="in">`part_id`</span>) exists in both tables.</span>
+<span id="cb45-138"><a href="#cb45-138" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-141"><a href="#cb45-141" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb45-142"><a href="#cb45-142" aria-hidden="true" tabindex="-1"></a>sql_inner_join <span class="ot">&lt;-</span> <span class="st">"</span></span>
+<span id="cb45-143"><a href="#cb45-143" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT cp.car_name, pi.part_name</span></span>
+<span id="cb45-144"><a href="#cb45-144" aria-hidden="true" tabindex="-1"></a><span class="st">FROM car_parts cp</span></span>
+<span id="cb45-145"><a href="#cb45-145" aria-hidden="true" tabindex="-1"></a><span class="st">INNER JOIN part_info pi ON cp.part_id = pi.part_id"</span></span>
+<span id="cb45-146"><a href="#cb45-146" aria-hidden="true" tabindex="-1"></a><span class="fu">dbGetQuery</span>(con, sql_inner_join)</span>
+<span id="cb45-147"><a href="#cb45-147" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb45-148"><a href="#cb45-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-149"><a href="#cb45-149" aria-hidden="true" tabindex="-1"></a><span class="fu">### LEFT JOIN</span></span>
+<span id="cb45-150"><a href="#cb45-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-151"><a href="#cb45-151" aria-hidden="true" tabindex="-1"></a>Returns all rows from the left table (<span class="in">`car_parts`</span>) and the matched rows from the right table (<span class="in">`part_info`</span>).</span>
+<span id="cb45-152"><a href="#cb45-152" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-155"><a href="#cb45-155" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb45-156"><a href="#cb45-156" aria-hidden="true" tabindex="-1"></a>sql_left_join <span class="ot">&lt;-</span> <span class="st">"</span></span>
+<span id="cb45-157"><a href="#cb45-157" aria-hidden="true" tabindex="-1"></a><span class="st">SELECT cp.car_name, pi.part_name</span></span>
+<span id="cb45-158"><a href="#cb45-158" aria-hidden="true" tabindex="-1"></a><span class="st">FROM car_parts cp</span></span>
+<span id="cb45-159"><a href="#cb45-159" aria-hidden="true" tabindex="-1"></a><span class="st">LEFT JOIN part_info pi ON cp.part_id = pi.part_id"</span></span>
+<span id="cb45-160"><a href="#cb45-160" aria-hidden="true" tabindex="-1"></a><span class="fu">dbGetQuery</span>(con, sql_left_join)</span>
+<span id="cb45-161"><a href="#cb45-161" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb45-162"><a href="#cb45-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-163"><a href="#cb45-163" aria-hidden="true" tabindex="-1"></a><span class="fu">## String and Date Functions</span></span>
+<span id="cb45-164"><a href="#cb45-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-165"><a href="#cb45-165" aria-hidden="true" tabindex="-1"></a>SQL has functions for manipulating strings and dates. The exact syntax can vary by database. In SQLite, you can use <span class="in">`UPPER()`</span> and <span class="in">`strftime()`</span>.</span>
+<span id="cb45-166"><a href="#cb45-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-169"><a href="#cb45-169" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb45-170"><a href="#cb45-170" aria-hidden="true" tabindex="-1"></a>sql_string_date <span class="ot">&lt;-</span> <span class="st">"SELECT car_name, UPPER(car_name) AS upper_name, '2023-10-27' AS today from car_parts"</span></span>
+<span id="cb45-171"><a href="#cb45-171" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">dbGetQuery</span>(con, sql_string_date))</span>
+<span id="cb45-172"><a href="#cb45-172" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb45-173"><a href="#cb45-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-174"><a href="#cb45-174" aria-hidden="true" tabindex="-1"></a><span class="fu">## Modifying Data</span></span>
+<span id="cb45-175"><a href="#cb45-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-176"><a href="#cb45-176" aria-hidden="true" tabindex="-1"></a><span class="fu">### UPDATE Table</span></span>
+<span id="cb45-177"><a href="#cb45-177" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-178"><a href="#cb45-178" aria-hidden="true" tabindex="-1"></a><span class="in">`UPDATE`</span> modifies existing records in a table.</span>
+<span id="cb45-179"><a href="#cb45-179" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-182"><a href="#cb45-182" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb45-183"><a href="#cb45-183" aria-hidden="true" tabindex="-1"></a><span class="co"># Note: dbExecute is used for statements that don't return data</span></span>
+<span id="cb45-184"><a href="#cb45-184" aria-hidden="true" tabindex="-1"></a><span class="fu">dbExecute</span>(con, <span class="st">"UPDATE mtcars SET hp = 120 WHERE car_name = 'Mazda RX4'"</span>)</span>
+<span id="cb45-185"><a href="#cb45-185" aria-hidden="true" tabindex="-1"></a><span class="fu">dbGetQuery</span>(con, <span class="st">"SELECT car_name, hp FROM mtcars WHERE car_name = 'Mazda RX4'"</span>)</span>
+<span id="cb45-186"><a href="#cb45-186" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb45-187"><a href="#cb45-187" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-188"><a href="#cb45-188" aria-hidden="true" tabindex="-1"></a><span class="fu">### CREATE and DROP Table</span></span>
+<span id="cb45-189"><a href="#cb45-189" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-190"><a href="#cb45-190" aria-hidden="true" tabindex="-1"></a><span class="in">`CREATE TABLE`</span> builds a new table, and <span class="in">`DROP TABLE`</span> deletes it.</span>
+<span id="cb45-191"><a href="#cb45-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-194"><a href="#cb45-194" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb45-195"><a href="#cb45-195" aria-hidden="true" tabindex="-1"></a>sql_create <span class="ot">&lt;-</span> <span class="st">"CREATE TABLE mtcars_copy AS SELECT * FROM mtcars"</span></span>
+<span id="cb45-196"><a href="#cb45-196" aria-hidden="true" tabindex="-1"></a><span class="fu">dbExecute</span>(con, sql_create)</span>
+<span id="cb45-197"><a href="#cb45-197" aria-hidden="true" tabindex="-1"></a><span class="fu">dbListTables</span>(con)</span>
+<span id="cb45-198"><a href="#cb45-198" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb45-199"><a href="#cb45-199" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-202"><a href="#cb45-202" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb45-203"><a href="#cb45-203" aria-hidden="true" tabindex="-1"></a>sql_drop <span class="ot">&lt;-</span> <span class="st">"DROP TABLE mtcars_copy"</span></span>
+<span id="cb45-204"><a href="#cb45-204" aria-hidden="true" tabindex="-1"></a><span class="fu">dbExecute</span>(con, sql_drop)</span>
+<span id="cb45-205"><a href="#cb45-205" aria-hidden="true" tabindex="-1"></a><span class="fu">dbListTables</span>(con)</span>
+<span id="cb45-206"><a href="#cb45-206" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb45-207"><a href="#cb45-207" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-208"><a href="#cb45-208" aria-hidden="true" tabindex="-1"></a><span class="fu"># 3. Method 2: Using `dbplyr`</span></span>
+<span id="cb45-209"><a href="#cb45-209" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-210"><a href="#cb45-210" aria-hidden="true" tabindex="-1"></a><span class="in">`dbplyr`</span> is a <span class="in">`tidyverse`</span> backend for databases. It allows you to write familiar <span class="in">`dplyr`</span> code, which <span class="in">`dbplyr`</span> translates into SQL for you. This is the recommended modern approach as it is easier to write and less prone to SQL injection errors.</span>
+<span id="cb45-211"><a href="#cb45-211" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-212"><a href="#cb45-212" aria-hidden="true" tabindex="-1"></a>First, we create a connection to the <span class="in">`mtcars`</span> table in the database.</span>
+<span id="cb45-213"><a href="#cb45-213" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-216"><a href="#cb45-216" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb45-217"><a href="#cb45-217" aria-hidden="true" tabindex="-1"></a>mtcars_db <span class="ot">&lt;-</span> <span class="fu">tbl</span>(con, <span class="st">"mtcars"</span>)</span>
+<span id="cb45-218"><a href="#cb45-218" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb45-219"><a href="#cb45-219" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-220"><a href="#cb45-220" aria-hidden="true" tabindex="-1"></a>Now, we can use <span class="in">`dplyr`</span> verbs on this object. The code is not run in R; it is translated to SQL and sent to the database.</span>
+<span id="cb45-221"><a href="#cb45-221" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-224"><a href="#cb45-224" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb45-225"><a href="#cb45-225" aria-hidden="true" tabindex="-1"></a>query <span class="ot">&lt;-</span> mtcars_db <span class="sc">%&gt;%</span></span>
+<span id="cb45-226"><a href="#cb45-226" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(car_name, mpg, hp, cyl) <span class="sc">%&gt;%</span></span>
+<span id="cb45-227"><a href="#cb45-227" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(hp <span class="sc">&gt;</span> <span class="dv">150</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb45-228"><a href="#cb45-228" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(cyl) <span class="sc">%&gt;%</span></span>
+<span id="cb45-229"><a href="#cb45-229" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">avg_mpg =</span> <span class="fu">mean</span>(mpg, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb45-230"><a href="#cb45-230" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(avg_mpg))</span>
+<span id="cb45-231"><a href="#cb45-231" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb45-232"><a href="#cb45-232" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-233"><a href="#cb45-233" aria-hidden="true" tabindex="-1"></a>We can use <span class="in">`show_query()`</span> to see the SQL that <span class="in">`dbplyr`</span> generated.</span>
+<span id="cb45-234"><a href="#cb45-234" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-237"><a href="#cb45-237" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb45-238"><a href="#cb45-238" aria-hidden="true" tabindex="-1"></a><span class="fu">show_query</span>(query)</span>
+<span id="cb45-239"><a href="#cb45-239" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb45-240"><a href="#cb45-240" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-241"><a href="#cb45-241" aria-hidden="true" tabindex="-1"></a>To execute the query and pull the results back into an R data frame, we use <span class="in">`collect()`</span>.</span>
+<span id="cb45-242"><a href="#cb45-242" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-245"><a href="#cb45-245" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb45-246"><a href="#cb45-246" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">collect</span>(query)</span>
+<span id="cb45-247"><a href="#cb45-247" aria-hidden="true" tabindex="-1"></a>results</span>
+<span id="cb45-248"><a href="#cb45-248" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb45-249"><a href="#cb45-249" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-250"><a href="#cb45-250" aria-hidden="true" tabindex="-1"></a><span class="fu"># 4. Best Practice: Parameterized Queries</span></span>
+<span id="cb45-251"><a href="#cb45-251" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-252"><a href="#cb45-252" aria-hidden="true" tabindex="-1"></a>To prevent SQL injection attacks, you should not use <span class="in">`paste()`</span> to insert values into a SQL query. Instead, use parameterized queries with <span class="in">`?`</span> as a placeholder. <span class="in">`DBI`</span> will safely insert the values for you.</span>
+<span id="cb45-253"><a href="#cb45-253" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-256"><a href="#cb45-256" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb45-257"><a href="#cb45-257" aria-hidden="true" tabindex="-1"></a>hp_threshold <span class="ot">&lt;-</span> <span class="dv">150</span></span>
+<span id="cb45-258"><a href="#cb45-258" aria-hidden="true" tabindex="-1"></a>sql_safe <span class="ot">&lt;-</span> <span class="st">"SELECT car_name, hp FROM mtcars WHERE hp &gt; ?"</span></span>
+<span id="cb45-259"><a href="#cb45-259" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-260"><a href="#cb45-260" aria-hidden="true" tabindex="-1"></a><span class="co"># dbGetQuery can take a `params` list</span></span>
+<span id="cb45-261"><a href="#cb45-261" aria-hidden="true" tabindex="-1"></a><span class="fu">dbGetQuery</span>(con, sql_safe, <span class="at">params =</span> <span class="fu">list</span>(hp_threshold)) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span>
+<span id="cb45-262"><a href="#cb45-262" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb45-263"><a href="#cb45-263" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-264"><a href="#cb45-264" aria-hidden="true" tabindex="-1"></a><span class="fu"># 5. Method 3: Using `sqldf` on Local Data Frames</span></span>
+<span id="cb45-265"><a href="#cb45-265" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-266"><a href="#cb45-266" aria-hidden="true" tabindex="-1"></a>The <span class="in">`sqldf`</span> package allows you to run SQL queries on local R data frames, not on an external database. This can be useful for users who are more comfortable with SQL than with <span class="in">`dplyr`</span> syntax for data manipulation.</span>
+<span id="cb45-267"><a href="#cb45-267" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-270"><a href="#cb45-270" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb45-271"><a href="#cb45-271" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sqldf)</span>
+<span id="cb45-272"><a href="#cb45-272" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-273"><a href="#cb45-273" aria-hidden="true" tabindex="-1"></a><span class="co"># Note the use of the R data frame `mtcars_df`</span></span>
+<span id="cb45-274"><a href="#cb45-274" aria-hidden="true" tabindex="-1"></a><span class="fu">sqldf</span>(<span class="st">"SELECT car_name, mpg FROM mtcars_df WHERE cyl = 8 LIMIT 5"</span>)</span>
+<span id="cb45-275"><a href="#cb45-275" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb45-276"><a href="#cb45-276" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-277"><a href="#cb45-277" aria-hidden="true" tabindex="-1"></a><span class="fu"># 6. Disconnecting from the Database</span></span>
+<span id="cb45-278"><a href="#cb45-278" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-279"><a href="#cb45-279" aria-hidden="true" tabindex="-1"></a>It is very important to close the database connection when you are finished to release resources.</span>
+<span id="cb45-280"><a href="#cb45-280" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-283"><a href="#cb45-283" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb45-284"><a href="#cb45-284" aria-hidden="true" tabindex="-1"></a><span class="fu">dbDisconnect</span>(con)</span>
+<span id="cb45-285"><a href="#cb45-285" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
