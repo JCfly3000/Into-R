@@ -33,9 +33,6 @@ format: revealjs
 
 # pages
 ```{r}
-# pages
-
-# In the morning
 
 ## Getting up
 
@@ -66,8 +63,17 @@ format:
     slide-number: c
     show-slide-number: all
     menu: false
-
 ```
+
+## if Produce a standalone HTML file with no external dependencies
+
+```{r}
+format:
+  revealjs:
+    embed-resources:true
+```
+
+
 
 # Main Title Slide Background YAML setting
 
@@ -102,8 +108,54 @@ format:
 This text is moved as well
 ```
 
+# revealjs example
+
+## if add to a quart website,need to install embedio quarto extension in project folder first
 
 
+```{r}
+#| eval: false
+quarto add coatless-quarto/embedio
+```
+
+## quarto code
+
+````
+---
+title: "Quarto revealjs Presentation"
+format:
+  revealjs:
+    embed-resources: true
+    transition: slide
+    background-transition: fade
+    
+---
+
+
+## Getting up
+
+- Turn off alarm
+- Get out of bed
+
+---
+
+## Going to sleep
+
+- Get in bed
+- Count sheep
+
+
+---
+
+<div style="display: flex; justify-content: center; align-items: center; height: 60vh;">
+  <div style="font-size: 100px; font-weight: bold;">Thank you</div>
+</div>
+````
+
+{{< revealjs "revealjs.html" >}}
 
 # reference:
 https://quarto.org/docs/presentations/revealjs/
+
+
+
