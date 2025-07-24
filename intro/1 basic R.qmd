@@ -5,6 +5,8 @@ author: "Tony Duan"
 execute:
   warning: false
   error: false
+
+  
 format:
   html:
     toc: true
@@ -18,7 +20,6 @@ format:
 
 ![](images/R_logo.svg.png){width="300"}
 
-
 # R version
 
 The `version` object in R holds information about the current R version you are running.
@@ -26,6 +27,63 @@ The `version` object in R holds information about the current R version you are 
 ```{r}
 version
 ```
+
+## manage R version with rig
+
+https://github.com/r-lib/rig
+
+
+### install rig
+
+```{bash}
+#| eval: false
+brew tap r-lib/rig
+brew install --cask rig
+```
+
+### show current downloaded R version
+
+```{bash}
+rig list
+```
+
+### show current which R version can be downloaded
+
+```{bash}
+rig available
+```
+
+### download R version
+
+```{bash}
+#| eval: false
+rig add 4.4.3
+```
+
+### use R 4.4.3 version
+
+```{bash}
+#| eval: false
+#rig default 4.4-arm64
+```
+
+
+### use R 4.5.1 version
+
+```{bash}
+#| eval: false
+rig default 4.5-arm64
+```
+
+or you can choose with UI
+
+```{bash}
+#| eval: false
+open -a Rig
+```
+
+![](images/clipboard-4220028785.png)
+
 
 # Work with files
 
@@ -91,6 +149,58 @@ library(fs)
 file_copy('test.csv', 'test2.csv')
 ```
 
+## find folder name with Upper Case letter
+
+```{r}
+#| eval: false
+root_path <- "."            # or "c:/my_project", "~/GitHub", etc.
+
+## ==== STEP 1 : find folders with uppercase ----------------------------
+dirs <- list.dirs(root_path, recursive = FALSE, full.names = FALSE)
+
+## Drop the root itself so we don't try to rename it
+dirs <- setdiff(dirs, root_path)
+
+## Posix-compliant: only paths whose last component has at least one A-Z
+needs_rename <- dirs[grepl("[A-Z]", basename(dirs))]
+
+if (length(needs_rename) == 0) {
+  message("  no folder needs renaming")
+  quit(save = "no")
+}
+needs_rename
+```
+
+## Rename folder with Upper Case letter to lower case letter
+
+```{r}
+#| eval: false
+for (old_path in needs_rename) {
+  dir_name   <- basename(old_path)
+  new_name   <- tolower(dir_name)
+  parent_dir <- dirname(old_path)
+  new_path   <- file.path(parent_dir, new_name)
+
+  # On case-insensitive filesystems (like macOS default), we can't
+  # rename 'A' to 'a' directly if 'a' is considered the same file as 'A'.
+  # We rename to a temporary name first.
+  temp_path <- file.path(parent_dir, paste0("temp__", new_name))
+
+  # 1. Rename to a temporary name that is guaranteed not to exist (or clash)
+  rename_ok <- file.rename(old_path, temp_path)
+
+  if (rename_ok) {
+    # 2. Rename from temporary to the final lowercase name
+    rename_ok <- file.rename(temp_path, new_path)
+  }
+
+  message(sprintf("%s -> %s  %s",
+                  old_path,
+                  new_path,
+                  ifelse(rename_ok, "✓", "✗ failed")))
+}
+```
+
 ## Download file from the internet
 
 The `download.file()` function downloads a file from a given URL.
@@ -107,6 +217,7 @@ download.file(url = url, destfile = "hotels.csv")
 This code scrapes a table from a Wikipedia page. It uses `rvest` to read the HTML content, `html_table` to extract tables, `janitor::clean_names` to clean up column names, and `dplyr` verbs (`filter`, `mutate`) to clean the data.
 
 ```{r}
+#| eval: false
 library(tidyverse)
 library(rvest)
 library(janitor)
@@ -128,6 +239,7 @@ tail(nba_wiki_data003)
 `tryCatch` allows you to handle errors gracefully. The code in the first block is executed. If an error occurs, the `error` function is called.
 
 ```{r}
+#| eval: false
 tryCatch({
   1+who # This will cause an error because 'who' is not defined
 },error=function(e){
@@ -456,7 +568,7 @@ cran_package_num=available.packages(repos = "http://cran.us.r-project.org") |> a
 `old.packages()` checks for installed packages that have newer versions available on CRAN.
 
 ```{r}
-old.packages(repos = "http://cran.us.r-project.org")
+old.packages(repos = "http://cran.us.r-project.org") |> as.data.frame() |> gt::gt() 
 ```
 
 ## Update all installed packages
@@ -512,9 +624,9 @@ renv::restore()
 The `withTimeout()` function from the `R.utils` package runs an expression and stops it if it exceeds the specified timeout.
 
 ```{r}
-#|  warning: true
-#|  error: true
-
+#| warning: true
+#| error: true
+#| eval: false
 library(R.utils)
 foo <- function() {
   print("Tic")
@@ -535,9 +647,190 @@ withTimeout({
 The `system()` function can run shell commands. Here, it uses `ping` to check if a website is reachable.
 
 ```{r}
+#| eval: false
 url='www.bing.com'
 connect_result=system(paste0('ping -c 1 ',url))
 connect_result
+```
+
+# check internet speed and connection
+
+```{r}
+#| eval: false
+library(httr)
+library(jsonlite)
+
+get_location <- function() {
+  response <- GET("http://ip-api.com/json/")
+
+  # Check if the request was successful (status code 200)
+  if (status_code(response) == 200) {
+    # Parse the JSON content from the response
+    data <- fromJSON(content(response, "text", encoding = "UTF-8"))
+
+    # Print the extracted information
+    cat(paste0("IP Address: ", data$query, "\n"))
+    cat(paste0("City: ", data$city, "\n"))
+    cat(paste0("Region: ", data$regionName, "\n"))
+    cat(paste0("Country: ", data$country, "\n"))
+    cat(paste0("ISP: ", data$isp, "\n"))
+    cat(paste0("Latitude: ", data$lat, ", Longitude: ", data$lon, "\n"))
+  } else {
+    cat("Failed to get location\n")
+  }
+}
+
+# Call the function
+get_location()
+```
+
+# check internet speed and connection
+
+```{r}
+#| eval: false
+test_connection <- function(host, port = 80, timeout = 3) {
+  con <- NULL
+  reachable <- FALSE
+  tryCatch({
+    # Open a socket connection in read/write mode with timeout
+    con <- socketConnection(host = host, port = port, open = "r+", blocking = TRUE, timeout = timeout)
+    reachable <- TRUE
+  }, error = function(e) {
+    reachable <- FALSE
+  }, finally = {
+    if (!is.null(con)) close(con)
+  })
+  return(reachable)
+}
+
+check_sites <- function() {
+  sites <- c("www.baidu.com", "www.google.com")
+  cat("\n🌍 Site Connectivity:\n")
+  for (site in sites) {
+    reachable <- test_connection(site)
+    status <- ifelse(reachable, "✅ Reachable", "❌ Unreachable")
+    cat(sprintf("  %-20s %s\n", site, status))
+  }
+}
+
+check_sites()
+
+
+```
+
+```{r}
+#| eval: false
+library(httr)
+library(curl) # Used for download progress if needed, httr leverages it
+library(jsonlite) # Not strictly needed for this code, but useful for general web tasks
+
+# Suppress SSL/TLS verification warnings for self-signed certificates or similar
+# Use with caution in production. This is analogous to urllib3.disable_warnings
+options(httr_oauth_cache = FALSE) # Prevent caching of auth tokens if any
+# For specific SSL verification issues, you might need to set config(ssl_verifypeer = 0L)
+# or config(ssl_verifyhost = 0L) in httr GET/POST calls, but it's generally not recommended.
+
+# Function to test download speed
+test_download_speed <- function(url, test_size_bytes = 1048576) { # 1MB
+  start_time <- Sys.time()
+
+  # Initiate the GET request with stream=TRUE (equivalent to httr's default streaming)
+  # For large files, curl::curl_download is often more efficient for raw bytes
+  # However, for a test_size_bytes limit, we can manage with httr's GET and content()
+  response <- GET(url)
+
+  # Check if the request was successful
+  if (status_code(response) != 200) {
+    warning("Download request failed with status code: ", status_code(response))
+    return(NA) # Return NA if download failed
+  }
+
+  # Get content as raw bytes
+  downloaded_content <- content(response, "raw")
+  bytes_downloaded <- length(downloaded_content)
+
+  # Only consider bytes up to test_size_bytes
+  if (bytes_downloaded > test_size_bytes) {
+    bytes_downloaded <- test_size_bytes
+  }
+
+  end_time <- Sys.time()
+  duration <- as.numeric(difftime(end_time, start_time, units = "secs"))
+
+  if (duration == 0) {
+    return(Inf) # Avoid division by zero if duration is extremely small
+  }
+
+  # Calculate Mbps: (bytes * 8 bits/byte) / (duration in seconds * 1,000,000 bits/Mb)
+  mbps <- (bytes_downloaded * 8) / (duration * 1e6)
+  return(mbps)
+}
+```
+
+```{r}
+#| eval: false
+# Function to test upload speed
+test_upload_speed <- function(url, test_size_bytes = 1048576) { # 1MB
+  # Create raw data for upload
+  # In R, raw vectors are used for binary data.
+  # This creates a raw vector of 'test_size_bytes' length filled with 0x78 (ASCII 'x')
+  data_to_upload <- as.raw(rep(charToRaw("x"), test_size_bytes))
+
+  start_time <- Sys.time()
+
+  # Perform the POST request. The 'body' argument takes raw data.
+  response <- POST(url, body = data_to_upload, encode = "raw") # encode="raw" sends as-is
+
+  end_time <- Sys.time()
+  duration <- as.numeric(difftime(end_time, start_time, units = "secs"))
+
+  if (duration == 0) {
+    return(Inf) # Avoid division by zero if duration is extremely small
+  }
+
+  # Check if the upload was successful
+  if (status_code(response) != 200) {
+    warning("Upload request failed with status code: ", status_code(response))
+    # Optionally print response content for debugging
+    # print(content(response, "text", encoding = "UTF-8"))
+    return(NA) # Return NA if upload failed
+  }
+
+  # Calculate Mbps: (bytes * 8 bits/byte) / (duration in seconds * 1,000,000 bits/Mb)
+  mbps <- (test_size_bytes * 8) / (duration * 1e6)
+  return(mbps)
+}
+```
+
+```{r}
+#| eval: false
+# Define URLs (these are examples and might not be optimal for China mainland)
+download_url <- "http://speedtest.tele2.net/10MB.zip"
+upload_url <- "http://speedtest.cc.cloudxns.net/speedtest/upload.php"
+```
+
+```{r}
+#| eval: false
+# Test download speed
+message("Testing download speed...") # Use message for user-friendly output
+down_speed <- test_download_speed(download_url)
+if (!is.na(down_speed)) {
+  cat(sprintf("Download speed: %.2f Mbps\n", down_speed))
+} else {
+  cat("Download speed test failed.\n")
+}
+```
+
+```{r}
+#| eval: false
+# Test upload speed
+message("Testing upload speed...")
+up_speed <- test_upload_speed(upload_url)
+if (!is.na(up_speed)) {
+  cat(sprintf("Upload speed: %.2f Mbps\n", up_speed))
+} else {
+  cat("Upload speed test failed.\n")
+}
 ```
 
 # Using Python
